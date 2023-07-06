@@ -40,23 +40,26 @@ export default class HeadFreeListing extends PureComponent {
         <LHead className="header wow fadeInDown">
             <Logo className={`logo  ${HeaderDrop && 'open'}`} onClick={this.toggleHeaderDrop}><img  src={LogoM} alt="logo" /> <Triangle/></Logo>
             {HeaderDrop && (
-            <DropDownMenu>
-              <Scrollbars renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
-                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-              >
-                  <a><img src={selogo01} /></a>
-                  <a><img src={selogo02} /></a>
-                  <a><img src={selogo03} /></a>
-                  <a><img src={selogo04} /></a>
-                  <a><img src={selogo05} /></a>
-                  <a><img src={selogo06} /></a>
-                  <a><img src={selogo07} /></a>
-                  {/* <a><img src={selogo08} /></a>
-                  <a><img src={selogo09} /></a>
-                  <a><img src={selogo10} /></a> */}
-                </Scrollbars>
-              </DropDownMenu>
+              <>
+              <DropDownMenu>
+                  <Scrollbars renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
+                    renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                    renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                  >
+                    <a><img src={selogo01} /></a>
+                    <a><img src={selogo02} /></a>
+                    <a><img src={selogo03} /></a>
+                    <a><img src={selogo04} /></a>
+                    <a><img src={selogo05} /></a>
+                    <a><img src={selogo06} /></a>
+                    <a><img src={selogo07} /></a>
+                    {/* <a><img src={selogo08} /></a>
+                    <a><img src={selogo09} /></a>
+                    <a><img src={selogo10} /></a> */}
+                  </Scrollbars>
+                </DropDownMenu>
+                <OverLay onClick={this.toggleHeaderDrop} />
+              </>
             )}
             <RMbox>
                 <a  className="link01 disableBtnLink" ><span>Rewards program</span></a>
@@ -72,9 +75,17 @@ const FlexDiv = styled.div`
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
 `;
 
+const OverLay = styled.div `
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;
+  @media (max-width: 768px){
+    background: #191b21;
+  }
+`
 const DropDownMenu = styled.div `
     position: absolute; top: 113px; left: 0; width: 375px; flex-flow: column; background: #191b21; padding: 10px 0; display: flex; z-index: 100; height: calc(100vh - 113px); overflow: auto;
-    a {width: 100%; margin: 0; min-height: 80px; padding: 14px 40px; display: block;}
+    a {width: 100%; margin: 0; min-height: 80px; padding: 14px 40px; display: block;
+      img {max-height: 85px;}
+    }
     a:hover {opacity: 0.6;}
     &.open {display: flex;}
 
@@ -110,7 +121,7 @@ const LHead = styled(FlexDiv) `
     }
 `
 const Logo = styled.a ` 
-    margin-right:25px; display: flex; align-items: center;  top: 0; width: 375px; padding:26px 40px; position: absolute; left: 0; cursor: pointer; 
+    margin-right:25px; display: flex; align-items: center;  top: 0; width: 375px; padding:26px 40px; position: absolute; left: 0; cursor: pointer; z-index: 2;
     .logo2 {display: none;}
     @media (max-width: 768px){
       width: 337px; margin: 0px auto; left: 50%; transform: translateX(-50%);

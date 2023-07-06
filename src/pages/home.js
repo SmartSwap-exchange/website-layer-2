@@ -63,12 +63,7 @@ export default class Welcome extends PureComponent {
             <BannerSec>
                 <Container className='justify-center'>
                     <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'><span>LAYER 2</span> VIRTUAL WALLET</BannerHD>
-                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Use your own private key wallet
-Gain rewards through self-custody vaults
-Generate income via AI market making  
-Reduce slippage and swap cost
-Speed up cross-chain waiting times
-Customize your shortcuts and apps</p>
+                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Your own private key wallet | Earn rewards via self-custody | Generate income with AI market making | Reduce swap cost | Expedite cross-chain waiting times | Customize shortcuts and apps</p>
                     <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <div className='btnTop'>
                             <img src={Apple}/>
@@ -113,12 +108,12 @@ Customize your shortcuts and apps</p>
                 )} 
                 {this.getActiveClass(2,
                 <TabContent>
-                    <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange functions as both a smartphone app and a web browser extension, serving as a comprehensive platform for users to engage with various blockchain opportunities. When users connect their wallets to DeFi platforms, such as DEXs , SmartExchange is triggered and presents the user with alternative and profitable offers. Users have the option to choose between faster expedited transactions or more cost-effective opportunities available in P2P or P</TabPera>
+                    <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange functions as both a smartphone app and a web browser extension, serving as a comprehensive platform for users to engage with various blockchain opportunities. When users connect their wallets to DeFi platforms, such as DEXs , SmartExchange is triggered and presents the user with alternative and profitable offers. Users have the option to choose between faster expedited transactions or more cost-effective opportunities available in P2P or P2DEX.</TabPera>
                 </TabContent>
                 )}
                 {this.getActiveClass(3,
                 <TabContent>
-                    <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange offers a user-friendly web3-based interface that is easily navigable, even for new users. The platform is highly customizable, allowing users to adjust settings and preferences according to their preferences. This level of customization enables users to optimize their DeFi experience based on their individual needs and goals. Additionally, SmartExchange provides shortcuts to favorite links, alerts, and various opportunities such as launch-pads, scale-pads, NFTs, staking, airdrops, strategy analysis, index tracking, educational, portfolio tracking, and access for all crypto apps from the google play marketplace</TabPera>
+                    <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange offers a user-friendly web3-based interface that is easily navigable, even for new users. The platform is highly customizable, allowing users to adjust settings and preferences according to their preferences. This level of customization enables users to optimize their DeFi experience based on their individual needs and goals. Additionally, SmartExchange provides shortcuts to favorite links, alerts, and various opportunities such as launch-pads, scale-pads, NFTs, staking, airdrops, strategy analysis, index tracking, educational, portfolio tracking, and access for all crypto apps from the google play marketplace.</TabPera>
                 </TabContent>
                 )}
                 <TabImages className='wow fadeIn' data-wow-delay='0.2s'>
@@ -264,7 +259,7 @@ const TotalValue = styled.div `
             p {font-size: 16px;}
         }
     }
-    @media screen and (max-width: 1350px) {
+    @media screen and (max-width: 1024px) {
         flex-flow: column;
         .totalGrid { max-width: 100%;
             padding: 20px 0;
@@ -438,6 +433,7 @@ const BtnPrimary = styled.a `
             b {display: block; font-size: 24px;}
         }
     }
+    
     @media (max-width: 1024px){
         min-width: 200px; margin-bottom: 25px;
     }
@@ -455,6 +451,9 @@ const BtnPrimary = styled.a `
         }
     }
     &.btnLg {padding: 18px 42px; font-size: 24px;
+        @media (max-width: 1200px){
+            padding: 18px 28px;
+        }
         @media (max-width: 767px){
             max-width: 100%; min-width: 200px; font-size: 18px;
         }
