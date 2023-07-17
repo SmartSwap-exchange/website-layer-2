@@ -125,7 +125,7 @@ export default class PopUp05 extends PureComponent {
                                             minValue={0}
                                             value={this.state.value}
                                             onChange={value => this.setState({ value })}
-                                            onChangeComplete={value => console.log(value)} />
+                                            />
                                         </RangeSlider>
                                         <Button className="green-border">AUTHORIZE NEW LIMIT</Button>
                                     </div>
