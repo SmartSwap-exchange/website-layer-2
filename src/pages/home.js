@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import HeaderWC from '../component/header';
 
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 import BannerBg from '../assets/welcome/home-bg.png';
@@ -352,7 +352,7 @@ const TabImages = styled.div `
     .slick-slider {width: 932px; }
     .slick-list {box-shadow: 0 0 20px #ffffff50;}
     .slick-arrow {display: none;}
-    .slick-dots {display: flex; position: static; align-items: center; justify-content: center; margin: 20px 0 0; padding: 0;
+    .slick-dots {display: flex !important; position: static; align-items: center; justify-content: center; margin: 20px 0 0; padding: 0; 
         li {list-style: none;}
         button {background: none; border: 0; color: transparent; height: 8px; width: 19px; background: #3d3d3d; margin: 0 4px; border-radius: 5px;
         &:before {display: none;}}
