@@ -2,20 +2,33 @@ import React, { PureComponent, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import Sidebar from '../component/Sidebar';
+import chrome from '../assets/welcome/chrome.png';
 
 
 import LogoM from '../assets/welcome/logo.png'
 import Logo2 from '../assets/welcome/logo2.png'
-import selogo01 from './../assets/images/se-logos/selogo01.png';
-import selogo02 from './../assets/images/se-logos/selogo02.png';
-import selogo03 from './../assets/images/se-logos/selogo03.png';
-import selogo04 from './../assets/images/se-logos/selogo04.png';
-import selogo05 from './../assets/images/se-logos/selogo05.png';
-import selogo06 from './../assets/images/se-logos/selogo06.png';
-import selogo07 from './../assets/images/se-logos/selogo07.png';
-import selogo08 from './../assets/images/se-logos/selogo08.png';
-import selogo09 from './../assets/images/se-logos/selogo09.png';
-import selogo10 from './../assets/images/se-logos/selogo10.png';
+import selogo01 from './../assets/images/pdo.png';
+import selogo02 from './../assets/images/detf.png';
+import selogo03 from './../assets/images/cbdc.png';
+import selogo04 from './../assets/images/derex.png';
+import selogo05 from './../assets/images/dumper.png';
+import selogo06 from './../assets/images/freez.png';
+import selogo07 from './../assets/images/lpinsure.png';
+import selogo08 from './../assets/images/nft.png';
+import selogo09 from './../assets/images/ibo.png';
+import selogo10 from './../assets/images/degenswap.png';
+import selogo11 from './../assets/images/uni.png';
+import selogo12 from './../assets/images/multiverse.png';
+import selogo13 from './../assets/images/vsinger.png';
+import selogo14 from './../assets/images/vtuber.png';
+import selogo15 from './../assets/images/oxn finance.png';
+import selogo16 from './../assets/images/updown.png';
+import selogo17 from './../assets/images/w3b.png';
+import selogo18 from './../assets/images/mass.png';
+import selogo19 from './../assets/images/social.png';
+import DropIcon from './../assets/images/tab22.png';
+import hright from './../assets/images/hright.png';
 
 
 export default class HeadFreeListing extends PureComponent {
@@ -35,8 +48,11 @@ export default class HeadFreeListing extends PureComponent {
   render() {
     const { HeaderDrop } = this.state;
     return (
-        <>
-        
+        <HeaderMain className='header'>
+        <TopBar>
+          <img src={DropIcon} />
+          <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all UNLIMITED PASSIVE AIRDROP subscription tokens</p>
+        </TopBar>
         <LHead className="header wow fadeInDown">
             <Logo className={`logo  ${HeaderDrop && 'open'}`} onClick={this.toggleHeaderDrop}><img  src={LogoM} alt="logo" /> <Triangle/></Logo>
             {HeaderDrop && (
@@ -53,6 +69,18 @@ export default class HeadFreeListing extends PureComponent {
                     <a><img src={selogo05} /></a>
                     <a><img src={selogo06} /></a>
                     <a><img src={selogo07} /></a>
+                    <a><img src={selogo08} /></a>
+                    <a><img src={selogo09} /></a>
+                    <a><img src={selogo10} /></a>
+                    <a><img src={selogo11} /></a>
+                    <a><img src={selogo12} /></a>
+                    <a><img src={selogo13} /></a>
+                    <a><img src={selogo14} /></a>
+                    <a><img src={selogo15} /></a>
+                    <a><img src={selogo16} /></a>
+                    <a><img src={selogo17} /></a>
+                    <a><img src={selogo18} /></a>
+                    <a><img src={selogo19} /></a>
                     {/* <a><img src={selogo08} /></a>
                     <a><img src={selogo09} /></a>
                     <a><img src={selogo10} /></a> */}
@@ -61,12 +89,25 @@ export default class HeadFreeListing extends PureComponent {
                 <OverLay onClick={this.toggleHeaderDrop} />
               </>
             )}
-            <RMbox>
+            {/* <RMbox>
                 <a  className="link01 disableBtnLink" ><span>Rewards program</span></a>
                 <a className="headerBtn disabled">GAIN 152.50% APY</a>
-            </RMbox>
+            </RMbox> */}
+            <HRight>
+              <HBtn>Claim Your <span>$25</span> Welcome Bonus
+                <div className='btnTop'>
+                    <img src={chrome}/>
+                    <div className='btnTxt'>
+                        <b>Install virtual wallet</b>
+                        <i>Web Store</i>
+                    </div>
+                </div>
+              </HBtn>
+              <a className='rightIcon'><img src={hright}/></a>
+            </HRight>
         </LHead>
-        </>
+        {/* <Sidebar/> */}
+        </HeaderMain>
     );
   }
 }
@@ -83,7 +124,7 @@ const OverLay = styled.div `
 `
 const DropDownMenu = styled.div `
     position: absolute; top: 113px; left: 0; width: 375px; flex-flow: column; background: #191b21; padding: 10px 0; display: flex; z-index: 100; height: calc(100vh - 113px); overflow: auto;
-    a {width: 100%; margin: 0; min-height: 80px; padding: 14px 40px; display: block;
+    a {width: 100%; margin: 0; /* min-height: 80px; */ padding: 6px 40px; display: block;
       img {max-height: 85px;}
     }
     a:hover {opacity: 0.6;}
@@ -108,9 +149,19 @@ const DropDownMenu = styled.div `
       a {padding: 14px 20px;}
     }
 `
+const TopBar = styled.div `
+  /* position: absolute; top: 0; */ left: 0; right: 0; height: 40px; background: #91dc27; display: flex; justify-content: center; align-items: center; 
+  p {color: #000; font-weight: 700; font-size: 14px;}
+  img {filter: brightness(0); height: 25px;}
+`
+const HeaderMain = styled.div `
+  position: fixed; top: 0; left: 0; right: 0; display: flex; flex-flow: column; z-index: 100;
+  &.fixed {
+    ${TopBar} {display: none;}
+  }
+`
 const LHead = styled(FlexDiv) ` 
-    padding:36px 40px; justify-content:flex-start; width: 100%;
-    position: fixed; top: 0; transition: all 0.3s ease-in-out; z-index: 100;
+    padding:36px 40px; justify-content:flex-start; width: 100%; position: sticky; top: 0; transition: all 0.3s ease-in-out; z-index: 100; 
     &.fixed {background: rgba(0,0,0,0.8);
       .logo {}
       .link01.disableBtnLink:hover:after {background: #000;}
@@ -188,8 +239,26 @@ const RMbox = styled(FlexDiv) `
       
     }
 `
-
-
+const HRight = styled.div `
+  display: flex; margin-left: auto ; align-items: center; position: relative;
+  &
+  p {
+  }
+  
+  a.rightIcon {}
+`
+const HBtn = styled.a `
+  font-size: 14px; color: #fff; padding: 10px 44px 10px 0 ; border-right: 1px solid #35373a; margin: 0; margin-right: 30px; font-weight: bold; position: relative;
+  span {color: #91dc27;}
+  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 260px; transform: translateY(-50%); opacity: 0; visibility: hidden; box-shadow: 0px 0px 10px #9d9d9d;
+      img {filter: brightness(0); flex-shrink: 0; margin-right: 18px; width: 30px; transition: all 0.5s ease-in-out;}
+      b {display: block; font-weight: bold; font-size: 16px; color: #0d0e13; transition: all 0.5s ease-in-out;}
+      i {display: block; font-weight: bold; font-size: 11px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;}
+  }
+  &:hover {
+    .btnTop {opacity: 1; visibility: visible;}
+  }
+`
 
 
 

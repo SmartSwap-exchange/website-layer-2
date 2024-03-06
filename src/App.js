@@ -7,6 +7,7 @@ import Welcome from './pages/welcome'
 import Screen01 from './pages/screen01' 
 import Screen02 from './pages/screen02' 
 import Screen03 from './pages/screen03' 
+import Screen04 from './pages/screen04' 
 import Gs from './theme/globalStyles';
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme/theme'  
@@ -32,6 +33,7 @@ function App() {
               <Route path="/screen01" exact> <Screen01 isDarkTheme={isDark}  />  </Route>  
               <Route path="/screen02" exact> <Screen02 isDarkTheme={isDark}  />  </Route>  
               <Route path="/screen03" exact> <Screen03 isDarkTheme={isDark}  />  </Route>  
+              <Route path="/screen04" exact> <Screen04 isDarkTheme={isDark}  />  </Route>  
             </Switch> 
         </section>
     </ThemeProvider>
