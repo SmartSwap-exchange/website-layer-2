@@ -97,7 +97,7 @@ export default class Welcome extends PureComponent {
                 <Container className='justify-center'>
                     <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'><span>LAYER 2</span> VIRTUAL WALLET</BannerHD>
                     <p className='wow fadeInUp' data-wow-delay='0.3s'>Tokens in your wallet are like money under the mattress, generating no income. Hodl your tokens in a self-custody layer 2 wallet, leveraging your own wallet's security, and enjoy unlimited passive airdrops, self-custody trading and short-term loan fees that help other users to expedite any cross-chain transaction to seconds</p>
-                    <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='/screen04' className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn01}/>
@@ -117,7 +117,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='http://airdrop.tube/' target='_blank' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn03}/>
@@ -127,7 +127,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='http://airdrop.tube/' target='_blank' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn04}/>
@@ -246,15 +246,15 @@ to seconds </h4>
                     <TabImgTxt>
                         <div className='tt-left'>
                             <div data-id="tabL01" >
-                                <h3 className={activeTab === 'tabL01' ? 'active' : ''} onClick={() => this.handleTabClick('tabL01')}>Self-custody vaults</h3>
+                                <h3 className={activeTab === 'tabL01' ? 'active' : ''} onMouseEnter={() => this.handleTabClick('tabL01')}>Self-custody vaults</h3>
                                 {activeTab === 'tabL01' ?  <p>SmartExchange is a Layer 2 virtual wallet featuring self-custody vaults that utilize the established security of decentralized wallets like MetaMask and TrustWallet.</p> : ''}
                             </div>
                             <div data-id="tabL02" >
-                                <h3 className={activeTab === 'tabL02' ? 'active' : ''} onClick={() => this.handleTabClick('tabL02')}>Cheaper swap</h3>
+                                <h3 className={activeTab === 'tabL02' ? 'active' : ''} onMouseEnter={() => this.handleTabClick('tabL02')}>Cheaper swap</h3>
                                 {activeTab === 'tabL02' ? <p>The smart extension is designed to pop up and offer users cheaper swap options every time they visit decentralized applications (dApps) like Uniswap, 1inch, and similar platforms</p> : ''}
                             </div>
                             <div data-id="tabL03" >
-                                <h3 className={activeTab === 'tabL03' ? 'active' : ''} onClick={() => this.handleTabClick('tabL03')}>Faster cross-chain</h3>
+                                <h3 className={activeTab === 'tabL03' ? 'active' : ''} onMouseEnter={() => this.handleTabClick('tabL03')}>Faster cross-chain</h3>
                                 {activeTab === 'tabL03' ? <p>When performing a cross-chain swap, users have the option to choose between the cheapest router or the fastest one, which is a unique expedited solution to bridge between any cross-chain in seconds</p> : ''}
                             </div>
                         </div>
@@ -280,15 +280,15 @@ to seconds </h4>
                     <TabImgTxt>
                         <div className='tt-left'>
                             <div data-id="tabL04" >
-                                <h3 className={activeTab2 === 'tabL04' ? 'active' : ''} onClick={() => this.handleTabClick2('tabL04')}>Unlimited airdrops</h3>
+                                <h3 className={activeTab2 === 'tabL04' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL04')}>Unlimited airdrops</h3>
                                 {activeTab2 === 'tabL04' ?  <p>$SMART token, acting as Unlimited Airdrop Subscription (UAS) token, represent an innovative cryptocurrency utility. They offer passive access to unlimited airdrops when held in self-custody.</p> : ''}
                             </div>
                             <div data-id="tabL05" >
-                                <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onClick={() => this.handleTabClick2('tabL05')}>Unlimited APY</h3>
+                                <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL05')}>Unlimited APY</h3>
                                 {activeTab2 === 'tabL05' ? <p>Holders can passively receive expedited fees every time users leverage the holding fund to perform short-term expedited loans</p> : ''}
                             </div>
                             <div data-id="tabL06" >
-                                <h3 className={activeTab2 === 'tabL06' ? 'active' : ''} onClick={() => this.handleTabClick2('tabL06')}>VIP access</h3>
+                                <h3 className={activeTab2 === 'tabL06' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL06')}>VIP access</h3>
                                 {activeTab2 === 'tabL06' ? <p></p> : ''}
                             </div>
                         </div>
@@ -400,7 +400,7 @@ to seconds </h4>
                             <h5>FOR PROJECTS</h5>
                             <h4>Distributes airdrops to holders and traders for <span>FREE</span></h4>
                             <p>Boost your project's success by sharing your tokens or NFTs with over 10 Million+ verified wallet holders.</p>
-                            <BtnSecondry>
+                            <BtnSecondry href='http://airdrop.tube/' target='_blank'>
                                 LAUNCH AIRDROP GIVEAWAY <img src={Recket2}/>
                             </BtnSecondry>
                         </div>

@@ -10,15 +10,31 @@ import sideClose from './../assets/images/sideClose.png'
 
 
 export default class Sidebar extends PureComponent {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            ConnectedWal: false
+        };
+    }
+    ShowContent = () => {
+        this.setState((prevState) => ({
+            ConnectedWal: !prevState.ConnectedWal,
+        }));
+    };
+    closeSidebar = () => {
+        // Call the function passed from the parent component to close the sidebar
+        this.props.closeSidebar();
+    };
     render() {
+        const sidebarClass = this.props.isSidebarOpen ? 'open' : '';
+        const { ConnectedWal } = this.state;
         return (
             <>
-                {/* <SideBar>
-                    <a className='connectwalBtn'>CONNECT WALLET</a>
-                </SideBar> */}
-                <SideBar>
-                    <Close><img src={sideClose}/></Close>
+                <SideBar className={sidebarClass}>
+                {!ConnectedWal && (<a onClick={this.ShowContent} className='connectwalBtn'>CONNECT WALLET</a>)}
+                
+                {ConnectedWal && ( <>
+                    <Close onClick={this.closeSidebar}><img src={sideClose}/></Close>
                     <WalId><img src={topicon}/> 0x9b...0D64</WalId>
                     <ValTop>
                         <div className='vt-left'>
@@ -136,7 +152,9 @@ export default class Sidebar extends PureComponent {
                             </tbody>
                         </table>
                     </TableContainer>
+                </>)}
                 </SideBar>
+                <OverLay className={sidebarClass} onClick={this.closeSidebar} />
             </>
         );
     }
@@ -147,15 +165,16 @@ const FlexDiv = styled.div`
 `;
 
 const SideBar = styled(FlexDiv) `
-    width: 452px; position: fixed; top: 0; right: 0; bottom: 0; background: #050507; box-shadow: 0 0 25px rgba(145,220,39,0.2); z-index: 1500; padding: 0 36px; align-content: flex-start; max-height: 100vh; overflow: auto;
-    .connectwalBtn {height: 40px; border: 2px solid #000; box-shadow: 0 0 15px rgba(50,50,50,0.7); font-size: 14px; font-weight: 700; margin: auto 0; width: calc(100% - 80px); text-align: center; display: flex; align-items: center; justify-content: center; }
+    width: 452px; position: fixed; top: 0; right: 0; bottom: 0; background: #050507; box-shadow: 0 0 25px rgba(145,220,39,0.2); z-index: 1500; padding: 0 36px; max-height: 100vh; overflow: auto; transform: translateX(100%); transition: all 0.3s ease-in-out;
+    .connectwalBtn {height: 40px; border: 2px solid #000; box-shadow: 0 0 15px rgba(50,50,50,0.7); font-size: 14px; font-weight: 700; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; align-self: center;}
+    &.open {transform: translateX(0%);}
     &::-webkit-scrollbar {width: 5px;}
     &::-webkit-scrollbar-track {background: transparent; }
     &::-webkit-scrollbar-thumb {background: #191b21;}
     &::-webkit-scrollbar-thumb:hover { background: #555;  }
 `
 const Btn = styled.a `
-    border: 2px solid #91dc27; padding: 9px 33px; font-size: 16px; font-weight: bold; background: none; color: #91dc27; box-shadow: 0 0 15px #323232; display: block; text-align: center;
+    border: 2px solid #91dc27; padding: 9px 33px; font-size: 16px; font-weight: bold; background: none; color: #91dc27; box-shadow: 0 0 15px #323232; display: block; text-align: center; margin: auto 0;
     &:hover {background: #91dc27; border: 2px solid #91dc27; box-shadow: 0 0 15px #91dc27; color: #fff;}
 `
 const ValTop = styled.div `
@@ -266,6 +285,13 @@ const WalId = styled.div `
 `
 const Close = styled.a `
     position: absolute; right: 15px; top: 17px;
+`
+const OverLay = styled.div `
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: none;
+    &.open {display: block;}
+    @media (max-width: 768px){
+        background: #191b21;
+    }
 `
 
 

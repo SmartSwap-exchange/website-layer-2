@@ -17,7 +17,6 @@ function PopupContainer({onClose, ClickChange }) {
 	const [value, setValue] = useState(20);
 
 	const handleChangeStart = () => {
-		// console.log('Change event started');
 	};
 
 	const handleChange = (newValue) => {
@@ -25,7 +24,6 @@ function PopupContainer({onClose, ClickChange }) {
 	};
 
 	const handleChangeComplete = () => {
-		// console.log('Change event completed');
 	};
 
 	const [ToggleState, setToggleState] = useState(1);

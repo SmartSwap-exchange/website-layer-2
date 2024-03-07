@@ -36,6 +36,7 @@ export default class HeadFreeListing extends PureComponent {
     super(props);
     this.state = {
       HeaderDrop: false,
+      SideBarMenu: false
     };
   }
 
@@ -44,6 +45,17 @@ export default class HeadFreeListing extends PureComponent {
       HeaderDrop: !prevState.HeaderDrop,
     }));
   };
+
+  toggleSelectToken = () => {
+    this.setState((prevState) => ({
+      SideBarMenu: !prevState.SideBarMenu,
+    }));
+  };
+
+  closeSidebar = () => {
+      this.setState({ SideBarMenu: false });
+  };
+  
 
   render() {
     const { HeaderDrop } = this.state;
@@ -62,25 +74,25 @@ export default class HeadFreeListing extends PureComponent {
                     renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
                   >
-                    <a><img src={selogo01} /></a>
-                    <a><img src={selogo02} /></a>
-                    <a><img src={selogo03} /></a>
-                    <a><img src={selogo04} /></a>
-                    <a><img src={selogo05} /></a>
-                    <a><img src={selogo06} /></a>
-                    <a><img src={selogo07} /></a>
-                    <a><img src={selogo08} /></a>
-                    <a><img src={selogo09} /></a>
-                    <a><img src={selogo10} /></a>
-                    <a><img src={selogo11} /></a>
-                    <a><img src={selogo12} /></a>
-                    <a><img src={selogo13} /></a>
-                    <a><img src={selogo14} /></a>
-                    <a><img src={selogo15} /></a>
-                    <a><img src={selogo16} /></a>
-                    <a><img src={selogo17} /></a>
-                    <a><img src={selogo18} /></a>
-                    <a><img src={selogo19} /></a>
+                    <a href='https://pdo.finance/'><img src={selogo01} /></a>
+                    <a className='soon'><img src={selogo02} /></a>
+                    <a href='https://cbdc.science/'><img src={selogo03} /></a>
+                    <a href='https://landing.derex.exchange/'><img src={selogo04} /></a>
+                    <a href='https://www.dumpershield.exchange/'><img src={selogo05} /></a>
+                    <a href='https://freez.finance/'><img src={selogo06} /></a>
+                    <a href='https://lp.insure/'><img src={selogo07} /></a>
+                    <a href='https://nft.protection/'><img src={selogo08} /></a>
+                    <a href='https://Ibo.DEREX.exchange'><img src={selogo09} /></a>
+                    <a href='https://degenswap.io/'><img src={selogo10} /></a>
+                    <a href='https://Uniguard.exchange'><img src={selogo11} /></a>
+                    <a className='no'><img src={selogo12} /></a>
+                    <a className='soon'><img src={selogo13} /></a>
+                    <a className='soon'><img src={selogo14} /></a>
+                    <a className='soon'><img src={selogo15} /></a>
+                    <a className='soon'><img src={selogo16} /></a>
+                    <a className='soon'><img src={selogo17} /></a>
+                    <a className='no'><img src={selogo18} /></a>
+                    <a className='soon'><img src={selogo19} /></a>
                     {/* <a><img src={selogo08} /></a>
                     <a><img src={selogo09} /></a>
                     <a><img src={selogo10} /></a> */}
@@ -103,10 +115,10 @@ export default class HeadFreeListing extends PureComponent {
                     </div>
                 </div>
               </HBtn>
-              <a className='rightIcon'><img src={hright}/></a>
+              <a onClick={this.toggleSelectToken} className='rightIcon'><img src={hright}/></a>
             </HRight>
-        </LHead>
-        {/* <Sidebar/> */}
+        </LHead> 
+        <Sidebar closeSidebar={this.closeSidebar}  isSidebarOpen={this.state.SideBarMenu} />
         </HeaderMain>
     );
   }
@@ -124,7 +136,14 @@ const OverLay = styled.div `
 `
 const DropDownMenu = styled.div `
     position: absolute; top: 113px; left: 0; width: 375px; flex-flow: column; background: #191b21; padding: 10px 0; display: flex; z-index: 100; height: calc(100vh - 113px); overflow: auto;
-    a {width: 100%; margin: 0; /* min-height: 80px; */ padding: 6px 40px; display: block;
+    a {width: 100%; margin: 0; /* min-height: 80px; */ font-size: 18px; padding: 6px 40px; display: block; position: relative;
+      &.soon {
+        &:hover {
+          opacity: 1;
+          &:after {content: "Coming Soon"; position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; text-shadow: 0 0 10px #91dc27;}
+          img {opacity: 0.2; filter: grayscale(100) blur(4px);}
+        }
+      }
       img {max-height: 85px;}
     }
     a:hover {opacity: 0.6;}
@@ -151,8 +170,8 @@ const DropDownMenu = styled.div `
 `
 const TopBar = styled.div `
   /* position: absolute; top: 0; */ left: 0; right: 0; height: 40px; background: #91dc27; display: flex; justify-content: center; align-items: center; 
-  p {color: #000; font-weight: 700; font-size: 14px;}
-  img {filter: brightness(0); height: 25px;}
+  p {color: #000; font-weight: 700; font-size: 14px; margin: 2px 0 0;}
+  img {filter: brightness(0); height: 25px; margin-right: 12px;}
 `
 const HeaderMain = styled.div `
   position: fixed; top: 0; left: 0; right: 0; display: flex; flex-flow: column; z-index: 100;
