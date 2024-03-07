@@ -166,7 +166,9 @@ const FlexDiv = styled.div`
 
 const SideBar = styled(FlexDiv) `
     width: 452px; position: fixed; top: 0; right: 0; bottom: 0; background: #050507; box-shadow: 0 0 25px rgba(145,220,39,0.2); z-index: 1500; padding: 0 36px; max-height: 100vh; overflow: auto; transform: translateX(100%); transition: all 0.3s ease-in-out;
-    .connectwalBtn {height: 40px; border: 2px solid #000; box-shadow: 0 0 15px rgba(50,50,50,0.7); font-size: 14px; font-weight: 700; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; align-self: center;}
+    .connectwalBtn {height: 40px; border: 2px solid #000; box-shadow: 0 0 15px rgba(50,50,50,0.7); font-size: 14px; font-weight: 700; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; align-self: center;
+        &:hover {box-shadow: 0 0 15px #91dc27; color: #91dc27;}
+    }
     &.open {transform: translateX(0%);}
     &::-webkit-scrollbar {width: 5px;}
     &::-webkit-scrollbar-track {background: transparent; }
