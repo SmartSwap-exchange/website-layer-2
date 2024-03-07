@@ -31,9 +31,9 @@ export default class Sidebar extends PureComponent {
         return (
             <>
                 <SideBar className={sidebarClass}>
-                {!ConnectedWal && (<a onClick={this.ShowContent} className='connectwalBtn'>CONNECT WALLET</a>)}
+                {/* {!ConnectedWal && (<a onClick={this.ShowContent} className='connectwalBtn'>CONNECT WALLET</a>)} */}
                 
-                {ConnectedWal && ( <>
+                {/* {ConnectedWal && ( <> */}
                     <Close onClick={this.closeSidebar}><img src={sideClose}/></Close>
                     <WalId><img src={topicon}/> 0x9b...0D64</WalId>
                     <ValTop>
@@ -152,7 +152,7 @@ export default class Sidebar extends PureComponent {
                             </tbody>
                         </table>
                     </TableContainer>
-                </>)}
+               {/*  </>)} */}
                 </SideBar>
                 <OverLay className={sidebarClass} onClick={this.closeSidebar} />
             </>
@@ -289,7 +289,7 @@ const Close = styled.a `
     position: absolute; right: 15px; top: 17px;
 `
 const OverLay = styled.div `
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: none;
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: none; z-index: 1499;
     &.open {display: block;}
     @media (max-width: 768px){
         background: #191b21;

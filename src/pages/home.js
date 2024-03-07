@@ -188,8 +188,15 @@ export default class Welcome extends PureComponent {
                         <h5>FOR HOLDERS</h5>
                         <h4>Unlimited passive airdrop subscription</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term arbitrage system, offering swift solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnClaim>
+                        <BtnClaim href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
                             CLAIM YOUR <span>$25</span> WELCOME BONUS
+                            <div className='btnTop'>
+                                <img src={chrome}/>
+                                <div className='btnTxt'>
+                                    <b>Install virtual wallet</b>
+                                    <i>Web Store</i>
+                                </div>
+                            </div>
                         </BtnClaim>
                     </div>
                 </Container>
@@ -202,8 +209,15 @@ export default class Welcome extends PureComponent {
                         <h4>Expedite cross chain
 to seconds </h4>
                         <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
-                        <BtnClaim>
+                        <BtnClaim href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
                             CLAIM YOUR <span>$25</span> WELCOME BONUS
+                            <div className='btnTop'>
+                                <img src={chrome}/>
+                                <div className='btnTxt'>
+                                    <b>Install virtual wallet</b>
+                                    <i>Web Store</i>
+                                </div>
+                            </div>
                         </BtnClaim>
                     </div>
                 </Container>
@@ -215,15 +229,22 @@ to seconds </h4>
                         <h5>FOR HOLDERS</h5>
                         <h4>Quantum virtual limit</h4>
                         <p>Virtual wallets are designed to facilitate quantum virtual orders across various markets without the necessity to spend gas or lock any funds beforehand. </p>
-                        <BtnClaim>
+                        <BtnClaim href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
                             CLAIM YOUR <span>$25</span> WELCOME BONUS
+                            <div className='btnTop'>
+                                <img src={chrome}/>
+                                <div className='btnTxt'>
+                                    <b>Install virtual wallet</b>
+                                    <i>Web Store</i>
+                                </div>
+                            </div>
                         </BtnClaim>
                     </div>
                 </Container>
             </LeftRightTxt>
 
             <WalletSec className='btnOnly'>
-                <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+                <BtnDark href="https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc" target="_blank" className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -433,7 +454,16 @@ to seconds </h4>
             </Container>
         </WelcomeMain>
         <FootBtn>
-            <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark>
+            {/* <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark> */}
+            <BtnDark href="https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc" target="_blank" className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+                <div className='btnTop'>
+                    <img src={chrome}/>
+                    <div className='btnTxt'>
+                        <b>Install virtual wallet</b>
+                        <i>Web Store</i>
+                    </div>
+                </div>
+            </BtnDark>
         </FootBtn>
         <Footer>
             <span>Powered by:</span> <img src={qntmLogo} />
@@ -531,7 +561,7 @@ const ValueMain = styled.div `
         }
     }
 `
-const BtnDark = styled.div `
+const BtnDark = styled.a `
     color: #91dc27; font-size: 24px; width: 665px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 0; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center;
     .img-right {margin-left: 26px;}
     
@@ -806,10 +836,15 @@ const Footer = styled.div `
 
 
 const BtnClaim = styled.a `
-    color: #fff; padding: 32px 30px; box-shadow: 0px 0px 10px #9d9d9d; font-size: 18px; font-weight: bold; display: inline-block; transition: all 0.5s ease-in-out;
+    color: #fff; padding: 32px 30px; box-shadow: 0px 0px 10px #9d9d9d; font-size: 18px; font-weight: bold; display: inline-block; transition: all 0.5s ease-in-out; position: relative;
     span {color: #91dc27;}
-    &:hover {background: #91dc27;
-        span {color: #fff;}
+    .btnTop {display: flex; align-items: center; font-weight: bold; opacity: 0; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 2; justify-content: center; background: #91dc27;
+        img {filter: brightness(0); flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
+        b {display: block; font-size: 24px; color: #0d0e13; transition: all 0.5s ease-in-out;}
+        i {display: block; font-size: 14px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 4px;}
+    }
+    &:hover {
+        .btnTop {opacity: 1;}
     }
 `
 const BtnChrome = styled.a `

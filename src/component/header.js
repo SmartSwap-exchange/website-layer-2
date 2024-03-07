@@ -63,10 +63,10 @@ export default class HeadFreeListing extends PureComponent {
         <HeaderMain className='header'>
         <TopBar>
           <img src={DropIcon} />
-          <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all UNLIMITED PASSIVE AIRDROP subscription tokens</p>
+          <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> subscription tokens</p>
         </TopBar>
         <LHead className="header wow fadeInDown">
-            <Logo className={`logo  ${HeaderDrop && 'open'}`} onClick={this.toggleHeaderDrop}><img  src={LogoM} alt="logo" /> <Triangle/></Logo>
+            <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> <Triangle onClick={this.toggleHeaderDrop}/></Logo>
             {HeaderDrop && (
               <>
               <DropDownMenu>
@@ -106,7 +106,7 @@ export default class HeadFreeListing extends PureComponent {
                 <a className="headerBtn disabled">GAIN 152.50% APY</a>
             </RMbox> */}
             <HRight>
-              <HBtn>Claim Your <span>$25</span> Welcome Bonus
+              <HBtn href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>Claim Your <span>$25</span> Welcome Bonus
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -115,7 +115,7 @@ export default class HeadFreeListing extends PureComponent {
                     </div>
                 </div>
               </HBtn>
-              <a onClick={this.toggleSelectToken} className='rightIcon'><img src={hright}/></a>
+              <Link onClick={this.toggleSelectToken} to='/screen04' className='rightIcon'><img src={hright}/></Link>
             </HRight>
         </LHead> 
         <Sidebar closeSidebar={this.closeSidebar}  isSidebarOpen={this.state.SideBarMenu} />
@@ -135,7 +135,7 @@ const OverLay = styled.div `
   }
 `
 const DropDownMenu = styled.div `
-    position: absolute; top: 113px; left: 0; width: 375px; flex-flow: column; background: #191b21; padding: 10px 0; display: flex; z-index: 100; height: calc(100vh - 113px); overflow: auto;
+    position: absolute; top: 110px; left: 0; width: 375px; flex-flow: column; background: #191b21; padding: 10px 0; display: flex; z-index: 100; height: calc(100vh - 113px); overflow: auto;
     a {width: 100%; margin: 0; /* min-height: 80px; */ font-size: 18px; padding: 6px 40px; display: block; position: relative;
       &.soon {
         &:hover {
@@ -170,7 +170,9 @@ const DropDownMenu = styled.div `
 `
 const TopBar = styled.div `
   /* position: absolute; top: 0; */ left: 0; right: 0; height: 40px; background: #91dc27; display: flex; justify-content: center; align-items: center; 
-  p {color: #000; font-weight: 700; font-size: 14px; margin: 2px 0 0;}
+  p {color: #000; font-weight: 700; font-size: 14px; margin: 2px 0 0;
+    span {color: #fff;}
+  }
   img {filter: brightness(0); height: 25px; margin-right: 12px;}
 `
 const HeaderMain = styled.div `
@@ -190,7 +192,7 @@ const LHead = styled(FlexDiv) `
       &.fixed {padding: 16px 20px 16px 15px;}
     }
 `
-const Logo = styled.a ` 
+const Logo = styled.div ` 
     margin-right:25px; display: flex; align-items: center;  top: 0; width: 375px; padding:26px 40px; position: absolute; left: 0; cursor: pointer; z-index: 2;
     .logo2 {display: none;}
     @media (max-width: 768px){
@@ -202,7 +204,8 @@ const Logo = styled.a `
   &.open {background: #191b21;}
 `
 const Triangle = styled.a `
-  display: inline-block; border-top: 6px solid #fff; border-left: 5px solid transparent; border-right: 5px solid transparent; margin-left: 36px;
+  display: inline-flex; margin-left: 25px; width: 30px; height: 30px; justify-content: center; align-items: center; flex-shrink: 0;
+  &:after {content: ""; border-top: 6px solid #fff; border-left: 5px solid transparent; border-right: 5px solid transparent; display: inline-block;}
   @media (max-width: 768px){
     margin-left: 20px;
   }
