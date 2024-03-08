@@ -97,7 +97,7 @@ export default class Welcome extends PureComponent {
                 <Container className='justify-center'>
                     <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'><span>LAYER 2</span> VIRTUAL WALLET</BannerHD>
                     <p className='wow fadeInUp' data-wow-delay='0.3s'>Tokens in your wallet are like money under the mattress, generating no income. Hodl your tokens in a self-custody layer 2 wallet, leveraging your own wallet's security, and enjoy unlimited passive airdrops, self-custody trading and short-term loan fees that help other users to expedite any cross-chain transaction to seconds</p>
-                    <BtnPrimary href='/screen04' className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='#Selfcustody' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn01}/>
@@ -107,7 +107,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='#expediteCrosschain' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn02}/>
@@ -117,7 +117,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary href='http://airdrop.tube/' target='_blank' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='#FreeAirdrop' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn03}/>
@@ -127,7 +127,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary href='http://airdrop.tube/' target='_blank' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='#unlimitedPassive' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn04}/>
@@ -137,7 +137,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href="#QuantumVirtual" className=' wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn05}/>
@@ -147,7 +147,7 @@ export default class Welcome extends PureComponent {
                             </div>
                         </div>
                     </BtnPrimary>
-                    <BtnPrimary className='disableBtn wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BtnPrimary href='#dApp' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn06}/>
@@ -161,7 +161,7 @@ export default class Welcome extends PureComponent {
                 </Container>
             </BannerSec>
             
-            <LeftRightTxt>
+            <LeftRightTxt id='Selfcustody'>
                 <Container>
                     <div className='LR-Left'><img src={lgIco01}/></div>
                     <div className='LR-Right'>
@@ -181,7 +181,7 @@ export default class Welcome extends PureComponent {
                     </div>
                 </Container>
             </LeftRightTxt>
-            <LeftRightTxt className='col-reverse'>
+            <LeftRightTxt id='unlimitedPassive' className='col-reverse'>
                 <Container>
                     <div className='LR-Left'><img src={lgIco02}/></div>
                     <div className='LR-Right'>
@@ -201,7 +201,7 @@ export default class Welcome extends PureComponent {
                     </div>
                 </Container>
             </LeftRightTxt>
-            <LeftRightTxt >
+            <LeftRightTxt id='expediteCrosschain'>
                 <Container>
                     <div className='LR-Left'><img src={lgIco03}/></div>
                     <div className='LR-Right'>
@@ -222,7 +222,7 @@ to seconds </h4>
                     </div>
                 </Container>
             </LeftRightTxt>
-            <LeftRightTxt className='col-reverse'>
+            <LeftRightTxt id='QuantumVirtual' className='col-reverse'>
                 <Container>
                     <div className='LR-Left'><img src={lgIco04}/></div>
                     <div className='LR-Right'>
@@ -300,22 +300,24 @@ to seconds </h4>
 
                     <TabImgTxt>
                         <div className='tt-left'>
-                            <div data-id="tabL04" >
-                                <h3 className={activeTab2 === 'tabL04' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL04')}>Unlimited airdrops</h3>
-                                {activeTab2 === 'tabL04' ?  <p>$SMART token, acting as Unlimited Airdrop Subscription (UAS) token, represent an innovative cryptocurrency utility. They offer passive access to unlimited airdrops when held in self-custody.</p> : ''}
+                            <div data-id="tabL05" >
+                                <h3 className={activeTab2 === 'tabL04' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL04')}>Unlimited APY</h3>
+                                {activeTab2 === 'tabL04' ? <p>Holders can passively receive expedited fees every time users leverage the holding fund to perform short-term expedited loans</p> : ''}
                             </div>
                             <div data-id="tabL05" >
-                                <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL05')}>Unlimited APY</h3>
-                                {activeTab2 === 'tabL05' ? <p>Holders can passively receive expedited fees every time users leverage the holding fund to perform short-term expedited loans</p> : ''}
+                                <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL05')}>Unlimited airdrops</h3>
+                                {activeTab2 === 'tabL05' ?  <p>$SMART token, acting as Unlimited Airdrop Subscription (UAS) token, represent an innovative cryptocurrency utility. They offer passive access to unlimited airdrops when held in self-custody.</p> : ''}
                             </div>
                             <div data-id="tabL06" >
                                 <h3 className={activeTab2 === 'tabL06' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL06')}>VIP access</h3>
                                 {activeTab2 === 'tabL06' ? <p></p> : ''}
                             </div>
+                            
+                            
                         </div>
                         <div className='tt-right'>
-                        <img id="tabL04" src={activeTab2 === 'tabL04' ? tab1Img04 : ''} style={{ display: activeTab2 === 'tabL04' ? 'block' : 'block' }} />
-                        <img id="tabL05" src={activeTab2 === 'tabL05' ? tab1Img05 : ''} style={{ display: activeTab2 === 'tabL05' ? 'block' : 'none' }} />
+                        <img id="tabL04" src={activeTab2 === 'tabL04' ? tab1Img05 : ''} style={{ display: activeTab2 === 'tabL04' ? 'block' : 'none' }} />
+                        <img id="tabL05" src={activeTab2 === 'tabL05' ? tab1Img04 : ''} style={{ display: activeTab2 === 'tabL05' ? 'block' : 'block' }} />
                         <img id="tabL06" src={activeTab2 === 'tabL06' ? tab1Img06 : ''} style={{ display: activeTab2 === 'tabL06' ? 'block' : 'none' }} />
                         </div>
                     </TabImgTxt>
@@ -414,7 +416,7 @@ to seconds </h4>
                 </WalletSec>
                 <Supporting>Supporting :<img src={Eth}/>300+ EVM blockchains</Supporting>
                 */}</>
-                <LeftRightTxt className='col-reverse'>
+                <LeftRightTxt id='FreeAirdrop' className='col-reverse'>
                     <Container>
                         <div className='LR-Left'><img src={lgIco05}/></div>
                         <div className='LR-Right'>
@@ -427,11 +429,11 @@ to seconds </h4>
                         </div>
                     </Container>
                 </LeftRightTxt>
-                <LeftRightTxt >
+                <LeftRightTxt id='dApp'>
                     <Container>
                         <div className='LR-Left'><img src={lgIco06}/></div>
                         <div className='LR-Right'>
-                            <h5>FOR HOLDERS</h5>
+                            <h5>FOR PROJECTS</h5>
                             <h4>Integrate virtual wallet to your dApp</h4>
                             <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
                             <LinkBtn>Start Integration <i class="fas fa-angle-double-right"></i></LinkBtn>
@@ -666,7 +668,7 @@ const WelcomeMain = styled.main `
     }
 `
 const BannerSec = styled.section `
-    padding: 264px 0 120px 0;
+    padding: 264px 0 70px 0;
     /* padding: 114px 0 225px 0; */
     width: 100%; min-height: 300px; text-align: center;
     p {
@@ -782,6 +784,7 @@ const Container = styled.div `
     }
 `
 const LeftRightTxt = styled.div `
+    padding-top: 50px;
     .LR-Left {width: 50%; align-self: center; margin-right: auto; text-align: center;}
     .LR-Right {width: 50%; align-self: center;
         h5 {font-size: 16px; color: #585560; margin: 0 0 19px 0;}

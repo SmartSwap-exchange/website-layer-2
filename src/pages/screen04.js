@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import HeaderWC from '../component/header';
 import PopupContainer from '../component/PopupContainer';
+import Sidebar from '../component/Sidebar';
 
 import icon1 from '../assets/images/icon1.png'
 import icon2 from '../assets/images/icon2.png'
@@ -31,6 +32,7 @@ const Screen03 = (props: any) => {
     };
     return (
         <>
+            <Sidebar />
             <PageContainer>
                 <DropdownTitle>
                     <i className="fas fa-info-circle" /> How it works <span className="fas fa-caret-up"/>
