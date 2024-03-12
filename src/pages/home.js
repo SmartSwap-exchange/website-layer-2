@@ -1,6 +1,7 @@
 import React, { PureComponent, lazy, Suspense, useState } from 'react';
 import styled from 'styled-components';
 import HeaderWC from '../component/header';
+import Sidebar2 from '../component/Sidebar2';
 
 import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
@@ -65,9 +66,16 @@ export default class Welcome extends PureComponent {
         this.state = {
             toggleState: 1,
             activeTab: 'tabL01',
-            activeTab2: 'tabL04'
+            activeTab2: 'tabL04',
+            sidebarVisible: false
         };
     }
+    
+    toggleSidebar = () => {
+        this.setState(prevState => ({
+            sidebarVisible: !prevState.sidebarVisible
+        }));
+    };
     
     toggleTab = (index) => {
         this.setState({ toggleState: index });
@@ -88,8 +96,10 @@ export default class Welcome extends PureComponent {
     render() {
         const { activeTab } = this.state;
         const { activeTab2 } = this.state;
+        const { sidebarVisible } = this.state;
     return (
     <>
+        <Sidebar2 sidebarVisible={sidebarVisible} onClose={() => this.setState({ sidebarVisible: false })} />
         <WelcomeMain id='main' className='welcome-page'>
             {/* <HeaderWC /> */}
 
@@ -163,13 +173,13 @@ export default class Welcome extends PureComponent {
             
             <LeftRightTxt id='Selfcustody'>
                 <Container>
-                    <div className='LR-Left'><img src={lgIco01}/></div>
-                    <div className='LR-Right'>
+                    <div data-wow-delay='0.2s' className='LR-Left wow fadeInLeft'><img src={lgIco01}/></div>
+                    <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
                         <h5>FOR HOLDERS</h5>
                         <h4>Self custody expedite
                         short loans</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term loans offering expedite swap solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnChrome href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
+                        <BtnChrome onClick={this.toggleSidebar}>
                             <div className='btnTop'>
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
@@ -183,12 +193,12 @@ export default class Welcome extends PureComponent {
             </LeftRightTxt>
             <LeftRightTxt id='unlimitedPassive' className='col-reverse'>
                 <Container>
-                    <div className='LR-Left'><img src={lgIco02}/></div>
-                    <div className='LR-Right'>
+                    <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco02}/></div>
+                    <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                         <h5>FOR HOLDERS</h5>
                         <h4>Unlimited passive airdrop subscription</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term arbitrage system, offering swift solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnClaim href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
+                        <BtnClaim onClick={this.toggleSidebar}>
                             CLAIM YOUR <span>$25</span> WELCOME BONUS
                             <div className='btnTop'>
                                 <img src={chrome}/>
@@ -203,13 +213,13 @@ export default class Welcome extends PureComponent {
             </LeftRightTxt>
             <LeftRightTxt id='expediteCrosschain'>
                 <Container>
-                    <div className='LR-Left'><img src={lgIco03}/></div>
-                    <div className='LR-Right'>
+                    <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={lgIco03}/></div>
+                    <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
                         <h5>FOR HOLDERS</h5>
                         <h4>Expedite cross chain
 to seconds </h4>
                         <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
-                        <BtnClaim href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
+                        <BtnClaim onClick={this.toggleSidebar}>
                             CLAIM YOUR <span>$25</span> WELCOME BONUS
                             <div className='btnTop'>
                                 <img src={chrome}/>
@@ -224,12 +234,12 @@ to seconds </h4>
             </LeftRightTxt>
             <LeftRightTxt id='QuantumVirtual' className='col-reverse'>
                 <Container>
-                    <div className='LR-Left'><img src={lgIco04}/></div>
-                    <div className='LR-Right'>
+                    <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco04}/></div>
+                    <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                         <h5>FOR HOLDERS</h5>
                         <h4>Quantum virtual limit</h4>
                         <p>Virtual wallets are designed to facilitate quantum virtual orders across various markets without the necessity to spend gas or lock any funds beforehand. </p>
-                        <BtnClaim href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>
+                        <BtnClaim onClick={this.toggleSidebar}>
                             CLAIM YOUR <span>$25</span> WELCOME BONUS
                             <div className='btnTop'>
                                 <img src={chrome}/>
@@ -244,7 +254,7 @@ to seconds </h4>
             </LeftRightTxt>
 
             <WalletSec className='btnOnly'>
-                <BtnDark href="https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc" target="_blank" className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+                <BtnDark onClick={this.toggleSidebar} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -262,7 +272,7 @@ to seconds </h4>
                     <a onClick={() => this.toggleTab(3)} className={this.getActiveClass(3,'active')}>New user experience</a>
                 </TabLinks>
                 {this.getActiveClass(1,
-                <TabContent>
+                <TabContent className='' data-wow-delay='0.2s'>
                     {/* <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange is a layer 2 virtual wallet utilizing the established security of decentralized wallets like MetaMask and TrustWallet. It optimizes multi-chain and cross-chain transactions, enhancing speed, cost-efficiency, and risk mitigation. Users can generate passive income through decentralized Arbitrage and AI Quantum market-making systems.</TabPera> */}
                     <TabImgTxt>
                         <div className='tt-left'>
@@ -288,14 +298,14 @@ to seconds </h4>
                 </TabContent>
                 )} 
                 {this.getActiveClass(2,
-                <TabContent>
+                <TabContent className='' data-wow-delay='0.2s'>
                     <TabImg>
                         <img src={tabImg01} />
                     </TabImg>
                 </TabContent>
                 )}
                 {this.getActiveClass(3,
-                <TabContent>
+                <TabContent className='' data-wow-delay='0.2s'>
                     {/* <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange offers a user-friendly web3-based interface that is easily navigable, even for new users. The platform is highly customizable, allowing users to adjust settings and preferences according to their preferences. This level of customization enables users to optimize their DeFi experience based on their individual needs and goals. Additionally, SmartExchange provides shortcuts to favorite links, alerts, and various opportunities such as launch-pads, scale-pads, NFTs, staking, airdrops, strategy analysis, index tracking, educational, portfolio tracking, and access for all crypto apps from the google play marketplace.</TabPera> */}
 
                     <TabImgTxt>
@@ -418,12 +428,12 @@ to seconds </h4>
                 */}</>
                 <LeftRightTxt id='FreeAirdrop' className='col-reverse'>
                     <Container>
-                        <div className='LR-Left'><img src={lgIco05}/></div>
-                        <div className='LR-Right'>
+                        <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco05}/></div>
+                        <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                             <h5>FOR PROJECTS</h5>
                             <h4>Distributes airdrops to holders and traders for <span>FREE</span></h4>
                             <p>Boost your project's success by sharing your tokens or NFTs with over 10 Million+ verified wallet holders.</p>
-                            <BtnSecondry href='http://airdrop.tube/' target='_blank'>
+                            <BtnSecondry href='http://airdrop.tube/giveaway' target='_blank'>
                                 LAUNCH AIRDROP GIVEAWAY <img src={Recket2}/>
                             </BtnSecondry>
                         </div>
@@ -431,8 +441,8 @@ to seconds </h4>
                 </LeftRightTxt>
                 <LeftRightTxt id='dApp'>
                     <Container>
-                        <div className='LR-Left'><img src={lgIco06}/></div>
-                        <div className='LR-Right'>
+                        <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={lgIco06}/></div>
+                        <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
                             <h5>FOR PROJECTS</h5>
                             <h4>Integrate virtual wallet to your dApp</h4>
                             <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
@@ -457,7 +467,7 @@ to seconds </h4>
         </WelcomeMain>
         <FootBtn>
             {/* <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark> */}
-            <BtnDark href="https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc" target="_blank" className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+            <BtnDark onClick={this.toggleSidebar} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
