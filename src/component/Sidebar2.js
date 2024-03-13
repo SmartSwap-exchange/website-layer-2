@@ -58,7 +58,9 @@ const SideBar = styled(FlexDiv) `
     &::-webkit-scrollbar-thumb {background: #191b21;}
     &::-webkit-scrollbar-thumb:hover { background: #555;  }
 
-    .viralkit-contest {width: 100%;}
+    .viralkit-contest {width: 100%;
+        /* iframe + iframe {display: none;} */
+    }
     padding: 50px 26px;
 `
 const Btn = styled.a `
@@ -146,6 +148,7 @@ const TableContainer = styled.div `
     .color-green {color: #91dc27}
     .color-blue {color: #2d52f3}
     .text-center {text-align: center}
+    
 `
 const VerticalSlider = styled.div ` position: sticky; top: 0;
     height: 100%; width: 70px; z-index: 5; padding: 0 0; margin-right: 20px; display: flex; flex-flow: column; flex-shrink: 0; background: #292b33;

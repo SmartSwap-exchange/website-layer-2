@@ -67,8 +67,16 @@ export default class Welcome extends PureComponent {
             toggleState: 1,
             activeTab: 'tabL01',
             activeTab2: 'tabL04',
-            sidebarVisible: false
+            sidebarVisible: props.toggleState
         };
+    }
+
+    componentWillReceiveProps = (nextProps) => {
+        if(nextProps.toggleState !== this.state.sidebarVisible){
+            this.setState({
+                sidebarVisible: nextProps.toggleState
+            })
+        }
     }
     
     toggleSidebar = () => {

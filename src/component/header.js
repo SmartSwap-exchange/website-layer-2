@@ -2,6 +2,7 @@ import React, { PureComponent, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import Sidebar2 from '../component/Sidebar2';
 
 import chrome from '../assets/welcome/chrome.png';
 
@@ -36,7 +37,8 @@ export default class HeadFreeListing extends PureComponent {
     super(props);
     this.state = {
       HeaderDrop: false,
-      SideBarMenu: false
+      SideBarMenu: false,
+      sidebarVisible: false
     };
   }
 
@@ -60,66 +62,68 @@ export default class HeadFreeListing extends PureComponent {
   render() {
     const { HeaderDrop } = this.state;
     return (
-        <HeaderMain className='header'>
-        <TopBar>
-          <img src={DropIcon} />
-          <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> subscription tokens</p>
-        </TopBar>
-        <LHead className="header wow fadeInDown">
-            <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> <Triangle onClick={this.toggleHeaderDrop}/></Logo>
-            {HeaderDrop && (
-              <>
-              <DropDownMenu>
-                  <Scrollbars renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
-                    renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                    renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                  >
-                    <a href='https://nft.protection/'><img src={selogo08} /></a>
-                    <a href='https://landing.derex.exchange/'><img src={selogo04} /></a>
-                    <a href='https://Ibo.DEREX.exchange'><img src={selogo09} /></a>
-                    <a href='https://pdo.finance/'><img src={selogo01} /></a>
-                    <a href='https://lp.insure/'><img src={selogo07} /></a>
-                    <a href='https://www.dumpershield.exchange/'><img src={selogo05} /></a>
-                    <a href='https://freez.finance/'><img src={selogo06} /></a>
-                    <a href='https://degenswap.io/'><img src={selogo10} /></a>
-                    <a href='https://Uniguard.exchange'><img src={selogo11} /></a>
-                    <a href='https://cbdc.science/'><img src={selogo03} /></a>
-                    <a data-id="01" className='soon'><img src={selogo12} /></a>
-                    <a data-id="02" className='soon'><img src={selogo13} /></a>
-                    <a data-id="03" className='soon'><img src={selogo14} /></a>
-                    <a data-id="04" className='soon'><img src={selogo15} /></a>
-                    <a data-id="05" className='soon'><img src={selogo02} /></a>
-                    <a data-id="06" className='soon'><img src={selogo16} /></a>
-                    <a data-id="07" className='soon'><img src={selogo17} /></a>
-                    <a data-id="08" className='soon'><img src={selogo19} /></a>
-                    {/* <a data-no="09" className='no'><img src={selogo18} /></a> */}
-                    {/* <a><img src={selogo08} /></a>
-                    <a><img src={selogo09} /></a>
-                    <a><img src={selogo10} /></a> */}
-                  </Scrollbars>
-                </DropDownMenu>
-                <OverLay onClick={this.toggleHeaderDrop} />
-              </>
-            )}
-            {/* <RMbox>
-                <a  className="link01 disableBtnLink" ><span>Rewards program</span></a>
-                <a className="headerBtn disabled">GAIN 152.50% APY</a>
-            </RMbox> */}
-            <HRight>
-              <HBtn href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc' target='_blank'>Claim Your <span>$25</span> Welcome Bonus
-                <div className='btnTop'>
-                    <img src={chrome}/>
-                    <div className='btnTxt'>
-                        <b>Install virtual wallet</b>
-                        <i>Web Store</i>
-                    </div>
-                </div>
-              </HBtn>
-              <Link target="_blank" onClick={this.toggleSelectToken} to='/screen04' className='rightIcon'><img src={hright}/></Link>
-            </HRight>
-        </LHead> 
-        
-        </HeaderMain>
+        <>
+          <HeaderMain className='header'>
+          <TopBar>
+            <img src={DropIcon} />
+            <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> subscription tokens</p>
+          </TopBar>
+          <LHead className="header wow fadeInDown">
+              <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> <Triangle onClick={this.toggleHeaderDrop}/></Logo>
+              {HeaderDrop && (
+                <>
+                <DropDownMenu>
+                    <Scrollbars renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
+                      renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                      renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                    >
+                      <a href='https://nft.protection/'><img src={selogo08} /></a>
+                      <a href='https://landing.derex.exchange/'><img src={selogo04} /></a>
+                      <a href='https://Ibo.DEREX.exchange'><img src={selogo09} /></a>
+                      <a href='https://pdo.finance/'><img src={selogo01} /></a>
+                      <a href='https://lp.insure/'><img src={selogo07} /></a>
+                      <a href='https://www.dumpershield.exchange/'><img src={selogo05} /></a>
+                      <a href='https://freez.finance/'><img src={selogo06} /></a>
+                      <a href='https://degenswap.io/'><img src={selogo10} /></a>
+                      <a href='https://Uniguard.exchange'><img src={selogo11} /></a>
+                      <a href='https://cbdc.science/'><img src={selogo03} /></a>
+                      <a data-id="01" className='soon'><img src={selogo12} /></a>
+                      <a data-id="02" className='soon'><img src={selogo13} /></a>
+                      <a data-id="03" className='soon'><img src={selogo14} /></a>
+                      <a data-id="04" className='soon'><img src={selogo15} /></a>
+                      <a data-id="05" className='soon'><img src={selogo02} /></a>
+                      <a data-id="06" className='soon'><img src={selogo16} /></a>
+                      <a data-id="07" className='soon'><img src={selogo17} /></a>
+                      <a data-id="08" className='soon'><img src={selogo19} /></a>
+                      {/* <a data-no="09" className='no'><img src={selogo18} /></a> */}
+                      {/* <a><img src={selogo08} /></a>
+                      <a><img src={selogo09} /></a>
+                      <a><img src={selogo10} /></a> */}
+                    </Scrollbars>
+                  </DropDownMenu>
+                  <OverLay onClick={this.toggleHeaderDrop} />
+                </>
+              )}
+              {/* <RMbox>
+                  <a  className="link01 disableBtnLink" ><span>Rewards program</span></a>
+                  <a className="headerBtn disabled">GAIN 152.50% APY</a>
+              </RMbox> */}
+              <HRight>
+                <HBtn onClick={()=>{this.props.setToggleState()}} >Claim Your <span>$25</span> Welcome Bonus
+                  <div className='btnTop'>
+                      <img src={chrome}/>
+                      <div className='btnTxt'>
+                          <b>Install virtual wallet</b>
+                          <i>Web Store</i>
+                      </div>
+                  </div>
+                </HBtn>
+                <Link target="_blank" onClick={this.toggleSelectToken} to='/screen04' className='rightIcon'><img src={hright}/></Link>
+              </HRight>
+          </LHead> 
+          
+          </HeaderMain>
+        </>
     );
   }
 }
