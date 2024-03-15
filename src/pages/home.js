@@ -192,7 +192,7 @@ export default class Welcome extends PureComponent {
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
                                     <b>Install virtual wallet</b>
-                                    <i>Web Store</i>
+                                    <i>Google web store</i>
                                 </div>
                             </div>
                         </BtnChrome>
@@ -212,7 +212,7 @@ export default class Welcome extends PureComponent {
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
                                     <b>Install virtual wallet</b>
-                                    <i>Web Store</i>
+                                    <i>Google web store</i>
                                 </div>
                             </div>
                         </BtnClaim>
@@ -233,7 +233,7 @@ to seconds </h4>
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
                                     <b>Install virtual wallet</b>
-                                    <i>Web Store</i>
+                                    <i>Google web store</i>
                                 </div>
                             </div>
                         </BtnClaim>
@@ -253,7 +253,7 @@ to seconds </h4>
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
                                     <b>Install virtual wallet</b>
-                                    <i>Web Store</i>
+                                    <i>Google web store</i>
                                 </div>
                             </div>
                         </BtnClaim>
@@ -267,7 +267,7 @@ to seconds </h4>
                     <img src={chrome}/>
                     <div className='btnTxt'>
                         <b>Install virtual wallet</b>
-                        <i>Web Store</i>
+                        <i>Google web store</i>
                     </div>
                 </div>
                 </BtnDark>
@@ -453,7 +453,7 @@ to seconds </h4>
                         <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
                             <h5>FOR PROJECTS</h5>
                             <h4>Integrate virtual wallet to your dApp</h4>
-                            <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
+                            <p>SmartExchange enables instant cross-chain expedite token reception without any waiting period. By integrating the SmartExchange virtual wallet into your dApp, you empower vault holders to place virtual orders, thereby generating additional buying pressure and enhancing liquidity for your sellers.</p>
                             <LinkBtn>Start Integration <i class="fas fa-angle-double-right"></i></LinkBtn>
                         </div>
                     </Container>
@@ -480,7 +480,7 @@ to seconds </h4>
                     <img src={chrome}/>
                     <div className='btnTxt'>
                         <b>Install virtual wallet</b>
-                        <i>Web Store</i>
+                        <i>Google web store</i>
                     </div>
                 </div>
             </BtnDark>

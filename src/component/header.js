@@ -66,7 +66,7 @@ export default class HeadFreeListing extends PureComponent {
           <HeaderMain className='header'>
           <TopBar>
             <img src={DropIcon} />
-            <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> subscription tokens</p>
+            <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> {/* subscription tokens */}</p>
           </TopBar>
           <LHead className="header wow fadeInDown">
               <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> <Triangle onClick={this.toggleHeaderDrop}/></Logo>
@@ -114,7 +114,7 @@ export default class HeadFreeListing extends PureComponent {
                       <img src={chrome}/>
                       <div className='btnTxt'>
                           <b>Install virtual wallet</b>
-                          <i>Web Store</i>
+                          <i>Google web store</i>
                       </div>
                   </div>
                 </HBtn>
