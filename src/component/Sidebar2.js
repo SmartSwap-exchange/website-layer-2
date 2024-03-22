@@ -20,7 +20,7 @@ const Sidebar = ({sidebarVisible, onClose }) => {
     const contestRef = useRef(null);
     useEffect(() => {
         const script = document.createElement('script');
-        script.src = 'https://viralkit.io/api/embed.js';
+        script.src = 'https://widget.gleamjs.io/e.js';
         script.async = true;
     
         // Append the script to the document body
@@ -36,7 +36,9 @@ const Sidebar = ({sidebarVisible, onClose }) => {
         <>
             <SideBar className={sidebarVisible  ? 'open' : ''}>
                 <Close onClick={onClose}><img src={sideClose}/></Close>
-                <div className="viralkit-contest" contests-id="ftkhwoa0" ref={contestRef}></div>
+                {/* <div className="viralkit-contest" contests-id="ftkhwoa0" ref={contestRef}></div> */}
+
+                <a class="e-widget no-button generic-loader" href="https://gleam.io/T1MUk/install-smart-exchange-virtual-wallet" rel="nofollow">Install Smart Exchange Virtual Wallet</a>
             </SideBar>
             <OverLay className={sidebarVisible ? 'open' : ''} onClick={onClose} />
         </>
@@ -62,6 +64,7 @@ const SideBar = styled(FlexDiv) `
         /* iframe + iframe {display: none;} */
     }
     padding: 50px 26px;
+    .e-widget-wrapper.e-dark {max-width: 100% !important; width: 100% !important; margin: 15px 0 0 !important; background: none;}
 `
 const Btn = styled.a `
     border: 2px solid #91dc27; padding: 9px 33px; font-size: 16px; font-weight: bold; background: none; color: #91dc27; box-shadow: 0 0 15px #323232; display: block; text-align: center; margin: auto 0;
