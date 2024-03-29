@@ -1,4 +1,5 @@
 import React, { PureComponent, lazy, Suspense, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import HeaderWC from '../component/header';
 import Sidebar2 from '../component/Sidebar2';
@@ -51,6 +52,19 @@ import tab1Img03 from '../assets/welcome/tab1Img03.png';
 import tab1Img04 from '../assets/welcome/tab1Img04.png';
 import tab1Img05 from '../assets/welcome/tab1Img05.png';
 import tab1Img06 from '../assets/welcome/tab1Img06.png';
+import giftWhite from './../assets/images/giftWhite.png';
+import DropIcon from './../assets/images/tab22.png';
+import DMoney from '../assets/images/money.png';
+import arrowBtn from '../assets/images/arrowBtn.png';
+import rocket from '../assets/welcome/rocket.png'
+
+import youtube from '../assets/social/youtube.svg'
+import linkedin from '../assets/social/linkedin-in.svg'
+import tiktok from '../assets/social/tiktok.svg'
+import twitter from '../assets/social/x-twitter.svg'
+import medium from '../assets/social/medium.svg'
+import instagram from '../assets/social/instagram.svg'
+
 
 
 
@@ -114,7 +128,7 @@ export default class Welcome extends PureComponent {
             <BannerSec>
                 <Container className='justify-center'>
                     <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'><span>LAYER 2</span> VIRTUAL WALLET</BannerHD>
-                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Tokens in your wallet are like money under the mattress, generating no income. Hodl your tokens in a self-custody layer 2 wallet, leveraging your own wallet's security, and enjoy unlimited passive airdrops, self-custody trading and short-term loan fees that help other users to expedite any cross-chain transaction to seconds</p>
+                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Over $1 trillion in crypto tokens is held in wallets, generating no income beyond appreciation. Hodl your tokens in a secure, self-custody Layer 2 wallet to enjoy unlimited PASSIVE airdrops and APY from short-term loan fees, expediting cross-chain transactions.</p>
                     <BtnPrimary href='#Selfcustody' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
@@ -188,11 +202,10 @@ export default class Welcome extends PureComponent {
                         short loans</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term loans offering expedite swap solutions for cross-chain users and generating passive profits from expedite fees.</p>
                         <BtnChrome onClick={this.toggleSidebar}>
-                            <div className='btnTop'>
-                                <img src={chrome}/>
+                            <div className='btnTop2'>
                                 <div className='btnTxt'>
-                                    <b>Install virtual wallet</b>
-                                    <i>Google web store</i>
+                                    <b>Deposit $100 for 100 Days</b>
+                                    <i>to Claim Your <span>547.50%</span> APY</i>
                                 </div>
                             </div>
                         </BtnChrome>
@@ -204,10 +217,11 @@ export default class Welcome extends PureComponent {
                     <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco02}/></div>
                     <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                         <h5>FOR HOLDERS</h5>
-                        <h4>Unlimited passive airdrop subscription</h4>
+                        <h4>Unlimited <span>passive</span> <br/> airdrop subscription</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term arbitrage system, offering swift solutions for cross-chain users and generating passive profits from expedite fees.</p>
                         <BtnClaim onClick={this.toggleSidebar}>
-                            CLAIM YOUR <span>$25</span> WELCOME BONUS
+                            CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS 
+                            <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
@@ -472,10 +486,14 @@ to seconds </h4>
                     </div>
                 </ValueMain>
             </Container>
+            <TopBar>
+                <img src={DropIcon} />
+                <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> subscription tokens</p>
+            </TopBar>
         </WelcomeMain>
         <FootBtn>
             {/* <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark> */}
-            <BtnDark onClick={this.toggleSidebar} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+            {/* <BtnDark onClick={this.toggleSidebar} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -483,10 +501,24 @@ to seconds </h4>
                         <i>Google web store</i>
                     </div>
                 </div>
-            </BtnDark>
+            </BtnDark> */}
+            <BtnNew data-aos="fade-up" className='v2'>Refer & Win Up to a <span>&nbsp;$1000&nbsp;</span> Reward <img src={DMoney} alt='btn' /></BtnNew>
         </FootBtn>
         <Footer>
-            <span>Powered by:</span> <img src={qntmLogo} />
+            <div className='FMLeftr'>
+                <span>Powered by:</span> <img src={qntmLogo} />
+            </div>
+            <div className='FMCenter'>
+                <a><img src={youtube}/></a>
+                <a><img src={linkedin}/></a>
+                <a><img src={tiktok}/></a>
+                <a><img src={twitter}/></a>
+                <a><img src={medium}/></a>
+                <a><img src={instagram}/></a>
+            </div>
+            <div className="FMRight">
+                <Link target='_blank' to='/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <span>&nbsp;FREE</span></Link>
+            </div>
         </Footer>
     </>
     );
@@ -690,7 +722,7 @@ const BannerSec = styled.section `
     /* padding: 114px 0 225px 0; */
     width: 100%; min-height: 300px; text-align: center;
     p {
-        color: #a6a2b0; font-size: 22px; line-height: 1.8; margin: 0 0 78px 0;
+        color: #a6a2b0; font-size: 22px; line-height: 1.8; margin: 0 0 78px 0; width: 1100px; max-width: 100%;
     }
     @media (max-width: 1200px){
         padding: 264px 0 200px 0;
@@ -721,7 +753,7 @@ const BannerHD = styled.h3 `
     }
 `
 const BtnPrimary = styled.a `
-    background-color: inherit; color: #FFF; font-weight: 700; border: 0 solid #91dc27; box-shadow: 0px 0px 10px #9d9d9d; padding: 18px 24px; font-size: 18px; display: inline-block; cursor: pointer; text-align: center; transition: all 0.5s ease-in-out 0s; position: relative; background: #0d0e13; margin: 0 15px; width: 355px; margin-bottom: 54px;
+    background-color: inherit; color: #FFF; font-weight: 700; border: 0 solid #91dc27; box-shadow: 0px 0px 10px #9d9d9d; padding: 18px 24px; font-size: 18px; display: inline-block; cursor: pointer; text-align: center; transition: all 0.5s ease-in-out 0s; position: relative; background: #0d0e13; margin: 0 15px; width: 355px; margin-bottom: 54px; border-radius: 5px;
     &.disableBtn:after {
         opacity: 0; background-color: rgb(145, 220, 39); visibility: hidden; content: "Coming Soon"; border: none; position: absolute; inset: 0px; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; color: rgb(255, 255,  255); font-size: 20px;
     }
@@ -851,13 +883,25 @@ const TabImgTxt = styled.div `
     .tt-right {box-shadow: 0 0 25px rgba(255,255,255, 0.07);}
 `
 const Footer = styled.div `
-    display: flex; align-items: center; background: #16171e;  padding: 16px 42px;
+    display: flex; align-items: center; background: #16171e;  padding: 16px 42px; justify-content: space-between;
     span {margin-right: 30px;}
+    .FMLeftr {display: flex; align-items: center; }
+    .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;
+        img {margin: 0 18px 0 0; height: 19px;}
+        span {color: #fff; margin-right: 0}
+        a {color: #91dc27;}
+    }
+    .FMCenter {
+        a {margin: 0 7px;
+            img {max-width: 16px; height: 16px; object-fit: contain; max-width: inherit; }
+        }
+    }
 `
 
 
 const BtnClaim = styled.a `
-    color: #fff; padding: 32px 30px; box-shadow: 0px 0px 10px #9d9d9d; font-size: 18px; font-weight: bold; display: inline-block; transition: all 0.5s ease-in-out; position: relative;
+    color: #fff; padding: 32px 30px; box-shadow: 0px 0px 10px #9d9d9d; font-size: 18px; font-weight: bold; display: inline-flex; transition: all 0.5s ease-in-out; position: relative; align-items: center; border-radius: 5px;
+    & > img {margin-left: 18px;}
     span {color: #91dc27;}
     .btnTop {display: flex; align-items: center; font-weight: bold; opacity: 0; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 2; justify-content: center; background: #91dc27;
         img {filter: brightness(0); flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
@@ -869,11 +913,18 @@ const BtnClaim = styled.a `
     }
 `
 const BtnChrome = styled.a `
-    display: inline-flex; padding: 18px 34px; font-size: 24px; color: #FFF; font-weight: 700; border: 0 solid #91dc27; box-shadow: 0px 0px 10px #9d9d9d; cursor: pointer; transition: all 0.5s ease-in-out 0s; position: relative; background: #0d0e13; 
+    display: inline-flex; padding: 18px 45px; font-size: 24px; color: #FFF; font-weight: 700; border: 0 solid #91dc27; box-shadow: 0px 0px 10px #9d9d9d; cursor: pointer; transition: all 0.5s ease-in-out 0s; position: relative; background: #0d0e13; border-radius: 5px;
     .btnTop {display: flex; align-items: center; font-weight: bold;
         img {filter: brightness(1); flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
         b {display: block; font-size: 24px; color: #91dc27; transition: all 0.5s ease-in-out;}
         i {display: block; font-size: 14px; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 6px;}
+    }
+    .btnTop2 {display: flex; align-items: center; font-weight: bold; justify-content: center; text-align: center;
+        img {filter: brightness(1); flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
+        b {display: block; font-size: 24px; font-weight: 700; color: #fff; transition: all 0.5s ease-in-out;}
+        i {display: block; font-size: 14px; font-weight: 700; color: #fff; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 6px;
+            span {color: #fff; font-style: normal;}
+        }
     }
     &:hover {background-color: #91dc27;
         .btnTop {
@@ -881,5 +932,26 @@ const BtnChrome = styled.a `
             b {color: #000;}
             i {color: #000;}
         }
+        .btnTop2 {
+            img {filter: brightness(0);}
+            b {color: #0d0e13;}
+            i {color: #0d0e13;}
+        }
+    }
+`
+const TopBar = styled.div `
+    /* position: absolute; top: 0; */ left: 0; right: 0; height: 40px; background: #fff; display: flex; justify-content: center; align-items: center; 
+    p {color: #000; font-weight: 700; font-size: 14px; margin: 2px 0 0;
+        span {color: #91dc27;}
+    }
+    img {filter: brightness(0); height: 25px; margin-right: 12px;}
+`
+const BtnNew = styled.a `
+    width: 662px; height: 85px; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px none; font-size: 24px; color: #ffffff; font-weight: 700; max-width: 100%; padding: 0 20px; text-align: center; position: relative; border-radius: 5px; border: 2px solid transparent; transition: all 0.3s ease-in-out;
+    span {color: #91dc27;}
+    img {margin-left: 25px;}
+    &:after {content: ""; position: absolute; left: -31px; top: 3px; width: 83px; height: 68px; background: url(${arrowBtn}) no-repeat; opacity: 0; transition: all 0.3s ease-in-out;}
+    &:hover {box-shadow: 0 0 15px #ffffff;
+        &:after {opacity: 1;}
     }
 `

@@ -30,6 +30,11 @@ import selogo18 from './../assets/images/mass.png';
 import selogo19 from './../assets/images/social.png';
 import DropIcon from './../assets/images/tab22.png';
 import hright from './../assets/images/hright.png';
+import GiftB from './../assets/images/giftB.png';
+import handtn from './../assets/images/handtn.png';
+import dreward from './../assets/images/dreward.png';
+import arrows from './../assets/images/arrows.png';
+import giftWhite from './../assets/images/giftWhite.png';
 
 
 export default class HeadFreeListing extends PureComponent {
@@ -64,10 +69,24 @@ export default class HeadFreeListing extends PureComponent {
     return (
         <>
           <HeaderMain className='header'>
-          <TopBar>
+            <TopNew>
+              <div className='tn-sec'>
+                <span>1</span>
+                <p>Claim your <b>$100</b> welcome bonus <img src={GiftB} alt='Gift Black'/></p>
+              </div>
+              <div className='tn-sec'>
+                <span>2</span>
+                <p>Claim your <b>547.50%</b> APY <img src={handtn} alt='Gift Black'/></p>
+              </div>
+              <div className='tn-sec'>
+                <span>3</span>
+                <p>Refer & win up to a <b>$1000</b> reward <img src={dreward} alt='Gift Black'/></p>
+              </div>
+            </TopNew>
+          {/* <TopBar>
             <img src={DropIcon} />
-            <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> {/* subscription tokens */}</p>
-          </TopBar>
+            <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> </p>
+          </TopBar> */}
           <LHead className="header wow fadeInDown">
               <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> <Triangle onClick={this.toggleHeaderDrop}/></Logo>
               {HeaderDrop && (
@@ -109,7 +128,7 @@ export default class HeadFreeListing extends PureComponent {
                   <a className="headerBtn disabled">GAIN 152.50% APY</a>
               </RMbox> */}
               <HRight>
-                <HBtn onClick={()=>{this.props.setToggleState()}} >Claim Your <span>$25</span> Welcome Bonus
+                <HBtn onClick={()=>{this.props.setToggleState()}} >Claim Your <span>&nbsp;$25&nbsp;</span> Welcome Bonus <img alt='rightIcon' src={giftWhite}/>
                   <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
@@ -118,7 +137,16 @@ export default class HeadFreeListing extends PureComponent {
                       </div>
                   </div>
                 </HBtn>
-                <Link target="_blank" onClick={this.toggleSelectToken} to='/screen04' className='rightIcon'><img src={hright}/></Link>
+                <HBtn className='last' onClick={()=>{this.props.setToggleState()}} >Claim Your <span>&nbsp;547.50%&nbsp;</span> APY <img alt='rightIcon' src={hright}/>
+                  {/* <div className='btnTop'>
+                      <img src={chrome}/>
+                      <div className='btnTxt'>
+                          <b>Install virtual wallet</b>
+                          <i>Google web store</i>
+                      </div>
+                  </div> */}
+                </HBtn>
+                {/* <Link target="_blank" onClick={this.toggleSelectToken} to='/screen04' className='rightIcon'><img src={hright}/></Link> */}
               </HRight>
           </LHead> 
           
@@ -274,10 +302,14 @@ const HRight = styled.div `
   a.rightIcon {}
 `
 const HBtn = styled.a `
-  font-size: 14px; color: #fff; padding: 10px 44px 10px 0 ; border-right: 1px solid #35373a; margin: 0; margin-right: 30px; font-weight: bold; position: relative;
+  font-size: 14px; color: #fff; padding: 10px 44px 10px 0 ; border-right: 1px solid #35373a; margin: 0; margin-left: 30px; font-weight: bold; position: relative; display: flex; align-items: center;
+  img {/* height: 31px; */ margin-left: 18px; margin-top: -1px;}
   span {color: #91dc27;}
-  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 260px; transform: translateY(-50%); opacity: 0; visibility: hidden; box-shadow: 0px 0px 10px #9d9d9d;
-      img {filter: brightness(0); flex-shrink: 0; margin-right: 18px; width: 30px; transition: all 0.5s ease-in-out;}
+  &.last {
+    border-right: 0; padding-right: 0;
+  }
+  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 280px; transform: translateY(-50%); opacity: 0; visibility: hidden; box-shadow: 0px 0px 10px #9d9d9d;
+      img {filter: brightness(0); flex-shrink: 0; margin-right: 18px; margin-top: 0; margin-left: 0; width: 30px; transition: all 0.5s ease-in-out;}
       b {display: block; font-weight: bold; font-size: 16px; color: #0d0e13; transition: all 0.5s ease-in-out;}
       i {display: block; font-weight: bold; font-size: 11px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;}
   }
@@ -286,6 +318,23 @@ const HBtn = styled.a `
   }
 `
 
+const TopNew = styled.div `
+  left: 0; right: 0; height: 40px; background-image: linear-gradient(90deg,#91dc27,#91dc27,#91dc27); display: flex; justify-content: center; align-items: center; transform: all 0.3s ease-in-out; cursor: pointer;
+  .tn-sec {display: flex; align-items: center;  width: 33.33%; justify-content: center;
+    span  {border: 1px solid #000; width: 22px; height: 22px; border-radius: 100%; display: flex; justify-content: center; align-items: center; color: #000; line-height: 24px; font-weight: 700; margin-right: 18px;}
+    p {color: #000; font-weight: 700; font-size: 14px; margin: 0 0 0; 
+      b {color: #fff; text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;}
+    }
+    img {/* filter: brightness(0); */ height: 21px; margin-left: 18px; margin-top: -3px;}
+  }
+  &:before {
+    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; left: 33.33%; transform: translateX(-50%);
+  }
+  &:after {
+    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; right: 33.33%; transform: translateX(50%);
+  }
+  &:hover {background-image: linear-gradient(90deg,#91dc27,#538e00,#91dc27);}
+`
 
 
 

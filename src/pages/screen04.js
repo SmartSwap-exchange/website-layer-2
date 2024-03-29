@@ -112,8 +112,12 @@ const Screen03 = (props: any) => {
                                     <td>53.52%</td>
                                     <td className='color-green'>87.53%</td>
                                     <td>0</td>
-                                    <td className='hcol'>0 </td>
-                                    <td className='hcol'>0</td>
+                                    <td colSpan={2}>
+                                        <BtnLg>
+                                            <b>Deposit $100 for 100 Days</b>
+                                            <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
+                                        </BtnLg>
+                                    </td>
                                     <td>0</td>
                                     <td><a className='btn01 white'>CONNECT WALLET</a></td>
                                 </tr>
@@ -125,8 +129,12 @@ const Screen03 = (props: any) => {
                                     <td>53.52%</td>
                                     <td className='color-green'>87.53%</td>
                                     <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000 </td>
+                                    <td colSpan={2}>
+                                        <BtnLg>
+                                            <b>Deposit $100 for 100 Days</b>
+                                            <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
+                                        </BtnLg>
+                                    </td>
                                     <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
                                     <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
                                 </tr>
@@ -138,8 +146,12 @@ const Screen03 = (props: any) => {
                                     <td>53.52%</td>
                                     <td className='color-green'>87.53%</td>
                                     <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000</td>
+                                    <td colSpan={2}>
+                                        <BtnLg>
+                                            <b>Deposit $100 for 100 Days</b>
+                                            <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
+                                        </BtnLg>
+                                    </td>
                                     <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
                                     <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
                                 </tr>
@@ -1356,6 +1368,20 @@ const Counter = styled.div `
     font-size: 11px; color: #a6a2b0; white-space: nowrap; font-weight: 400;
     b {background: #0d0e13; border: 1px solid #3b3e4b; padding: 1px 3px; min-width: 10px; display: inline-block; margin: 0 0; text-align: center;}
     i {margin: 0 3px; font-style: normal;}
+`
+const BtnLg = styled.div `text-align: center; position: relative; z-index: 1; color: #fff; cursor: pointer;
+    b {display: block; font-size: 14px; font-weight: 700;  transition: all 0.5s ease-in-out;}
+    i {display: block; font-size: 12px; font-weight: 500; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;
+        span {color: #91dc27; font-style: normal;}
+        strong {font-size: 8px; position: relative; top: -0.29em;}
+    }
+    &:after {content: ""; position: absolute; left: -11px; right: -11px; bottom: -10px; top: -10px; background: #6cb10c; border: 1px solid #3e4647; z-index: -1; opacity: 0; transition: all 0.3s ease-in-out; box-shadow: 0 0 10px #fff;}
+    &:hover { color: #0d0e13;
+        i {
+            span, strong {color: #fff;}
+        }
+        &:after { opacity: 1;}
+    }
 `
 
 export default Screen03;
