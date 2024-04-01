@@ -530,7 +530,7 @@ to seconds </h4>
                 <a><img src={instagram}/></a>
             </div>
             <div className="FMRight">
-                <p target='_blank' to='/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <a target='_blank' href='https://airdrop.tube/giveaway'>FREE</a></p>
+                <a target='_blank' href='https://airdrop.tube/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <span>FREE</span></a>
             </div>
         </Footer>
     </>
@@ -901,8 +901,8 @@ const Footer = styled.div `
     .FMLeftr {display: flex; align-items: center; }
     .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;
         img {margin: 0 18px 0 0; height: 19px;}
-        a {color: #fff; margin-right: 0}
-        p {color: #91dc27;}
+        a {color: #91dc27;}
+        span {color: #fff; margin-right: 0}
     }
     .FMCenter {
         a {margin: 0 7px;
