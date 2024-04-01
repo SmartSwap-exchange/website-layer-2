@@ -1371,7 +1371,7 @@ const Counter = styled.div `
 `
 const BtnLg = styled.div `text-align: center; position: relative; z-index: 1; color: #fff; cursor: pointer;
     b {display: block; font-size: 14px; font-weight: 700;  transition: all 0.5s ease-in-out;}
-    i {display: block; font-size: 12px; font-weight: 500; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;
+    i {display: block; font-size: 12px; font-weight: 500; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px; 
         span {color: #91dc27; font-style: normal;}
         strong {font-size: 8px; position: relative; top: -0.29em;}
     }

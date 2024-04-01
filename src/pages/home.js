@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import HeaderWC from '../component/header';
 import Sidebar2 from '../component/Sidebar2';
+import ReferSidebar from '../component/ReferSidebar';
 
 import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
@@ -53,6 +54,7 @@ import tab1Img04 from '../assets/welcome/tab1Img04.png';
 import tab1Img05 from '../assets/welcome/tab1Img05.png';
 import tab1Img06 from '../assets/welcome/tab1Img06.png';
 import giftWhite from './../assets/images/giftWhite.png';
+import giftWhitelg from './../assets/images/giftWhitelg.png';
 import DropIcon from './../assets/images/tab22.png';
 import DMoney from '../assets/images/money.png';
 import arrowBtn from '../assets/images/arrowBtn.png';
@@ -81,7 +83,8 @@ export default class Welcome extends PureComponent {
             toggleState: 1,
             activeTab: 'tabL01',
             activeTab2: 'tabL04',
-            sidebarVisible: props.toggleState
+            sidebarVisible: props.toggleState,
+            RefsidebarVisible: props.toggleStateSidebar
         };
     }
 
@@ -96,6 +99,11 @@ export default class Welcome extends PureComponent {
     toggleSidebar = () => {
         this.setState(prevState => ({
             sidebarVisible: !prevState.sidebarVisible
+        }));
+    };
+    toggleRefSidebar = () => {
+        this.setState(prevState => ({
+            RefsidebarVisible: !prevState.RefsidebarVisible
         }));
     };
     
@@ -119,9 +127,11 @@ export default class Welcome extends PureComponent {
         const { activeTab } = this.state;
         const { activeTab2 } = this.state;
         const { sidebarVisible } = this.state;
+        const { RefsidebarVisible } = this.state;
     return (
     <>
-        <Sidebar2 sidebarVisible={sidebarVisible} onClose={() => this.setState({ sidebarVisible: false })} />
+        <Sidebar2 sidebarVisible={this.props.toggleState} onClose={() => this.props.setToggleState() } />
+        <ReferSidebar sidebarVisible={this.props.toggleStateSidebar}  onClose={() => this.props.setoggleStateSidebar() } />
         <WelcomeMain id='main' className='welcome-page'>
             {/* <HeaderWC /> */}
 
@@ -201,7 +211,7 @@ export default class Welcome extends PureComponent {
                         <h4>Self custody expedite
                         short loans</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term loans offering expedite swap solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnChrome onClick={this.toggleSidebar}>
+                        <BtnChrome onClick={this.props.setToggleState}>
                             <div className='btnTop2'>
                                 <div className='btnTxt'>
                                     <b>Deposit $100 for 100 Days</b>
@@ -219,7 +229,7 @@ export default class Welcome extends PureComponent {
                         <h5>FOR HOLDERS</h5>
                         <h4>Unlimited <span>passive</span> <br/> airdrop subscription</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term arbitrage system, offering swift solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnClaim onClick={this.toggleSidebar}>
+                        <BtnClaim onClick={this.props.setToggleState}>
                             CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS 
                             <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
@@ -241,8 +251,9 @@ export default class Welcome extends PureComponent {
                         <h4>Expedite cross chain
 to seconds </h4>
                         <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
-                        <BtnClaim onClick={this.toggleSidebar}>
-                            CLAIM YOUR <span>$25</span> WELCOME BONUS
+                        <BtnClaim onClick={this.props.setToggleState}>
+                            CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS
+                            <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
@@ -261,8 +272,9 @@ to seconds </h4>
                         <h5>FOR HOLDERS</h5>
                         <h4>Quantum virtual limit</h4>
                         <p>Virtual wallets are designed to facilitate quantum virtual orders across various markets without the necessity to spend gas or lock any funds beforehand. </p>
-                        <BtnClaim onClick={this.toggleSidebar}>
-                            CLAIM YOUR <span>$25</span> WELCOME BONUS
+                        <BtnClaim onClick={this.props.setToggleState}>
+                            CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS
+                            <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
                                 <img src={chrome}/>
                                 <div className='btnTxt'>
@@ -276,7 +288,8 @@ to seconds </h4>
             </LeftRightTxt>
 
             <WalletSec className='btnOnly'>
-                <BtnDark onClick={this.toggleSidebar} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+                <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$100</span>&nbsp;WELCOME BONUS 
+                <img className='img-right' src={giftWhitelg} alt='giftWhite'/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -493,7 +506,7 @@ to seconds </h4>
         </WelcomeMain>
         <FootBtn>
             {/* <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark> */}
-            {/* <BtnDark onClick={this.toggleSidebar} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+            {/* <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -502,11 +515,11 @@ to seconds </h4>
                     </div>
                 </div>
             </BtnDark> */}
-            <BtnNew data-aos="fade-up" className='v2'>Refer & Win Up to a <span>&nbsp;$1000&nbsp;</span> Reward <img src={DMoney} alt='btn' /></BtnNew>
+            <BtnNew onClick={()=>this.props.setoggleStateSidebar()} data-aos="fade-up" className='v2'>Refer & Win Up to a <span>&nbsp;$1000&nbsp;</span> Reward <img src={DMoney} alt='btn' /></BtnNew>
         </FootBtn>
         <Footer>
             <div className='FMLeftr'>
-                <span>Powered by:</span> <img src={qntmLogo} />
+                <span>Powered by:</span> <a target='_blank' href='https://quantum.foundation/'><img src={qntmLogo} /></a>
             </div>
             <div className='FMCenter'>
                 <a><img src={youtube}/></a>
@@ -517,7 +530,7 @@ to seconds </h4>
                 <a><img src={instagram}/></a>
             </div>
             <div className="FMRight">
-                <Link target='_blank' to='/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <span>&nbsp;FREE</span></Link>
+                <p target='_blank' to='/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <Link to='/screen04'>FREE</Link></p>
             </div>
         </Footer>
     </>
@@ -614,8 +627,8 @@ const ValueMain = styled.div `
     }
 `
 const BtnDark = styled.a `
-    color: #91dc27; font-size: 24px; width: 665px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 0; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    .img-right {margin-left: 26px;}
+    color: #91dc27; font-size: 24px; width: 665px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 0; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 5px;
+    .img-right {margin-left: 26px; height: 38px; margin-top: -1px;}
     
     &.disabled {
         position: relative;
@@ -863,7 +876,7 @@ const LinkBtn = styled.a `
     &:hover {color: #fff;}
 `
 const BtnSecondry = styled.a ` 
-    margin: 0; width: auto; display: inline-flex; align-items: center; box-shadow: 0px 0px 10px 2px #fff; padding: 18px 48px; font-size: 24px; font-weight: 700; color: #91dc27; transition: all 0.3s ease-in-out;
+    margin: 0; width: auto; display: inline-flex; align-items: center; box-shadow: 0px 0px 10px 2px #fff; padding: 18px 48px; font-size: 24px; font-weight: 700; color: #91dc27; transition: all 0.3s ease-in-out; border-radius: 5px;
     img {margin-left: 35px;}
     &:hover {box-shadow: 0 0 12px #91dc27;}
 `
@@ -888,12 +901,13 @@ const Footer = styled.div `
     .FMLeftr {display: flex; align-items: center; }
     .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;
         img {margin: 0 18px 0 0; height: 19px;}
-        span {color: #fff; margin-right: 0}
-        a {color: #91dc27;}
+        a {color: #fff; margin-right: 0}
+        p {color: #91dc27;}
     }
     .FMCenter {
         a {margin: 0 7px;
             img {max-width: 16px; height: 16px; object-fit: contain; max-width: inherit; }
+            &:hover {opacity: 0.7;}
         }
     }
 `
@@ -903,7 +917,7 @@ const BtnClaim = styled.a `
     color: #fff; padding: 32px 30px; box-shadow: 0px 0px 10px #9d9d9d; font-size: 18px; font-weight: bold; display: inline-flex; transition: all 0.5s ease-in-out; position: relative; align-items: center; border-radius: 5px;
     & > img {margin-left: 18px;}
     span {color: #91dc27;}
-    .btnTop {display: flex; align-items: center; font-weight: bold; opacity: 0; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 2; justify-content: center; background: #91dc27;
+    .btnTop {display: flex; align-items: center; font-weight: bold; opacity: 0; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 2; justify-content: center; background: #91dc27; border-radius: 5px;
         img {filter: brightness(0); flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
         b {display: block; font-size: 24px; color: #0d0e13; transition: all 0.5s ease-in-out;}
         i {display: block; font-size: 14px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 4px;}

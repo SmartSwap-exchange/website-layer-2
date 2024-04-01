@@ -43,7 +43,7 @@ export default class HeadFreeListing extends PureComponent {
     this.state = {
       HeaderDrop: false,
       SideBarMenu: false,
-      sidebarVisible: false
+      // sidebarVisible: false
     };
   }
 
@@ -70,18 +70,18 @@ export default class HeadFreeListing extends PureComponent {
         <>
           <HeaderMain className='header'>
             <TopNew>
-              <div className='tn-sec'>
+              <div onClick={()=>{this.props.setToggleState()}} className='tn-sec'>
                 <span>1</span>
                 <p>Claim your <b>$100</b> welcome bonus <img src={GiftB} alt='Gift Black'/></p>
               </div>
-              <div className='tn-sec'>
+              <a target="_blank" href='/screen04' className='tn-sec'>
                 <span>2</span>
                 <p>Claim your <b>547.50%</b> APY <img src={handtn} alt='Gift Black'/></p>
-              </div>
-              <div className='tn-sec'>
+              </a>
+              <a onClick={()=>{this.props.setoggleStateSidebar()}} className='tn-sec'>
                 <span>3</span>
                 <p>Refer & win up to a <b>$1000</b> reward <img src={dreward} alt='Gift Black'/></p>
-              </div>
+              </a>
             </TopNew>
           {/* <TopBar>
             <img src={DropIcon} />
@@ -128,7 +128,7 @@ export default class HeadFreeListing extends PureComponent {
                   <a className="headerBtn disabled">GAIN 152.50% APY</a>
               </RMbox> */}
               <HRight>
-                <HBtn onClick={()=>{this.props.setToggleState()}} >Claim Your <span>&nbsp;$25&nbsp;</span> Welcome Bonus <img alt='rightIcon' src={giftWhite}/>
+                <HBtn onClick={()=>{this.props.setToggleState()}} >Claim Your <span>&nbsp;$100&nbsp;</span> Welcome Bonus <img alt='rightIcon' src={giftWhite}/>
                   <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
@@ -137,7 +137,7 @@ export default class HeadFreeListing extends PureComponent {
                       </div>
                   </div>
                 </HBtn>
-                <HBtn className='last' onClick={()=>{this.props.setToggleState()}} >Claim Your <span>&nbsp;547.50%&nbsp;</span> APY <img alt='rightIcon' src={hright}/>
+                <HBtn className='last' target="_blank" href='/screen04'>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY <img alt='rightIcon' src={hright}/>
                   {/* <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
@@ -308,7 +308,7 @@ const HBtn = styled.a `
   &.last {
     border-right: 0; padding-right: 0;
   }
-  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 280px; transform: translateY(-50%); opacity: 0; visibility: hidden; box-shadow: 0px 0px 10px #9d9d9d;
+  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 290px; transform: translateY(-50%); opacity: 0; visibility: hidden; box-shadow: 0px 0px 10px #9d9d9d; border-radius: 5px;
       img {filter: brightness(0); flex-shrink: 0; margin-right: 18px; margin-top: 0; margin-left: 0; width: 30px; transition: all 0.5s ease-in-out;}
       b {display: block; font-weight: bold; font-size: 16px; color: #0d0e13; transition: all 0.5s ease-in-out;}
       i {display: block; font-weight: bold; font-size: 11px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;}
@@ -319,21 +319,22 @@ const HBtn = styled.a `
 `
 
 const TopNew = styled.div `
-  left: 0; right: 0; height: 40px; background-image: linear-gradient(90deg,#91dc27,#91dc27,#91dc27); display: flex; justify-content: center; align-items: center; transform: all 0.3s ease-in-out; cursor: pointer;
-  .tn-sec {display: flex; align-items: center;  width: 33.33%; justify-content: center;
+  left: 0; right: 0; height: 40px; background-image: linear-gradient(90deg,#91dc27,#91dc27,#91dc27); display: flex; justify-content: center;  transform: all 0.3s ease-in-out;
+  .tn-sec {display: flex; align-items: center;  width: 33.33%; justify-content: center; position: relative; cursor: pointer;
     span  {border: 1px solid #000; width: 22px; height: 22px; border-radius: 100%; display: flex; justify-content: center; align-items: center; color: #000; line-height: 24px; font-weight: 700; margin-right: 18px;}
     p {color: #000; font-weight: 700; font-size: 14px; margin: 0 0 0; 
       b {color: #fff; text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;}
     }
     img {/* filter: brightness(0); */ height: 21px; margin-left: 18px; margin-top: -3px;}
+    &:hover {background-image: linear-gradient(90deg,#91dc27,#538e00,#91dc27);}
   }
   &:before {
-    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; left: 33.33%; transform: translateX(-50%);
+    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; left: 33.33%; transform: translateX(-50%); z-index: 2;
   }
   &:after {
-    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; right: 33.33%; transform: translateX(50%);
+    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; right: 33.33%; transform: translateX(50%); z-index: 2;
   }
-  &:hover {background-image: linear-gradient(90deg,#91dc27,#538e00,#91dc27);}
+  
 `
 
 
