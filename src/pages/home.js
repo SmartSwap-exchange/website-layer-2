@@ -2,8 +2,8 @@ import React, { PureComponent, lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import HeaderWC from '../component/header';
-import Sidebar2 from '../component/Sidebar2';
-import ReferSidebar from '../component/ReferSidebar';
+/* import Sidebar2 from '../component/Sidebar2';
+import ReferSidebar from '../component/ReferSidebar'; */
 
 import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
@@ -96,7 +96,7 @@ export default class Welcome extends PureComponent {
         }
     }
     
-    toggleSidebar = () => {
+    /* toggleSidebar = () => {
         this.setState(prevState => ({
             sidebarVisible: !prevState.sidebarVisible
         }));
@@ -106,7 +106,7 @@ export default class Welcome extends PureComponent {
             RefsidebarVisible: !prevState.RefsidebarVisible
         }));
     };
-    
+     */
     toggleTab = (index) => {
         this.setState({ toggleState: index });
     };
@@ -126,12 +126,12 @@ export default class Welcome extends PureComponent {
     render() {
         const { activeTab } = this.state;
         const { activeTab2 } = this.state;
-        const { sidebarVisible } = this.state;
-        const { RefsidebarVisible } = this.state;
+        /* const { sidebarVisible } = this.state;
+        const { RefsidebarVisible } = this.state; */
     return (
     <>
-        <Sidebar2 sidebarVisible={this.props.toggleState} onClose={() => this.props.setToggleState() } />
-        <ReferSidebar sidebarVisible={this.props.toggleStateSidebar}  onClose={() => this.props.setoggleStateSidebar() } />
+        {/* <Sidebar2 sidebarVisible={this.props.toggleState} onClose={() => this.props.setToggleState() } />
+        <ReferSidebar sidebarVisible={this.props.toggleStateSidebar}  onClose={() => this.props.setoggleStateSidebar() } /> */}
         <WelcomeMain id='main' className='welcome-page'>
             {/* <HeaderWC /> */}
 
@@ -530,7 +530,7 @@ to seconds </h4>
                 <a><img src={instagram}/></a>
             </div>
             <div className="FMRight">
-                <p target='_blank' to='/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <Link to='/screen04'>FREE</Link></p>
+                <p target='_blank' to='/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <a target='_blank' href='https://airdrop.tube/giveaway'>FREE</a></p>
             </div>
         </Footer>
     </>

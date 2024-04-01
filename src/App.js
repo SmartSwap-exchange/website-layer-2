@@ -28,14 +28,14 @@ function App() {
     <ThemeProvider theme={selectedTheme}>
       <section className='bodySection clearfix'>
         <Gs.GlobalStyle />  
-          <Header isDarkTheme={isDark} setTheme={setTheme} setToggleState={()=>setToggleState(!toggleState)} setoggleStateSidebar={()=>setoggleStateSidebar(!toggleStateSidebar)}  />  
+          <Header isDarkTheme={isDark} setTheme={setTheme} setToggleState={()=>setToggleState(!toggleState)} setoggleStateSidebar={()=>setoggleStateSidebar(!toggleStateSidebar)} toggleState={toggleState} toggleStateSidebar={toggleStateSidebar} />  
             <Switch>
               <Route path="/" exact> <Home isDarkTheme={isDark} toggleState={toggleState} setoggleStateSidebar={()=>setoggleStateSidebar(!toggleStateSidebar)} toggleStateSidebar={toggleStateSidebar} setToggleState={()=>setToggleState(!toggleState)}/>  </Route>  
               <Route path="/welcome" exact> <Welcome isDarkTheme={isDark}  />  </Route>  
               <Route path="/screen01" exact> <Screen01 isDarkTheme={isDark}  />  </Route>  
               <Route path="/screen02" exact> <Screen02 isDarkTheme={isDark}  />  </Route>  
               <Route path="/screen03" exact> <Screen03 isDarkTheme={isDark}  />  </Route>  
-              <Route path="/screen04" exact> <Screen04 isDarkTheme={isDark}  />  </Route>  
+              <Route path="/vaults" exact> <Screen04 isDarkTheme={isDark} toggleState={toggleState} setoggleStateSidebar={()=>setoggleStateSidebar(!toggleStateSidebar)} toggleStateSidebar={toggleStateSidebar} setToggleState={()=>setToggleState(!toggleState)}  />  </Route>  
             </Switch> 
         </section>
     </ThemeProvider>

@@ -33,6 +33,7 @@ const Screen03 = (props: any) => {
     return (
         <>
             <Sidebar />
+            
             <PageContainer>
                 <DropdownTitle>
                     <i className="fas fa-info-circle" /> How it works <span className="fas fa-caret-up"/>

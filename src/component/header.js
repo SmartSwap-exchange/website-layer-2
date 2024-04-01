@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import Sidebar2 from '../component/Sidebar2';
+import ReferSidebar from '../component/ReferSidebar';
 
 import chrome from '../assets/welcome/chrome.png';
 
@@ -42,7 +43,7 @@ export default class HeadFreeListing extends PureComponent {
     super(props);
     this.state = {
       HeaderDrop: false,
-      SideBarMenu: false,
+      // SideBarMenu: false,
       // sidebarVisible: false
     };
   }
@@ -68,13 +69,15 @@ export default class HeadFreeListing extends PureComponent {
     const { HeaderDrop } = this.state;
     return (
         <>
+          <Sidebar2 sidebarVisible={this.props.toggleState} onClose={() => this.props.setToggleState() } />
+          <ReferSidebar sidebarVisible={this.props.toggleStateSidebar}  onClose={() => this.props.setoggleStateSidebar() } />
           <HeaderMain className='header'>
             <TopNew>
               <div onClick={()=>{this.props.setToggleState()}} className='tn-sec'>
                 <span>1</span>
                 <p>Claim your <b>$100</b> welcome bonus <img src={GiftB} alt='Gift Black'/></p>
               </div>
-              <a target="_blank" href='/screen04' className='tn-sec'>
+              <a target="_blank" href='/vaults' className='tn-sec'>
                 <span>2</span>
                 <p>Claim your <b>547.50%</b> APY <img src={handtn} alt='Gift Black'/></p>
               </a>
@@ -137,7 +140,7 @@ export default class HeadFreeListing extends PureComponent {
                       </div>
                   </div>
                 </HBtn>
-                <HBtn className='last' target="_blank" href='/screen04'>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY <img alt='rightIcon' src={hright}/>
+                <HBtn className='last' target="_blank" href='/vaults'>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY <img alt='rightIcon' src={hright}/>
                   {/* <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
