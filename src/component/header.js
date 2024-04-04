@@ -81,10 +81,10 @@ export default class HeadFreeListing extends PureComponent {
                 <span>2</span>
                 <p>Claim your <b>547.50%</b> APY <img src={handtn} alt='Gift Black'/></p>
               </a>
-              <a onClick={()=>{this.props.setoggleStateSidebar()}} className='tn-sec'>
+              <div onClick={()=>{this.props.setoggleStateSidebar()}} className='tn-sec'>
                 <span>3</span>
                 <p>Refer & win up to a <b>$1000</b> reward <img src={dreward} alt='Gift Black'/></p>
-              </a>
+              </div>
             </TopNew>
           {/* <TopBar>
             <img src={DropIcon} />
@@ -131,7 +131,8 @@ export default class HeadFreeListing extends PureComponent {
                   <a className="headerBtn disabled">GAIN 152.50% APY</a>
               </RMbox> */}
               <HRight>
-                <HBtn onClick={()=>{this.props.setToggleState()}} >Claim Your <span>&nbsp;$100&nbsp;</span> Welcome Bonus <img alt='rightIcon' src={giftWhite}/>
+                <HBtn onClick={()=>{this.props.setToggleState()}} >
+                  <p>Claim Your <span>&nbsp;$100&nbsp;</span> Welcome Bonus</p> <img alt='rightIcon' src={giftWhite}/>
                   <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
@@ -140,7 +141,8 @@ export default class HeadFreeListing extends PureComponent {
                       </div>
                   </div>
                 </HBtn>
-                <HBtn className='last' target="_blank" href='/vaults'>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY <img alt='rightIcon' src={hright}/>
+                <HBtn className='last' target="_blank" href='/vaults'>
+                  <p>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY</p> <img alt='rightIcon' src={hright}/>
                   {/* <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
@@ -162,7 +164,38 @@ export default class HeadFreeListing extends PureComponent {
 const FlexDiv = styled.div`
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
 `;
-
+const TopNew = styled.div `
+  left: 0; right: 0; height: 40px; background-image: linear-gradient(90deg,#91dc27,#91dc27,#91dc27); display: flex; justify-content: center;  transition: all 0.5s ease-in-out; overflow: hidden;
+  .tn-sec {display: flex; align-items: center;  width: 33.33%; justify-content: center; position: relative; cursor: pointer;
+    span  {border: 1px solid #000; width: 22px; height: 22px; border-radius: 100%; display: flex; justify-content: center; align-items: center; color: #000; line-height: 24px; font-weight: 700; margin-right: 18px;}
+    p {color: #000; font-weight: 700; font-size: 14px; margin: 0 0 0; 
+      b {color: #fff; text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;}
+    }
+    img {/* filter: brightness(0); */ height: 21px; margin-left: 18px; margin-top: -3px;}
+    &:hover {background-image: linear-gradient(90deg,#91dc27,#538e00,#91dc27);}
+  }
+  &:before {
+    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; left: 33.33%; transform: translateX(-50%); z-index: 2;
+  }
+  &:after {
+    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; right: 33.33%; transform: translateX(50%); z-index: 2;
+  }
+  @media (max-width: 1250px){
+    &:after {width: 30px; background-size: 100% 100%; }
+    &:before {width: 30px; background-size: 100% 100%;} 
+    .tn-sec {
+      span {font-size: 12px; margin-right: 5px;}
+      p {font-size: 12px;}
+      img {height: 16px; margin-left: 5px;}
+    }
+  }
+  @media (max-width: 991px){
+    flex-flow: column; height: auto; max-height: 400px;
+    &:after {display: none;}
+    &:before {display: none;} 
+    .tn-sec {width: 100%; padding: 10px 0;}
+  }
+`
 const OverLay = styled.div `
   position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;
   @media (max-width: 768px){
@@ -213,36 +246,39 @@ const TopBar = styled.div `
 const HeaderMain = styled.div `
   position: fixed; top: 0; left: 0; right: 0; display: flex; flex-flow: column; z-index: 100;
   &.fixed {
-    ${TopBar} {display: none;}
+    @media (max-width: 991px){
+      ${TopNew} {max-height: 0;}
+    }
   }
 `
 const LHead = styled(FlexDiv) ` 
-    padding:36px 40px; justify-content:flex-start; width: 100%; position: sticky; top: 0; transition: all 0.3s ease-in-out; z-index: 100; 
+    justify-content:flex-start; width: 100%; position: sticky; top: 0; transition: all 0.3s ease-in-out; z-index: 100; padding: 20px 40px;
     &.fixed {background: rgba(0,0,0,0.8);
       .logo {}
       .link01.disableBtnLink:hover:after {background: #000;}
     }
-    @media (max-width: 768px){
+    @media (max-width: 991px){
       padding: 20px 20px 20px 15px;
-      &.fixed {padding: 16px 20px 16px 15px;}
+      &.fixed {padding: 20px 20px 20px 15px;}
     }
 `
 const Logo = styled.div ` 
     margin-right:25px; display: flex; align-items: center;  top: 0; width: 375px; padding:26px 40px; position: absolute; left: 0; cursor: pointer; z-index: 2;
     .logo2 {display: none;}
-    @media (max-width: 768px){
-      width: 337px; margin: 0px auto; left: 50%; transform: translateX(-50%);
-      /* img:not(.logo2) {display: none;} */ padding: 7px 20px;
-      .logo2 {display: block; height: 43px; filter: drop-shadow(0px 0px 7px #91dc27)}
-      /*       overflow: hidden; width: 80px
- */    }
   &.open {background: #191b21;}
+  @media screen and (max-width: 991px) {
+    padding: 12px 10px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 18px 10px; width: auto; margin-right: 0;
+    img {width: 220px;}
+  }
 `
 const Triangle = styled.a `
   display: inline-flex; margin-left: 25px; width: 30px; height: 30px; justify-content: center; align-items: center; flex-shrink: 0;
   &:after {content: ""; border-top: 6px solid #fff; border-left: 5px solid transparent; border-right: 5px solid transparent; display: inline-block;}
   @media (max-width: 768px){
-    margin-left: 20px;
+    margin-left: 5px;
   }
 `
 const RMbox = styled(FlexDiv) `
@@ -319,26 +355,19 @@ const HBtn = styled.a `
   &:hover {
     .btnTop {opacity: 1; visibility: visible;}
   }
+  @media screen and (max-width: 991px) {
+    border-right: 2px solid #35373a;
+    p {display: none;}
+    img {margin-left: 0;}
+    .btnTop {display: none;}
+  }
+  @media screen and (max-width: 640px) {
+    padding: 10px 10px; margin: 0; border-right: 0 solid #35373a;
+    img {height: 25px;}
+  }
 `
 
-const TopNew = styled.div `
-  left: 0; right: 0; height: 40px; background-image: linear-gradient(90deg,#91dc27,#91dc27,#91dc27); display: flex; justify-content: center;  transform: all 0.3s ease-in-out;
-  .tn-sec {display: flex; align-items: center;  width: 33.33%; justify-content: center; position: relative; cursor: pointer;
-    span  {border: 1px solid #000; width: 22px; height: 22px; border-radius: 100%; display: flex; justify-content: center; align-items: center; color: #000; line-height: 24px; font-weight: 700; margin-right: 18px;}
-    p {color: #000; font-weight: 700; font-size: 14px; margin: 0 0 0; 
-      b {color: #fff; text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;}
-    }
-    img {/* filter: brightness(0); */ height: 21px; margin-left: 18px; margin-top: -3px;}
-    &:hover {background-image: linear-gradient(90deg,#91dc27,#538e00,#91dc27);}
-  }
-  &:before {
-    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; left: 33.33%; transform: translateX(-50%); z-index: 2;
-  }
-  &:after {
-    content: ""; width: 64px; height: 40px; background: url(${arrows}) no-repeat; background-size: contain; position: absolute; right: 33.33%; transform: translateX(50%); z-index: 2;
-  }
-  
-`
+
 
 
 

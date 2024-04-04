@@ -30,14 +30,20 @@ const Screen03 = (props: any) => {
     const toggleSelectToken = () => {
         setSelectTokenVisible(!isSelectTokenVisible);
     };
+
+    const [isOpen, setIsOpen] = useState(true);
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <>
             <Sidebar />
             
             <PageContainer>
-                <DropdownTitle>
-                    <i className="fas fa-info-circle" /> How it works <span className="fas fa-caret-up"/>
+                <DropdownTitle onClick={toggleDropdown}>
+                    <i className="fas fa-info-circle" /> How it works <span className={`fas ${isOpen ? 'fa-caret-up' : 'fa-caret-down'}`}/>
                 </DropdownTitle>
+                {isOpen && (
                 <DropContent>
                     <div className='DcSec'>
                         <b>1</b>
@@ -61,6 +67,7 @@ const Screen03 = (props: any) => {
                         </div>
                     </div>
                 </DropContent>
+                )}
 
                 <TopMenu>
                     <a onClick={() => toggleTab(1)} className={getActiveClass(1, 'active')}><img src={tab1}/>Self custody vaults</a>
@@ -93,149 +100,151 @@ const Screen03 = (props: any) => {
                                 <span><img src={icon3}/></span>
                                 <span><img src={icon4}/></span>
                             </VerticalSlider>
-                            <table>
-                                <tr>
-                                    <th className='w-10'>Token <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10'>TVL <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10'>Avg usage  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10'>Expedite rewards <i className="fas fa-question-circle"></i></th>
-                                    <th className='w-10'>Your vault value <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10 hcol'>Your ROI <i className="fas fa-question-circle"></i></th>
-                                    <th className='w-10 hcol'>Your rewards <i className="fas fa-question-circle"></i></th>
-                                    <th className='w-10'>Your Balance <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10 text-center'>Deposit</th>
-                                </tr>
-                                <tr className='hRow'>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>23,563,653</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td>0</td>
-                                    <td colSpan={2}>
-                                        <BtnLg>
-                                            <b>Deposit $100 for 100 Days</b>
-                                            <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
-                                        </BtnLg>
-                                    </td>
-                                    <td>0</td>
-                                    <td><a className='btn01 white'>CONNECT WALLET</a></td>
-                                </tr>
-                                <tr className='hRow'>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td colSpan={2}>
-                                        <BtnLg>
-                                            <b>Deposit $100 for 100 Days</b>
-                                            <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
-                                        </BtnLg>
-                                    </td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr className='hRow'>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td colSpan={2}>
-                                        <BtnLg>
-                                            <b>Deposit $100 for 100 Days</b>
-                                            <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
-                                        </BtnLg>
-                                    </td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000 </td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000 </td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000 </td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon2}/> SMART</Token>
-                                    </td>
-                                    <td>1,000,000</td>
-                                    <td>53.52%</td>
-                                    <td className='color-green'>87.53%</td>
-                                    <td className=''>1,000,000</td>
-                                    <td className='hcol'>25.52%</td>
-                                    <td className='hcol color-green'>+1,000,000 </td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td colSpan={5} valign='top' className='nobo'>
-                                        <a className='becameV'>
-                                            <p><img src={Shield}/> Become your own validator </p>
-                                        </a>
-                                    </td>
-                                    <td className='nobo'><span>Avg: <b>25.52%</b></span>
-                                    </td>
-                                    <td className='nobo'><span>Total: <b>10,000,000</b></span>
-                                    </td>
-                                    <td className='nobo'><span>Total: <b>1,000,000,000,000</b></span>
-                                    </td>
-                                    <td className='nobo'></td>
-                                </tr>
-                            </table>
+                            <TableScroll>
+                                <table>
+                                    <tr>
+                                        <th className='w-10'>Token <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                        <th className='w-10'>TVL <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                        <th className='w-10'>Avg usage  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                        <th className='w-10'>Expedite rewards <i className="fas fa-question-circle"></i></th>
+                                        <th className='w-10'>Your vault value <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                        <th className='w-10 hcol'>Your ROI <i className="fas fa-question-circle"></i></th>
+                                        <th className='w-10 hcol'>Your rewards <i className="fas fa-question-circle"></i></th>
+                                        <th className='w-10'>Your Balance <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                        <th className='w-10 text-center'>Deposit</th>
+                                    </tr>
+                                    <tr className='hRow'>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>23,563,653</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td>0</td>
+                                        <td colSpan={2}>
+                                            <BtnLg>
+                                                <b>Deposit $100 for 100 Days</b>
+                                                <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
+                                            </BtnLg>
+                                        </td>
+                                        <td>0</td>
+                                        <td><a className='btn01 white'>CONNECT WALLET</a></td>
+                                    </tr>
+                                    <tr className='hRow'>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td colSpan={2}>
+                                            <BtnLg>
+                                                <b>Deposit $100 for 100 Days</b>
+                                                <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
+                                            </BtnLg>
+                                        </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr className='hRow'>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td colSpan={2}>
+                                            <BtnLg>
+                                                <b>Deposit $100 for 100 Days</b>
+                                                <i>to Claim Your <span>547.50%</span> APY <strong className="fas fa-question-circle"></strong></i>
+                                            </BtnLg>
+                                        </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>25.52%</td>
+                                        <td className='hcol color-green'>+1,000,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>25.52%</td>
+                                        <td className='hcol color-green'>+1,000,000 </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>25.52%</td>
+                                        <td className='hcol color-green'>+1,000,000 </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>25.52%</td>
+                                        <td className='hcol color-green'>+1,000,000 </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>25.52%</td>
+                                        <td className='hcol color-green'>+1,000,000 </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colSpan={5} valign='top' className='nobo'>
+                                            <a className='becameV'>
+                                                <p><img src={Shield}/> Become your own validator </p>
+                                            </a>
+                                        </td>
+                                        <td className='nobo'><span>Avg: <b>25.52%</b></span>
+                                        </td>
+                                        <td className='nobo'><span>Total: <b>10,000,000</b></span>
+                                        </td>
+                                        <td className='nobo'><span>Total: <b>1,000,000,000,000</b></span>
+                                        </td>
+                                        <td className='nobo'></td>
+                                    </tr>
+                                </table>
+                            </TableScroll>
                         </TableContainer>
                     </>
                 )}
@@ -260,220 +269,222 @@ const Screen03 = (props: any) => {
                             <span><img src={icon3}/></span>
                             <span><img src={icon4}/></span>
                         </VerticalSlider>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th className='w-10'>Token <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Airdrop 
-supply <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Token 
-value  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Metrics</th>
-                                <th className='w-10'>Drop
-progress <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Airdrop 
-ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Share power <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Your 
-                                rewards <i className="fas fa-question-circle"></i></th>
-                                <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <TableScroll>
+                            <table>
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
+                                    <th className='w-10'>Token <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Airdrop 
+    supply <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Token 
+    value  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Metrics</th>
+                                    <th className='w-10'>Drop
+    progress <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Airdrop 
+    ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Share power <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Your 
+                                    rewards <i className="fas fa-question-circle"></i></th>
+                                    <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td colSpan={7} valign='top' className='nobo'>
-                                    </td>
-                                    <td className='nobo'>
-                                        <a className='btn01 green'>CLAIM ALL</a>
-                                    </td>
-                                    <td className='nobo'></td>
-                                </tr>   
-                            </tbody>               
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colSpan={7} valign='top' className='nobo'>
+                                        </td>
+                                        <td className='nobo'>
+                                            <a className='btn01 green'>CLAIM ALL</a>
+                                        </td>
+                                        <td className='nobo'></td>
+                                    </tr>   
+                                </tbody>               
+                            </table>
+                        </TableScroll>
                     </TableContainer>
 
                     <TableContainer>
@@ -488,207 +499,209 @@ ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fa
                             <span><img src={icon3}/></span>
                             <span><img src={icon4}/></span>
                         </VerticalSlider>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th className='w-10'>Collection <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>NFT <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>NFT supply  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Floor price</th>
-                                <th className='w-10'>Metrics <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Drop progress  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Due date <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Eligable to claim <i className="fas fa-question-circle"></i></th>
-                                <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <TableScroll>
+                            <table>
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
+                                    <th className='w-10'>Collection <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>NFT <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>NFT supply  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Floor price</th>
+                                    <th className='w-10'>Metrics <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Drop progress  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Due date <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Eligable to claim <i className="fas fa-question-circle"></i></th>
+                                    <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                            </tbody>               
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                </tbody>               
+                            </table>
+                        </TableScroll>
                     </TableContainer>
                     </>
                 )}
@@ -720,220 +733,222 @@ ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fa
                             <span><img src={icon3}/></span>
                             <span><img src={icon4}/></span>
                         </VerticalSlider>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th className='w-10'>Token <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Airdrop 
-supply <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Token 
-value  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Metrics</th>
-                                <th className='w-10'>Drop
-progress <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Airdrop 
-ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Share power <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Your 
-                                rewards <i className="fas fa-question-circle"></i></th>
-                                <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <TableScroll>
+                            <table>
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
+                                    <th className='w-10'>Token <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Airdrop 
+    supply <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Token 
+    value  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Metrics</th>
+                                    <th className='w-10'>Drop
+    progress <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Airdrop 
+    ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Share power <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Your 
+                                    rewards <i className="fas fa-question-circle"></i></th>
+                                    <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> SMART</Token>
-                                    </td>
-                                    <td>100,000,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td id="toolID1">100,000</td>
-                                    <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td colSpan={7} valign='top' className='nobo'>
-                                    </td>
-                                    <td className='nobo'>
-                                        <a className='btn01 green'>CLAIM ALL</a>
-                                    </td>
-                                    <td className='nobo'></td>
-                                </tr>   
-                            </tbody>               
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> SMART</Token>
+                                        </td>
+                                        <td>100,000,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td id="toolID1">100,000</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-green'>CLAIM TO YOUR VAULT</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colSpan={7} valign='top' className='nobo'>
+                                        </td>
+                                        <td className='nobo'>
+                                            <a className='btn01 green'>CLAIM ALL</a>
+                                        </td>
+                                        <td className='nobo'></td>
+                                    </tr>   
+                                </tbody>               
+                            </table>
+                        </TableScroll>
                     </TableContainer>
 
                     <TableContainer>
@@ -948,207 +963,209 @@ ending  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fa
                             <span><img src={icon3}/></span>
                             <span><img src={icon4}/></span>
                         </VerticalSlider>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th className='w-10'>Collection <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>NFT <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>NFT supply  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Floor price</th>
-                                <th className='w-10'>Metrics <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Drop progress  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Due date <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                <th className='w-10'>Eligable to claim <i className="fas fa-question-circle"></i></th>
-                                <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <TableScroll>
+                            <table>
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
+                                    <th className='w-10'>Collection <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>NFT <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>NFT supply  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Floor price</th>
+                                    <th className='w-10'>Metrics <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Drop progress  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Due date <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Eligable to claim <i className="fas fa-question-circle"></i></th>
+                                    <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Bored Ape ...</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Token><img src={icon1}/> Ghost Project</Token>
-                                    </td>
-                                    <td><Token><img src={icon1}/> Ghost Project</Token></td>
-                                    <td>10,000</td>
-                                    <td>$1</td>
-                                    <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
-                                    <td>
-                                        <Progress><b style={{width: '20%'}} /></Progress>
-                                        <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
-                                    </td>
-                                    <td>
-                                        <Counter>
-                                            <b>3</b><b>6</b><b>4</b><i>:</i>
-                                            <b>1</b><b>2</b><i>:</i>
-                                            <b>4</b><b>3</b><i>:</i>
-                                            <b>2</b><b>5</b>
-                                        </Counter>
-                                    </td>
-                                    <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
-                                    <td><a className='btn01'>DEPOSIT</a></td>
-                                </tr>
-                            </tbody>               
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Bored Ape ...</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Bored Ape ...</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Token><img src={icon1}/> Ghost Project</Token>
+                                        </td>
+                                        <td><Token><img src={icon1}/> Ghost Project</Token></td>
+                                        <td>10,000</td>
+                                        <td>$1</td>
+                                        <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
+                                        <td>
+                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                        </td>
+                                        <td>
+                                            <Counter>
+                                                <b>3</b><b>6</b><b>4</b><i>:</i>
+                                                <b>1</b><b>2</b><i>:</i>
+                                                <b>4</b><b>3</b><i>:</i>
+                                                <b>2</b><b>5</b>
+                                            </Counter>
+                                        </td>
+                                        <td className='hasBtn'>1 <a className='claim color-green'>CLAIM TO YOUR VAULT</a></td>
+                                        <td><a className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                </tbody>               
+                            </table>
+                        </TableScroll>
                     </TableContainer>
                     </>
                 )}
@@ -1174,22 +1191,54 @@ const DropContent = styled.div `
         width: 33.33%; display: flex; align-items: flex-start;
         b {width: 40px; height: 40px; flex-shrink: 0; text-align: center; border: 2px solid #91dc27; border-radius: 40px; margin-right: 22px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700;}
     }
+    @media (max-width: 991px){
+        flex-flow: column; gap: 30px;
+        .DcSec {
+            width: 100%;
+        }
+    }
 `
 const PageContainer = styled.div `
-    padding: 120px 62px 0;
+    padding: 150px 62px 0;
+    @media (max-width: 1400px){
+        padding: 150px 30px 0;
+    }
+    @media (max-width: 1200px){
+        padding: 150px 15px 0;
+    }
+    @media (max-width: 991px){
+        padding: 220px 15px 0;
+    }
 `
 const TopMenu = styled.div `
     padding: 48px 0px 0px; border-bottom: 3px solid #fff; display: flex;
-    a {color: #fff; padding: 2px 20px 30px; font-size: 21px; font-weight: bold; flex-grow: 1; text-align: center; position: relative; width: 100%; 
-        &:last-child {border-right: 0 solid #000; box-shadow: 0 0 0 #3d3f49; }
+    a {color: #fff; padding: 2px 0 30px; font-size: 21px; font-weight: bold; flex-grow: 1; text-align: center; position: relative; width: 100%; 
+        /* &:last-child {border-right: 0 solid #000; box-shadow: 0 0 0 #3d3f49; } */
         img {margin-right: 20px; filter: brightness(100); transition: all 0.3s ease-in-out 0s; height: 26px; align-items: center;}
-        .badge {background-color: #91dc27; font-size: 12px; width: 27px; height: 27px; position: absolute; top: 0; border-radius: 100px; line-height: 27px; margin: -13px 0 0 10px; color: #0d0e13 !important;}
+        .badge {background-color: #91dc27; font-size: 12px; width: 27px; height: 27px; position: relative; top: 0; border-radius: 100px; line-height: 27px; margin: -13px 0 0 10px; color: #0d0e13 !important; display: inline-block; vertical-align: top;}
         &.activeRed {color: var(--red2); box-shadow: 0 3px 0 var(--red2);}
         &.active {color: #91dc27; box-shadow: 0 3px 0 #91dc27;
             img {filter: brightness(1);}
         }
         &:hover {color: #91dc27; img {filter: brightness(1);}}
     }
+    @media (max-width: 1400px){
+        a {font-size: 20px;}
+    }
+    @media (max-width: 1200px){
+        a {font-size: 18px; width: auto; flex-grow: 1;
+            img {margin-right: 10px; height: 20px;}
+        }
+    }
+    @media (max-width: 991px){
+        flex-flow: column; border-bottom: 0;
+        a {width: 100%; padding: 20px 15px 17px; box-shadow: 0 3px 0 #fff;}
+    }
+    @media (max-width: 500px){
+        a {font-size: 16px;}
+        .badge {width: 24px; height: 24px;}
+    }
+    
 ` 
 const TableTop = styled.div `
     display: flex; justify-content: space-between; align-items: center; margin: 65px 0 15px;
@@ -1210,8 +1259,18 @@ const TableTop = styled.div `
             span {margin: 0 10px; color: #a6a2b0;}
         }
     }
+    @media (max-width: 991px){
+        flex-flow: column; overflow: hidden; padding-bottom: 5px;
+    }
+    @media (max-width: 640px){
+        margin-bottom: 30px;
+        .searchRight {
+            flex-flow: column;
+            .searchVlt {margin-bottom: 15px; max-width: 90%;}
+        }
+    }
 `
-const Checkbox = styled.div `
+const Checkbox = styled.div ` 
     position: relative; margin-left: 11px;
     input {opacity: 0; position: absolute; visibility: hidden;
         &:checked + label:after {opacity: 1;}
@@ -1229,6 +1288,9 @@ const Btn = styled.button `
     &.inactive {color: #fff; box-shadow: 0 0 10px rgba(255,255,255,0.2);}
     &.hover-white {
         &:hover {background: none; color:#fff; border-color: black; box-shadow: none;}
+    }
+    @media (max-width: 991px){
+        margin: 20px auto 0;
     }
 `
 const Token = styled.div `
@@ -1382,6 +1444,12 @@ const BtnLg = styled.div `text-align: center; position: relative; z-index: 1; co
             span, strong {color: #fff;}
         }
         &:after { opacity: 1;}
+    }
+`
+const TableScroll = styled.div `
+    overflow: auto; flex-grow: 1;
+    table {
+        min-width: 1200px;
     }
 `
 

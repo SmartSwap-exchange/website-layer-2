@@ -230,7 +230,7 @@ export default class Welcome extends PureComponent {
                         <h4>Unlimited <span>passive</span> <br/> airdrop subscription</h4>
                         <p>Virtual wallets function automatically as a self-custody decentralized short-term arbitrage system, offering swift solutions for cross-chain users and generating passive profits from expedite fees.</p>
                         <BtnClaim onClick={this.props.setToggleState}>
-                            CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS 
+                            <strong>CLAIM YOUR <span>$100</span> WELCOME BONUS </strong>
                             <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
                                 <img src={chrome}/>
@@ -252,7 +252,7 @@ export default class Welcome extends PureComponent {
 to seconds </h4>
                         <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
                         <BtnClaim onClick={this.props.setToggleState}>
-                            CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS
+                            <strong>CLAIM YOUR <span>$100</span> WELCOME BONUS</strong>
                             <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
                                 <img src={chrome}/>
@@ -273,7 +273,7 @@ to seconds </h4>
                         <h4>Quantum virtual limit</h4>
                         <p>Virtual wallets are designed to facilitate quantum virtual orders across various markets without the necessity to spend gas or lock any funds beforehand. </p>
                         <BtnClaim onClick={this.props.setToggleState}>
-                            CLAIM YOUR <span>&nbsp;$100&nbsp;</span> WELCOME BONUS
+                            <strong>CLAIM YOUR <span>$100</span> WELCOME BONUS</strong>
                             <img src={giftWhite} alt='giftWhite'/>
                             <div className='btnTop'>
                                 <img src={chrome}/>
@@ -288,15 +288,16 @@ to seconds </h4>
             </LeftRightTxt>
 
             <WalletSec className='btnOnly'>
-                <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$100</span>&nbsp;WELCOME BONUS 
-                <img className='img-right' src={giftWhitelg} alt='giftWhite'/>
-                <div className='btnTop'>
-                    <img src={chrome}/>
-                    <div className='btnTxt'>
-                        <b>Install virtual wallet</b>
-                        <i>Google web store</i>
+                <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>
+                    <strong>CLAIM YOUR <span className='color-green'>$100</span> WELCOME BONUS </strong>
+                    <img className='img-right' src={giftWhitelg} alt='giftWhite'/>
+                    <div className='btnTop'>
+                        <img src={chrome}/>
+                        <div className='btnTxt'>
+                            <b>Install virtual wallet</b>
+                            <i>Google web store</i>
+                        </div>
                     </div>
-                </div>
                 </BtnDark>
             </WalletSec>
 
@@ -461,30 +462,32 @@ to seconds </h4>
                 </WalletSec>
                 <Supporting>Supporting :<img src={Eth}/>300+ EVM blockchains</Supporting>
                 */}</>
-                <LeftRightTxt id='FreeAirdrop' className='col-reverse'>
-                    <Container>
-                        <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco05}/></div>
-                        <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
-                            <h5>FOR PROJECTS</h5>
-                            <h4>Distributes airdrops to holders and traders for <span>FREE</span></h4>
-                            <p>Boost your project's success by sharing your tokens or NFTs with over 10 Million+ verified wallet holders.</p>
-                            <BtnSecondry href='http://airdrop.tube/giveaway' target='_blank'>
-                                LAUNCH AIRDROP GIVEAWAY <img src={Recket2}/>
-                            </BtnSecondry>
-                        </div>
-                    </Container>
-                </LeftRightTxt>
-                <LeftRightTxt id='dApp'>
-                    <Container>
-                        <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={lgIco06}/></div>
-                        <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
-                            <h5>FOR PROJECTS</h5>
-                            <h4>Integrate virtual wallet to your dApp</h4>
-                            <p>SmartExchange enables instant cross-chain expedite token reception without any waiting period. By integrating the SmartExchange virtual wallet into your dApp, you empower vault holders to place virtual orders, thereby generating additional buying pressure and enhancing liquidity for your sellers.</p>
-                            <LinkBtn>Start Integration <i class="fas fa-angle-double-right"></i></LinkBtn>
-                        </div>
-                    </Container>
-                </LeftRightTxt>
+            </Container>
+            <LeftRightTxt id='FreeAirdrop' className='col-reverse'>
+                <Container>
+                <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco05}/></div>
+                <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
+                    <h5>FOR PROJECTS</h5>
+                    <h4>Distributes airdrops to holders and traders for <span>FREE</span></h4>
+                    <p>Boost your project's success by sharing your tokens or NFTs with over 10 Million+ verified wallet holders.</p>
+                    <BtnSecondry href='http://airdrop.tube/giveaway' target='_blank'>
+                        LAUNCH AIRDROP GIVEAWAY <img src={Recket2}/>
+                    </BtnSecondry>
+                </div>
+                </Container>
+            </LeftRightTxt>
+            <LeftRightTxt id='dApp'>
+                <Container>
+                    <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={lgIco06}/></div>
+                    <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
+                        <h5>FOR PROJECTS</h5>
+                        <h4>Integrate virtual wallet to your dApp</h4>
+                        <p>SmartExchange enables instant cross-chain expedite token reception without any waiting period. By integrating the SmartExchange virtual wallet into your dApp, you empower vault holders to place virtual orders, thereby generating additional buying pressure and enhancing liquidity for your sellers.</p>
+                        <LinkBtn>Start Integration <i class="fas fa-angle-double-right"></i></LinkBtn>
+                    </div>
+                </Container>
+            </LeftRightTxt>
+            <Container>
                 <ValueMain>
                     <div className='valueCol wow fadeInLeft' data-wow-delay='0.2s'>
                         <img src={ZeroDollar}/>
@@ -515,7 +518,8 @@ to seconds </h4>
                     </div>
                 </div>
             </BtnDark> */}
-            <BtnNew onClick={()=>this.props.setoggleStateSidebar()} data-aos="fade-up" className='v2'>Refer & Win Up to a <span>&nbsp;$1000&nbsp;</span> Reward <img src={DMoney} alt='btn' /></BtnNew>
+            <BtnNew onClick={()=>this.props.setoggleStateSidebar()} data-aos="fade-up" className='v2'>
+                <p>Refer & Win Up to a <span>$1000</span> Reward</p> <img src={DMoney} alt='btn' /></BtnNew>
         </FootBtn>
         <Footer>
             <div className='FMLeftr'>
@@ -548,10 +552,11 @@ const TabLinks = styled.div `
         a {font-size: 25px;}
     }
     @media screen and (max-width: 991px) {
-        flex-flow: column;
-        a {padding: 15px; font-size: 20px;}
+        a {font-size: 20px;}
     }
     @media screen and (max-width: 768px) {
+        flex-flow: column; margin-top: 80px;
+        a {padding: 15px; font-size: 20px; width: 100%;}
     }
 `
 const TabContent = styled.div `
@@ -594,7 +599,7 @@ const TotalValue = styled.div `
     }
 `
 const ValueMain = styled.div `
-    display: flex; padding: 158px 0; position: relative; margin-top: 140px;
+    display: flex; padding: 158px 0; position: relative; margin-top: 140px; width: 100%; 
     &:after {position: absolute; top: 0; left: -50vw; bottom: 0; content: ""; z-index: -1; width: 100vw; margin-left: 50%;
     background-image: -moz-linear-gradient( 0deg, rgb(13,14,19) 0%, rgb(145,220,39) 50%, rgb(13,14,19) 100%);
     background-image: -webkit-linear-gradient( 0deg, rgb(13,14,19) 0%, rgb(145,220,39) 50%, rgb(13,14,19) 100%);
@@ -615,46 +620,41 @@ const ValueMain = styled.div `
         }
     }
     @media screen and (max-width: 991px) {
-        flex-flow: column; align-items: center; padding: 100px 0 0 0;
+        flex-flow: column; align-items: center; padding: 80px 0; margin-top: 80px;
         .valueCol { text-align: center;
             h3 {font-size: 26px; margin: 22px 0 30px;} 
             img {max-height: 130px;}
         }
-        .ValImg {margin: 30px auto;
+        .ValImg {margin: 30px -15px;
             .desk {display: none;}
             .responsive {display: block;}
         }
     }
 `
 const BtnDark = styled.a `
-    color: #91dc27; font-size: 24px; width: 665px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 0; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 5px;
+    color: #fff; font-size: 24px; width: 665px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 5px; position: relative; box-shadow: 0 0 18px 5px #fff; text-align: left; overflow: hidden;
     .img-right {margin-left: 26px; height: 38px; margin-top: -1px;}
-    
-    &.disabled {
-        position: relative;
-        &:after {
-            opacity: 0; visibility: hidden; background-color: #0d0e13; content: "Coming Soon"; border: none; position: absolute; inset: 0px; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; color: #91dc27; 
-        }
-        &:hover {
-            &:after {opacity: 1; visibility: visible;}
-        }
-    }
-    .color-green {color: #91dc27;}
-    &.white-color {color: #fff;}
+    strong {color: #fff; margin: 0; line-height: 1.3;}
     .btnTop {display: flex; align-items: center; font-weight: bold; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #91dc27; color: #0d0e13; text-align: left; justify-content: center; opacity: 0; visibility: hidden; z-index: 1;
         img {filter: brightness(0); width: 48px; flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
         b {display: block; font-size: 24px; color: #0d0e13; transition: all 0.5s ease-in-out;}
         i {display: block; font-size: 14px; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 6px;}
     }
-    &.shadow-white {box-shadow: 0 0 18px 8px #fff;}
     &:hover {color: #fff; background: #0d0e13;
         .btnTop {opacity: 1; visibility: visible;}
     }
     @media screen and (max-width: 991px) {
-        font-size: 22px;  padding: 20px 10px; width: auto; 
+        font-size: 20px; width: 540px; padding: 15px 15px; height: 75px;
+        .img-right {height: 35px;}
+        .btnTop { 
+            img {margin-right: 15px; width: 40px;}
+            b {font-size: 18px;}
+            i {font-size: 14px; margin-top: 2px;}
+        }
     }
-    @media screen and (max-width: 768px) {
-        font-size: 18px;  padding: 18px 10px;
+    @media screen and (max-width: 640px) {
+        font-size: 16px; width: 540px; padding: 15px 15px; box-shadow: 0 0 18px 0px #fff;
+        .img-right {height: 30px;}
     }
 `
 const WalletSec = styled.div `
@@ -667,14 +667,14 @@ const WalletSec = styled.div `
     p {font-size: 18px; line-height: 30px; margin: 0 0 30px 0;}
     h2 {font-size: 48px; font-weight: bold; margin: 36px 0 0 0;}
     &.btnOnly {
-        margin: 90px 0 204px; padding: 84px 0;
+        margin: 90px 0 204px; padding: 84px 20px;
         ${BtnDark} {margin: 0 auto;}
     }
     @media screen and (max-width: 1400px) {
         padding: 112px 20px 65px;
     }
     @media screen and (max-width: 991px) {
-        margin: 100px 0 0; padding: 70px 0 20px;
+        margin: 100px 0 0; padding: 70px 20px 20px;
         h3 {font-size: 30px; margin: 0 0 20px;}
         p {font-size: 18px; margin: 0 0 20px 0;}
         h2 {font-size: 40px; margin: 20px 0 0 0;}
@@ -683,6 +683,9 @@ const WalletSec = styled.div `
         h3 {font-size: 26px;}
         p {font-size: 16px;line-height: 1.6;}
         h2 {font-size: 30px;}
+        &.btnOnly {
+            margin: 80px 0 0;
+        }
     }
 `
 
@@ -738,15 +741,16 @@ const BannerSec = styled.section `
         color: #a6a2b0; font-size: 22px; line-height: 1.8; margin: 0 0 78px 0; width: 1100px; max-width: 100%;
     }
     @media (max-width: 1200px){
-        padding: 264px 0 200px 0;
+        padding: 264px 0 100px 0;
     }
     @media (max-width: 991px){
+        padding: 264px 0 30px 0;
         p {
             br {display: none;}
         }
     }
     @media (max-width: 767px){
-        min-height: 100vh; padding: 200px 0 80px; display: flex; align-items: center; justify-content: center;
+        min-height: 100vh; padding: 250px 0 80px; display: flex; align-items: center; justify-content: center;
         p {font-size: 20px;}
     }
     @media (max-width: 480px){
@@ -767,38 +771,27 @@ const BannerHD = styled.h3 `
 `
 const BtnPrimary = styled.a `
     background-color: inherit; color: #FFF; font-weight: 700; border: 0 solid #91dc27; box-shadow: 0px 0px 10px #9d9d9d; padding: 18px 24px; font-size: 18px; display: inline-block; cursor: pointer; text-align: center; transition: all 0.5s ease-in-out 0s; position: relative; background: #0d0e13; margin: 0 15px; width: 355px; margin-bottom: 54px; border-radius: 5px;
-    &.disableBtn:after {
+    /* &.disableBtn:after {
         opacity: 0; background-color: rgb(145, 220, 39); visibility: hidden; content: "Coming Soon"; border: none; position: absolute; inset: 0px; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; color: rgb(255, 255,  255); font-size: 20px;
-    }
-    &.h-dark {
+    } */
+    /* &.h-dark {
         :hover {color: #000;
             .btnTop {
                 img {filter: grayscale(0);}
                 .btnTxt i {color: #000;}
             }
         }
-    }
+    } */
     .btnTop {
         display: flex; align-items: center;
-        img {flex-shrink: 0; margin-right: 25px; filter: grayscale(100%); transition: all 0.5s ease-in-out 0s;}
+        img {flex-shrink: 0; margin-right: 25px; filter: brightness(1) grayscale(100%); transition: all 0.5s ease-in-out 0s;}
         .btnTxt { text-align: left; 
             i {display: block; font-size: 14px; font-style: normal; color: #a6a2b0; font-weight: normal; transition: all 0.5s ease-in-out 0s;}
             b {display: block; font-size: 21px;}
         }
     }
-    &.btnLg {padding: 18px 20px; font-size: 24px;
-        @media (max-width: 1200px){
-            padding: 18px 28px;
-        }
-        @media (max-width: 767px){
-            max-width: 100%; min-width: 200px; font-size: 18px;
-        }
-    }
-    &.btnXl {min-width: 666px; padding: 26px 50px; font-size: 24px; display: table; margin: 0px auto;
-        @media (max-width: 767px){
-            max-width: 100%; min-width: 200px; padding: 20px 50px; font-size: 18px;
-        }
-    }
+    &.btnLg {padding: 18px 20px; font-size: 24px;}
+    /* &.btnXl {min-width: 666px; padding: 26px 50px; font-size: 24px; display: table; margin: 0px auto;} */
     &:hover {background-color: #91dc27;
         &:after {opacity: 1; visibility: visible;}
         .btnTop {
@@ -807,18 +800,22 @@ const BtnPrimary = styled.a `
                 i {color: #fff;}
             }
         }
+        &.btnLg {
+            img {filter: brightness(0);}
+            color: #000;
+        }
     }
     span {font-size: 18px; color: #fff;
         span {color: #91dc27;}
     }
     strong {position: absolute; top: -25px; left: 0; font-size: 12px; color: #585560;}
-    &.color-icon {
+    /* &.color-icon {
         img {filter: none;}
     }
     &.color-green {color: #91dc27; 
         span {color: #91dc27; font-size: 24px;}
-    }
-    @media (max-width: 1024px){
+    } */
+    /* @media (max-width: 1024px){
         min-width: 200px; margin-bottom: 25px;
     }
     @media (max-width: 767px){
@@ -826,13 +823,23 @@ const BtnPrimary = styled.a `
         padding: 18px 24px;
         font-size: 16px;
         .btnTop {
-            display: flex; align-items: center;
+            display: flex; align-items: center;  
             img {max-height: 39px;}
             .btnTxt { text-align: left; 
                 i {display: block; font-size: 12px; font-style: normal; color: #a6a2b0; font-weight: normal; }
                 b {display: block; font-size: 20px;}
             }
         }
+    } */
+    @media (max-width: 991px) {
+        width: 310px; margin: 0 10px 50px;
+        .btnTop  {
+            img {margin-right: 15px; height: 38px; object-fit: contain;}
+            .btnTxt {
+                b {font-size: 18px;}
+            }
+        }
+        
     }
     
 `
@@ -866,6 +873,22 @@ const LeftRightTxt = styled.div `
         .LR-Left {order: 2;  margin-right: 0;  margin-left: auto;}
         .LR-Right {order: 1;}
     }
+    @media (max-width: 1024px){
+        .LR-Right {
+            h4 {font-size: 28px;}
+        }
+    }
+    @media (max-width: 768px){
+        margin-bottom: 80px; padding-top: 0;
+        .LR-Left {width: 100%;
+            img {width: 300px; max-width: 100%;}
+        }
+        .LR-Right {width: 100%; text-align: center;}
+        &.col-reverse {
+            .LR-Left {order: 1;
+            .LR-Right {order: 2;}
+        }
+    }
 `
 const TabImg = styled.div `
     padding: 67px 0 100px;
@@ -874,14 +897,25 @@ const LinkBtn = styled.a `
     font-size: 18px; font-weight: 700; color: #91dc27; display: flex; align-items: center; transition: all 0.3s ease-in-out;
     i {margin-left: 30px;}
     &:hover {color: #fff;}
+    @media (max-width: 768px){
+        margin: 0px auto; display: inline-flex;
+        i {margin-left: 20px;}
+    }
 `
 const BtnSecondry = styled.a ` 
     margin: 0; width: auto; display: inline-flex; align-items: center; box-shadow: 0px 0px 10px 2px #fff; padding: 18px 48px; font-size: 24px; font-weight: 700; color: #91dc27; transition: all 0.3s ease-in-out; border-radius: 5px;
     img {margin-left: 35px;}
     &:hover {box-shadow: 0 0 12px #91dc27;}
+    @media (max-width: 1024px){
+        padding: 16px 25px; font-size: 20px; text-align: left;
+    }
+    @media (max-width: 640px){
+        font-size: 16px;
+        img {margin-left: 20px; height: 30px;}
+    }
 `
 const FootBtn = styled.div `
-    padding: 90px 0;  display: flex; justify-content: center; 
+    padding: 90px 20px;  display: flex; justify-content: center; 
 `
 const TabImgTxt = styled.div `
     display: flex; align-items: flex-start; margin-top: 80px; min-height: 470px;
@@ -894,20 +928,49 @@ const TabImgTxt = styled.div `
         }
     }
     .tt-right {box-shadow: 0 0 25px rgba(255,255,255, 0.07);}
+    @media (max-width: 991px){
+        .tt-left {width: 50%; padding-right: 30px;}
+        .tt-right {width: 50%}
+    }
+    @media (max-width: 767px){
+        flex-flow: column-reverse;
+        .tt-left {width: 100%; padding-right: 0;  margin-top: 30px;}
+        .tt-right {width: 100%;}
+    }
 `
 const Footer = styled.div `
     display: flex; align-items: center; background: #16171e;  padding: 16px 42px; justify-content: space-between;
     span {margin-right: 30px;}
-    .FMLeftr {display: flex; align-items: center; }
-    .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;
+    .FMLeftr {display: flex; align-items: center; width: 33.33%;}
+    .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;  width: 33.33%; text-align: right;
         img {margin: 0 18px 0 0; height: 19px;}
         a {color: #91dc27;}
         span {color: #fff; margin-right: 0}
     }
-    .FMCenter {
+    .FMCenter {width: 33.33%; text-align: center;
         a {margin: 0 7px;
             img {max-width: 16px; height: 16px; object-fit: contain; max-width: inherit; }
             &:hover {opacity: 0.7;}
+        }
+    }
+    @media (max-width: 1024px){
+        padding: 16px 20px;
+        .FMLeftr {flex-flow: column; align-items: flex-start;
+            span {display: block; margin-bottom: 4px;}
+        }
+        .FMRight {
+            img {margin-right: 10px;}
+        }
+    }
+    @media (max-width: 768px){
+        flex-flow: column; padding: 25px 15px;
+        .FMLeftr {align-items: center; margin-bottom: 25px; width: 100%;
+            span {margin-right: 0;}
+            img {height: auto; width: auto;}
+        }
+        .FMCenter {margin-bottom: 25px; width: 100%;}
+        .FMRight {width: 100%; text-align: center;
+            img {margin: -4px 10px 0 0;}
         }
     }
 `
@@ -916,6 +979,7 @@ const Footer = styled.div `
 const BtnClaim = styled.a `
     color: #fff; padding: 32px 30px; box-shadow: 0px 0px 10px #9d9d9d; font-size: 18px; font-weight: bold; display: inline-flex; transition: all 0.5s ease-in-out; position: relative; align-items: center; border-radius: 5px;
     & > img {margin-left: 18px;}
+    strong {text-align: left;}
     span {color: #91dc27;}
     .btnTop {display: flex; align-items: center; font-weight: bold; opacity: 0; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 2; justify-content: center; background: #91dc27; border-radius: 5px;
         img {filter: brightness(0); flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
@@ -924,6 +988,17 @@ const BtnClaim = styled.a `
     }
     &:hover {
         .btnTop {opacity: 1;}
+    }
+    @media (max-width: 640px){
+        padding: 20px 30px; font-size: 16px;
+        strong {}
+        .btnTop {
+            img {margin-right: 15px;}
+            .btnTxt {
+                b {font-size: 20px;}
+                i {text-align: left; margin-top: 0;}
+            }
+        }
     }
 `
 const BtnChrome = styled.a `
@@ -952,13 +1027,22 @@ const BtnChrome = styled.a `
             i {color: #0d0e13;}
         }
     }
+    @media (max-width: 640px){
+        padding: 14px 20px;
+        .btnTop2 {
+            b {font-size: 20px;}
+        }
+    }
 `
 const TopBar = styled.div `
-    /* position: absolute; top: 0; */ left: 0; right: 0; height: 40px; background: #fff; display: flex; justify-content: center; align-items: center; 
+    /* position: absolute; top: 0; */ left: 0; right: 0; min-height: 40px; background: #fff; display: flex; justify-content: center; align-items: center; padding: 5px 20px;
     p {color: #000; font-weight: 700; font-size: 14px; margin: 2px 0 0;
         span {color: #91dc27;}
     }
     img {filter: brightness(0); height: 25px; margin-right: 12px;}
+    @media (max-width: 640px){
+        padding: 10px 20px;
+    }
 `
 const BtnNew = styled.a `
     width: 662px; height: 85px; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px none; font-size: 24px; color: #ffffff; font-weight: 700; max-width: 100%; padding: 0 20px; text-align: center; position: relative; border-radius: 5px; border: 2px solid transparent; transition: all 0.3s ease-in-out;
@@ -967,5 +1051,16 @@ const BtnNew = styled.a `
     &:after {content: ""; position: absolute; left: -31px; top: 3px; width: 83px; height: 68px; background: url(${arrowBtn}) no-repeat; opacity: 0; transition: all 0.3s ease-in-out;}
     &:hover {box-shadow: 0 0 15px #ffffff;
         &:after {opacity: 1;}
+    }
+    @media (max-width: 991px){
+        font-size: 20px; width: 550px; max-width: 100%;
+        img {height: 30px;}
+    }
+    @media (max-width: 768px){
+        box-shadow: 0 0 15px #ffffff; font-size: 18px;
+        &:after { opacity: 1; transform: scale(0.7); left: -34px;}
+    }
+    @media (max-width: 640px){
+        img {margin-left: 15px;}
     }
 `

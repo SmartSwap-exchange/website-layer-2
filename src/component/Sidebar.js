@@ -152,15 +152,18 @@ const FlexDiv = styled.div`
 `;
 
 const SideBar = styled(FlexDiv) `
-    width: 452px; position: fixed; top: 0; right: 0; bottom: 0; background: #050507; box-shadow: 0 0 25px rgba(145,220,39,0.2); z-index: 1500; padding: 0 36px; max-height: 100vh; overflow: auto; transform: translateX(100%); transition: all 0.3s ease-in-out;
+    width: 452px; max-width: 100%; position: fixed; top: 0; right: 0; bottom: 0; background: #050507; box-shadow: 0 0 0 rgba(145,220,39,0.2); z-index: 1500; padding: 50px 36px; max-height: 100vh; overflow: auto; transform: translateX(100%); transition: all 0.3s ease-in-out;
     .connectwalBtn {height: 40px; border: 2px solid #000; box-shadow: 0 0 15px rgba(50,50,50,0.7); font-size: 14px; font-weight: 700; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; align-self: center;
         &:hover {box-shadow: 0 0 15px #91dc27; color: #91dc27;}
     }
-    &.open {transform: translateX(0%);}
+    &.open {transform: translateX(0%); box-shadow: 0 0 25px rgba(145,220,39,0.2);}
     &::-webkit-scrollbar {width: 5px;}
     &::-webkit-scrollbar-track {background: transparent; }
     &::-webkit-scrollbar-thumb {background: #191b21;}
     &::-webkit-scrollbar-thumb:hover { background: #555;  }
+    @media (max-width: 768px){
+        padding: 50px 15px;
+    }
 `
 const Btn = styled.a `
     border: 2px solid #91dc27; padding: 9px 33px; font-size: 16px; font-weight: bold; background: none; color: #91dc27; box-shadow: 0 0 15px #323232; display: block; text-align: center; margin: auto 0;
@@ -269,7 +272,7 @@ const Token = styled.div `
     img { margin-right: 10px; width: 25px; height: 25px;}
 `
 const WalId = styled.div `
-    display: inline-flex; align-items: center; vertical-align: top; white-space: nowrap; max-width: 100px; font-size: 14px; font-weight: 700; margin-top: 50px; margin-bottom: 42px;
+    display: inline-flex; align-items: center; vertical-align: top; white-space: nowrap; max-width: 100px; font-size: 14px; font-weight: 700; margin-top: 0; margin-bottom: 42px;
     img { margin-right: 10px; width: 19px; height: 19px; object-fit: contain;}
 `
 const Close = styled.a `
@@ -279,9 +282,9 @@ const OverLay = styled.div `
     position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: none; z-index: 1499;
     &.open {display: block;}
     @media (max-width: 768px){
-        background: #191b21;
+        /* background: #191b21; */
     }
-`
+` 
 
 export default Sidebar;
 
