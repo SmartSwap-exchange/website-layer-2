@@ -66,6 +66,8 @@ import tiktok from '../assets/social/tiktok.svg'
 import twitter from '../assets/social/x-twitter.svg'
 import medium from '../assets/social/medium.svg'
 import instagram from '../assets/social/instagram.svg'
+import box from '../assets/social/box.svg'
+import telegram from '../assets/social/telegram-plane.svg'
 
 
 
@@ -469,7 +471,7 @@ to seconds </h4>
                 <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                     <h5>FOR PROJECTS</h5>
                     <h4>Distributes airdrops to holders and traders for <span>FREE</span></h4>
-                    <p>Boost your project's success by sharing your tokens or NFTs with over 10 Million+ verified wallet holders.</p>
+                    <p>Boost your project's success by distributing your tokens or NFTs for FREE with over 10 Million verified wallet holders.</p>
                     <BtnSecondry href='http://airdrop.tube/giveaway' target='_blank'>
                         LAUNCH AIRDROP GIVEAWAY <img src={Recket2}/>
                     </BtnSecondry>
@@ -526,12 +528,13 @@ to seconds </h4>
                 <span>Powered by:</span> <a target='_blank' href='https://quantum.foundation/'><img src={qntmLogo} /></a>
             </div>
             <div className='FMCenter'>
-                <a><img src={youtube}/></a>
-                <a><img src={linkedin}/></a>
-                <a><img src={tiktok}/></a>
-                <a><img src={twitter}/></a>
-                <a><img src={medium}/></a>
-                <a><img src={instagram}/></a>
+                {/* <a><img src={youtube}/></a> */}
+                {/* <a><img src={linkedin}/></a> */}
+                {/* <a><img src={tiktok}/></a> */}
+                <a href='https://twitter.com/_Smart_Exchange' target='_blank'><img src={twitter}/></a>
+                {/* <a><img src={medium}/></a> */}
+                <a target='_blank' href='https://t.me/+uukHBGUhdKhlNGM5'><img src={telegram}/></a>
+                <a><img src={box}/></a>
             </div>
             <div className="FMRight">
                 <a target='_blank' href='https://airdrop.tube/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <span>FREE</span></a>
@@ -943,7 +946,7 @@ const Footer = styled.div `
     span {margin-right: 30px;}
     .FMLeftr {display: flex; align-items: center; width: 33.33%;}
     .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;  width: 33.33%; text-align: right;
-        img {margin: 0 18px 0 0; height: 19px;}
+        img {margin: -3px 18px 0 0; height: 19px;}
         a {color: #91dc27;}
         span {color: #fff; margin-right: 0}
     }
