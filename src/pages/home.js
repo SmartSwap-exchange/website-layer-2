@@ -64,10 +64,10 @@ import youtube from '../assets/social/youtube.svg'
 import linkedin from '../assets/social/linkedin-in.svg'
 import tiktok from '../assets/social/tiktok.svg'
 import twitter from '../assets/social/x-twitter.svg'
-import medium from '../assets/social/medium.svg'
-import instagram from '../assets/social/instagram.svg'
 import box from '../assets/social/box.svg'
 import telegram from '../assets/social/telegram-plane.svg'
+import medium from '../assets/social/medium.svg'
+import instagram from '../assets/social/instagram.svg'
 
 
 
