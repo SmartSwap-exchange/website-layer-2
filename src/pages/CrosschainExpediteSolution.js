@@ -34,11 +34,11 @@ export default class Screen03 extends PureComponent {
                 </Header>
                 <Container className='no-flex'>
                     <Banner>
-                        <h1>Accelerate your EXISTING BRIDGES
+                        <h1 className='wow fadeInUp' data-wow-delay='0.2s'>Accelerate your EXISTING BRIDGES
                             <span>with a Cutting Edge Cross-Chain Expedite Solution</span>
                         </h1>
-                        <p>Whichever bridge your work with, we can help speed up any and all bridges process.</p>
-                        <div className='bannerLogos'>
+                        <p className='wow fadeInUp' data-wow-delay='0.3s'>Whichever bridge your work with, we can help speed up any and all bridges process.</p>
+                        <div className='bannerLogos wow fadeInUp' data-wow-delay='0.4s'>
                             <a><img src={logo01} alt='logo'/></a>
                             <a><img src={logo02} alt='logo'/></a>
                             <a><img src={logo03} alt='logo'/></a>
@@ -51,8 +51,8 @@ export default class Screen03 extends PureComponent {
                     <LeftRightTxt className='col-reverse'>   
                         <h2>EXPEDITE crosschain in seconds</h2>
                         <div className='flex'>
-                            <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={lgIco03}/></div>
-                            <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
+                            <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco03}/></div>
+                            <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                                 <ul>
                                     <li className='wrong'>Bridges offer a swap service with varying completion times, from minutes to hours, Your community needs speed, not long waiting times.</li>
                                     <li>SmartExchange is short-loan lending protocol that runs on top of the bridge and enables instant token transactions without any waiting period. We are not a bridge. We help users jump into your ecosystem nearly instantaneously to enjoy the benefits.</li>
@@ -67,11 +67,11 @@ export default class Screen03 extends PureComponent {
                     any cross-chain transactions in seconds.
                     </RandomTxt>
                     <HowIt>
-                        <h3>How does it work?</h3>
-                        <p>When a user initiates a cross-chain transfer through the blockchain bridge, SmartExchange's vaults instantly lend the desired tokens to the user, providing immediate access to the assets they need. Simultaneously, SmartExchange submits proof of this lending transaction to the blockchain bridge. The bridge, recognizing this proof, redirects the tokens from the cross-chain transfer directly to SmartExchange's vaults, rather than the user's wallet. This process not only streamlines cross-chain swaps by eliminating unnecessary waiting times but also maintains the security and integrity of user funds by leveraging the trust and efficiency of blockchain bridges.</p>
-                        <p>Behind the magic of EXPEDITE are the users of our layer 2 Virtual Wallet Virtual wallets. This virtual wallet functions automatically as a self-custody decentralized short-term loans provider which powers the EXPEDITE swap solutions for cross-chain users while generating passive profits from EXPEDITE fees.</p>
+                        <h3 className='wow fadeInUp' data-wow-delay='0.2s'>How does it work?</h3>
+                        <p className='wow fadeInUp' data-wow-delay='0.2s'>When a user initiates a cross-chain transfer through the blockchain bridge, SmartExchange's vaults instantly lend the desired tokens to the user, providing immediate access to the assets they need. Simultaneously, SmartExchange submits proof of this lending transaction to the blockchain bridge. The bridge, recognizing this proof, redirects the tokens from the cross-chain transfer directly to SmartExchange's vaults, rather than the user's wallet. This process not only streamlines cross-chain swaps by eliminating unnecessary waiting times but also maintains the security and integrity of user funds by leveraging the trust and efficiency of blockchain bridges.</p>
+                        <p className='wow fadeInUp' data-wow-delay='0.2s'>Behind the magic of EXPEDITE are the users of our layer 2 Virtual Wallet Virtual wallets. This virtual wallet functions automatically as a self-custody decentralized short-term loans provider which powers the EXPEDITE swap solutions for cross-chain users while generating passive profits from EXPEDITE fees.</p>
                         <p>Your users loan your token, while your bridge does its work, leaving a seemless experience for those users coming into your blockchain ecosystem.</p>
-                        <img src={howworks} alt='how it works' />
+                        <img className='wow fadeInUp' data-wow-delay='0.2s' src={howworks} alt='how it works' />
                     </HowIt>
 
                     <LeftRightTxt>  
@@ -87,8 +87,8 @@ export default class Screen03 extends PureComponent {
                     </LeftRightTxt>
                     <LeftRightTxt className='col-reverse'>  
                         <div className='flex'>
-                            <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={expedite03}/></div>
-                            <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
+                            <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={expedite03}/></div>
+                            <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
                                 <h4>How do you get EXPEDITE for your blockchain?</h4>
                                 <p>We can build a custom solution any where in your website, partners, or anywhere where your current bridge lies. We will also build the integration on our end so SmartExchanges internal users can benefit from there as well.</p>
                             </div>
@@ -96,7 +96,7 @@ export default class Screen03 extends PureComponent {
                     </LeftRightTxt>
                 </Container>
                 <PageBottom>
-                    <Container className='no-flex'>
+                    <Container className='no-flex wow zoomIn' data-wow-delay='0.2s'>
                         <h5>Wait, there's more!</h5>
                         <h3>Do you want us to reward your holders with</h3>
                         <p><strong>Here's how it works:</strong></p>
@@ -241,7 +241,7 @@ const LeftRightTxt = styled.div `
 `
 const PageBottom = styled.div `
     padding: 166px 0; background: url(${bottomBg}) no-repeat bottom center; background-size: 100%;
-    h5 {color: #fff; font-size: 18px; font-weight: 700; text-align: center; margin: 0 0 20px;}
+    h5 {color: #fff; font-size: 18px; font-weight: 700; text-align: center; margin: 0 0 15px;}
     h3 {text-align: center; font-size: 48px; font-weight: 700; color: #a849f2; text-shadow: 0 0 25px #a849f2; background: linear-gradient(90deg, #a849f2, #6764ff) text; color: transparent; opacity: 0.6; margin: 0 0 80px;}
     p {
         strong {font-size: 24px; font-weight: 700;}
@@ -258,8 +258,11 @@ const PageBottom = styled.div `
     }
 `
 const ButtonMain = styled.a `
-    color: #fff; padding: 26px 30px; width: 432px; height: 80px; font-size: 24px; font-weight: 700; margin: 0px auto; border-radius: 5px; position: relative; display: flex; justify-content: center; align-items: center; background: linear-gradient(90deg, #a849f2, #6764ff); z-index: 1; box-shadow: 0 0 25px rgba(168,73,242,0.43); 
-    &:after {content: ""; background: linear-gradient(90deg, #a849f2, #6764ff); position: absolute; bottom: 2px; top: 2px; left: 2px; right: 2px; z-index: -1; border-radius: 5px; background: #0c0522;}
+    color: #fff; padding: 26px 30px; width: 432px; height: 80px; font-size: 24px; font-weight: 700; margin: 96px auto 0; border-radius: 5px; position: relative; display: flex; justify-content: center; align-items: center; background: linear-gradient(90deg, #a849f2, #6764ff); z-index: 1; box-shadow: 0 0 25px rgba(168,73,242,0.43); 
+    &:after {content: ""; position: absolute; bottom: 2px; top: 2px; left: 2px; right: 2px; z-index: -1; border-radius: 5px; background: #0c0522; transition: all 0.5s ease-in-out;}
+    &:hover {
+        &:after {background: linear-gradient(90deg, #a849f2, #6764ff); }
+    }
     @media (max-width: 768px){
         max-width: 100%; margin-top: 50px; padding: 20px 30px; height: auto; font-size: 20px;
     }
@@ -267,7 +270,7 @@ const ButtonMain = styled.a `
 const HowIt = styled.div `
     text-align: center; margin-bottom: 50px; position: relative; z-index: 2;
     h3 {font-size: 48px; font-weight: 700; margin: 0 0 50px;}
-    p {font-size: 18px; font-weight: normal; line-height: 1.6; text-align: left; color:#a6a2b0;}
+    p {font-size: 18px; font-weight: normal; line-height: 1.6; text-align: left; color:#a6a2b0; margin: 0 0 60px;}
     img {margin-top: 126px;}
     &:before { content: ""; position: absolute; width: 650px; height: 650px; border-radius: 100%; filter: blur(120px); right: -55%; top: 0%; z-index: -1; opacity: 0.35; background: #4846b2; transform: translateY(-5%);}
     &:after { content: ""; position: absolute; width: 650px; height: 650px; border-radius: 100%; filter: blur(120px); left: -55%; top: 50%; z-index: -1; opacity: 0.35; background: #7332a5; transform: translateY(40%);}
@@ -295,10 +298,19 @@ const Footer = styled.div `
         a {margin-right: 30px;}
         b {height: 33px; width: 1px; background: #1c1c1c; margin-right: 30px;}
     }
+    @media screen and (max-width: 640px) {
+        height: auto; padding: 15px 20px;
+        .footer-right {
+            flex-flow: wrap;
+            span {width: 100%; margin-bottom: 10px;}
+            a {max-width: 40%; margin-right: 5%;}
+            b {margin-right: 5%;}
+        }
+    }
 `
 const Header = styled.div `
     display: flex; align-items: center; justify-content: space-between; position: absolute; left: 0; right: 0; top: 0; padding: 10px 10px;
-    .headBtn {color: #fff; padding: 7px 26px; font-size: 14px; font-weight: 700; margin: 0px 0; border-radius: 5px; position: relative; display: flex; justify-content: center; align-items: center; z-index: 1; box-shadow: 0 0 15px #fff; border: 1px solid #fff; margin-right: 30px;
+    .headBtn {color: #fff; padding: 7px 26px; font-size: 14px; font-weight: 700; margin: 0px 0; border-radius: 5px; position: relative; display: flex; justify-content: center; align-items: center; z-index: 1; box-shadow: 0 0 15px #fff; border: 1px solid #fff; margin-right: 30px; transition: all 0.5s ease-in-out;
         &:hover {color: #000; background: #fff;}
     }
     @media screen and (max-width: 640px) {
