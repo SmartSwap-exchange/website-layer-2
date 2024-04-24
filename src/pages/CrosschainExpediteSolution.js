@@ -30,7 +30,7 @@ export default class Screen03 extends PureComponent {
             <Solution id='main' className='welcome-page'>
                 <Header>
                     <a><img src={smartex2} alt='smart ex'/></a>
-                    <a className='headBtn'>Schedule a Demo</a>
+                    <a target='_blank' href='https://calendly.com/aaron-sanchez-metaengine-partnerships/30' className='headBtn'>Schedule a Demo</a>
                 </Header>
                 <Container className='no-flex'>
                     <Banner>
@@ -101,7 +101,7 @@ export default class Screen03 extends PureComponent {
                         <h3>Do you want us to reward your holders with</h3>
                         <p><strong>Here's how it works:</strong></p>
                         <p>When your users self-custody your native token, they will receive an APY derived from expedited cross-chain service fees. This means that your holders not only facilitate the entry of new users into your ecosystem but also earn unlimited APY for doing so, without any expenditure from your side!  This process maintains the stability of your token's circulation and drives buying pressure to your native token at the same time.</p>
-                        <ButtonMain>SCHEDULE A DEMO</ButtonMain>
+                        <ButtonMain href='https://calendly.com/aaron-sanchez-metaengine-partnerships/30' target='_blank'>SCHEDULE A DEMO</ButtonMain>
                     </Container>
                 </PageBottom>
                 <Footer>
