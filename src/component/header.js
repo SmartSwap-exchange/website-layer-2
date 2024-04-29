@@ -347,7 +347,7 @@ const HBtn = styled.a `
   &.last {
     border-right: 0; padding-right: 0;
   }
-  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 290px; transform: translateY(-50%); opacity: 0; visibility: hidden; box-shadow: 0px 0px 10px #9d9d9d; border-radius: 5px;
+  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 290px; transform: translateY(-50%); /* opacity: 0; visibility: hidden; */ box-shadow: 0px 0px 10px #9d9d9d; border-radius: 5px;
       img {filter: brightness(0); flex-shrink: 0; margin-right: 18px; margin-top: 0; margin-left: 0; width: 30px; transition: all 0.5s ease-in-out;}
       b {display: block; font-weight: bold; font-size: 16px; color: #0d0e13; transition: all 0.5s ease-in-out;}
       i {display: block; font-weight: bold; font-size: 11px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;}
