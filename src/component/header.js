@@ -131,7 +131,10 @@ export default class HeadFreeListing extends PureComponent {
                   <a className="headerBtn disabled">GAIN 152.50% APY</a>
               </RMbox> */}
               <HRight>
-                <HBtn onClick={()=>{this.props.setToggleState()}} >
+                <HBtn
+                  target='_blank' href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc'
+                  // onClick={()=>{this.props.setToggleState()}} 
+                >
                   <p>Claim Your <span>&nbsp;$100&nbsp;</span> Welcome Bonus</p> <img alt='rightIcon' src={giftWhite}/>
                   <div className='btnTop'>
                       <img src={chrome}/>
