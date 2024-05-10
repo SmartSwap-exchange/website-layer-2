@@ -9,6 +9,7 @@ import Screen02 from './pages/screen02'
 import Screen03 from './pages/screen03' 
 import Screen04 from './pages/screen04' 
 import CrosschainExpediteSolution from './pages/CrosschainExpediteSolution' 
+import SmartVaults from './pages/SmartVaults' 
 import Gs from './theme/globalStyles';
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme/theme'  
@@ -29,7 +30,8 @@ function App() {
       <section className='bodySection clearfix'>
         <Gs.GlobalStyle />  
         <Router> 
-        {window.location.pathname !== '/crosschain-expedite-solution' ? ( 
+        {window.location.pathname !== '/crosschain-expedite-solution' &&
+        window.location.pathname !== '/smart-vaults' ? ( 
         <Header isDarkTheme={isDark} setTheme={setTheme} setToggleState={()=>setToggleState(!toggleState)} setoggleStateSidebar={()=>setoggleStateSidebar(!toggleStateSidebar)} toggleState={toggleState} toggleStateSidebar={toggleStateSidebar} />  
         ) : null}
           <Switch>
@@ -40,6 +42,7 @@ function App() {
             <Route path="/screen03" exact> <Screen03 isDarkTheme={isDark}  />  </Route>  
             <Route path="/vaults" exact> <Screen04 isDarkTheme={isDark} toggleState={toggleState} setoggleStateSidebar={()=>setoggleStateSidebar(!toggleStateSidebar)} toggleStateSidebar={toggleStateSidebar} setToggleState={()=>setToggleState(!toggleState)}  />  </Route>  
             <Route path="/crosschain-expedite-solution" exact> <CrosschainExpediteSolution isDarkTheme={isDark}  />  </Route>  
+            <Route path="/smart-vaults" exact> <SmartVaults isDarkTheme={isDark}  />  </Route>  
           </Switch> 
         </Router>
         
