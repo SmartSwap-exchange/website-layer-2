@@ -28,8 +28,8 @@ export default class Screen03 extends PureComponent {
         <>
             <Solution id='main' className='welcome-page'>
                 <Header>
-                    <a><img src={smartex2} alt='smart ex'/></a>
-                    <a target='_blank' href='https://calendly.com/aaron-sanchez-metaengine-partnerships/30' className='headBtn'>Deploy Your Smart Vault</a>
+                    <Link to="/"><img src={smartex2} alt='smart ex'/></Link>
+                    <Link to='/vaults' className='headBtn'>Deploy Your Smart Vault</Link>
                 </Header>
                 <Container className='no-flex'>
                     <Banner>
@@ -47,7 +47,6 @@ export default class Screen03 extends PureComponent {
                                     <li><span>Remove sell pressure from market</span></li>
                                 </ul>
                             </div>
-                            
                         </div>
                     </LeftRightTxt>
                     
@@ -65,6 +64,7 @@ export default class Screen03 extends PureComponent {
                     <Container className='no-flex wow zoomIn' data-wow-delay='0.2s'>
                         <h4>Unlimited APY and Airdrops for Your Community</h4>
                         <h5>Encouraging our community members to hold their XYZ tokens in self-custody vaults is essential for the sustainability and growth of our project. Here's why:</h5>
+                        
                         <ul>
                             <li>
                                 <img src={CheckIcon} alt='check' />
