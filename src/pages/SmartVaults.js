@@ -1,17 +1,9 @@
 import React, { PureComponent, lazy, Suspense, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import HeaderWC from '../component/header';
 
 import MainBg from '../assets/images/bg.png';
 import bottomBg from '../assets/images/bottomBg.png';
-import logo01 from '../assets/images/solution/logo01.png';
-import logo02 from '../assets/images/solution/logo02.png';
-import logo03 from '../assets/images/solution/logo03.png'; 
-import logo04 from '../assets/images/solution/logo04.png';
-import logo05 from '../assets/images/solution/logo05.png';
-import logo06 from '../assets/images/solution/logo06.png';
-import logo07 from '../assets/images/solution/logo07.png';
 import lgIco03 from '../assets/images/vault-blue.png';
 import check from '../assets/images/solution/check.png';
 import times from '../assets/images/solution/times.png';
@@ -221,14 +213,15 @@ const LeftRightTxt = styled.div `
     @media (max-width: 768px) {
         margin-bottom: 80px; padding-top: 0;
         .flex {flex-flow: column;}
-        h2 {font-size: 25px;}
+        h2 {font-size: 20px;}
         .LR-Left {width: 100%;
             img {width: 300px; max-width: 100%;}
         }
         .LR-Right {width: 100%; text-align: center;}
-        ul {margin: 0;
-            li {text-align: left; padding-left: 60px;
-                &:after {left: 0; transform: scale(0.8);}
+        ul {margin: 20px 0 0;
+            li {text-align: left; padding-left: 40px; margin-bottom: 24px;
+                &:after {left: 0; transform: scale(0.8); width: 25px; top: -9px;}
+                span {font-size: 16px;}
             }
         }
         &.col-reverse {
@@ -281,6 +274,9 @@ const HowIt = styled.div `
     @media (max-width: 768px){
         h3 {font-size: 30px; margin-bottom: 30px;}
         p {font-size: 16px; line-height: 1.5; margin-bottom: 20px;}
+    }
+    @media (max-width: 480px){
+        margin-top: 60px;
     }
 `
 const RandomTxt = styled.p `
@@ -347,6 +343,7 @@ const UltimateSec = styled.div `
         h5 {padding: 0;}
     }
     @media screen and (max-width: 640px) {
+        padding-top: 80px;
         h4 {font-size: 25px}
         h5 {padding: 0; font-size: 16px; margin-top: 20px;}
         ul {
