@@ -195,7 +195,7 @@ const LeftRightTxt = styled.div `
         ul {margin: 0;
             li {
                 color: #a6a2b0; font-size: 18px; line-height: 1.7; margin-bottom: 34px; padding-left: 82px; position: relative;
-                &:after {content: ""; width: 36px; height: 36px; position: absolute; left: 26px; top: 0; background: url(${check}) no-repeat center center;}
+                &:after {content: ""; width: 36px; height: 36px; position: absolute; left: 26px; top: 0; background: url(${check}) no-repeat center center; background-size: contain;}
                 &.wrong:after {background: url(${times}) no-repeat center left;}
             }
         }
@@ -228,9 +228,10 @@ const LeftRightTxt = styled.div `
             img {width: 300px; max-width: 100%;}
         }
         .LR-Right {width: 100%; text-align: center;}
-        ul {margin: 0;
-            li {text-align: left; padding-left: 60px;
-                &:after {left: 0; transform: scale(0.8);}
+        ul {margin: 20px 0 0;
+            li {text-align: left; padding-left: 40px; margin-bottom: 24px;
+                &:after {left: 0; transform: scale(0.8); width: 25px; top: -9px;}
+                span {font-size: 16px;}
             }
         }
         &.col-reverse {

@@ -277,6 +277,7 @@ const HowIt = styled.div `
     }
     @media (max-width: 480px){
         margin-top: 60px;
+        h4 {margin: 60px 0 30px;}
     }
 `
 const RandomTxt = styled.p `
