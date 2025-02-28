@@ -27,10 +27,10 @@ function PopupContainer({onClose, ClickChange }) {
 	};
 
 	const [ToggleState, setToggleState] = useState(1);
-    const toggleTab = (index: number) => {
+    const toggleTab = (index) => {
         setToggleState(index);
     };
-    const getActiveClass = (index: number, className: any) =>
+    const getActiveClass = (index, className) =>
         ToggleState === index ? className : '';
 
 	
@@ -206,8 +206,11 @@ const Popup = styled.div`
         .formCol {
             flex-flow: column; display: flex; flex-grow: 1; max-width: 100%; margin-bottom: 30px;
             & > label {min-height: auto; margin-bottom: 10px; width: 100%;}
-            .textBox {margin: 0; width: 100%;
+            .textBox {margin: 0; width: 100%; min-height: 46px;
                 .infoRight {text-align: left; margin-left: 0;}
+				.floatingInfo {
+					font-size: 10px;
+				}
             }
         }
     }
@@ -218,7 +221,7 @@ const PopTitle = styled.div`
 	&.color-red {color: #c32b2d; }
 	p {font-size: 14px; color: #a6a2b0; font-weight: normal; margin-top: 20px; font-size: 18px;}
 	${Media.sm} {
-		margin-bottom: 30px; font-size: 26px;
+		margin-bottom: 30px; font-size: 20px;
 	}
 `
 const Button = styled.a `
@@ -261,6 +264,9 @@ const SliderContainer = styled.div `
 			}
 		}
 	}
+	${Media.sm} {
+		margin-right: 10px;
+	}
 `
 const TopMenu = styled.div `
     padding: 48px 0px 0px; border-bottom: 3px solid #fff; display: flex; margin-bottom: 40px;
@@ -276,12 +282,19 @@ const TopMenu = styled.div `
         }
         &:hover {color: #545453; img {filter: brightness(1);}}
     }
+	${Media.sm} { 
+		padding: 0px; margin-bottom: 20px;
+		a {padding: 2px 15px 16px;}
+	}
 ` 
 const DropdownBtn = styled.div `
     width: 100%; height: 56px; border: 2px solid #000; background: #21232b; font-size: 16px; color: #fff; padding: 0 13px 0 13px; display: flex; align-items: center; justify-content: space-between;
     span {display: flex; align-items: center; justify-content: space-between; 
         img {margin-right: 15px; width: 24px; height: 24px; object-fit: contain;}
     }
+	${Media.sm} { 
+		height: 46px;
+	}
 `
 const DropDownList = styled.div `
     width: 100%; border: 2px solid #000; background: #21232b; font-size: 16px; color: #fff; display: flex; align-items: center; flex-flow: column; justify-content: space-between; position: absolute; top: 54px; left: 0; right: 0; z-index: 1; padding: 10px 0 10px; /* display: none; */

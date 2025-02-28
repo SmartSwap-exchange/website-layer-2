@@ -15,132 +15,137 @@ const Sidebar = () => {
     const handleCloseClick = () => {
         setIsOpen(false);
     };
+    const [isWallet, ConnectedWal] = useState(true);
+    const ShowContent = () => {
+        ConnectedWal(false);
+    } 
 
     return (
         <>
             <SideBar className={isOpen ? 'open' : ''}>
-            {/* {!ConnectedWal && (<a onClick={this.ShowContent} className='connectwalBtn'>CONNECT WALLET</a>)} */}
-            
-            {/* {ConnectedWal && ( <> */}
                 <Close onClick={handleCloseClick}><img src={sideClose}/></Close>
-                <WalId><img src={topicon}/> 0x9b...0D64</WalId>
-                <ValTop>
-                    <div className='vt-left'>
-                        <span>Total value</span>
-                        <p>$20,586.63</p>
-                    </div>
-                    <div className='vt-right'>
-                        <span>Deposit tokens to your vaults</span>
-                        <Btn>DEPOSIT</Btn>
-                    </div>
-                </ValTop>
-                <TableContainer>
-                    <VerticalSlider>
-                        <div className='VsHead'>Chain</div>
-                        <span><img src={icon1}/></span>
-                        <span><img src={icon2}/></span>
-                        <span><img src={icon3}/></span>
-                        <span><img src={icon4}/></span>
-                        <span><img src={icon1}/></span>
-                        <span><img src={icon2}/></span>
-                        <span><img src={icon3}/></span>
-                        <span><img src={icon4}/></span>
-                        <span><img src={icon4}/></span>
-                        <span><img src={icon4}/></span>
-                        <span><img src={icon4}/></span>
-                        <span><img src={icon4}/></span>
-                        <span><img src={icon4}/></span>
-                    </VerticalSlider>
-                    <table>
-                        <thead>
+                {isWallet && (<a onClick={ShowContent} className='connectwalBtn'>CONNECT WALLET</a>)}
+            
+                {!isWallet && ( <>
+                    
+                    <WalId><img src={topicon}/> 0x9b...0D64</WalId>
+                    <ValTop>
+                        <div className='vt-left'>
+                            <span>Total value</span>
+                            <p>$20,586.63</p>
+                        </div>
+                        <div className='vt-right'>
+                            <span>Deposit tokens to your vaults</span>
+                            <Btn>DEPOSIT</Btn>
+                        </div>
+                    </ValTop>
+                    <TableContainer>
+                        <VerticalSlider>
+                            <div className='VsHead'>Chain</div>
+                            <span><img src={icon1}/></span>
+                            <span><img src={icon2}/></span>
+                            <span><img src={icon3}/></span>
+                            <span><img src={icon4}/></span>
+                            <span><img src={icon1}/></span>
+                            <span><img src={icon2}/></span>
+                            <span><img src={icon3}/></span>
+                            <span><img src={icon4}/></span>
+                            <span><img src={icon4}/></span>
+                            <span><img src={icon4}/></span>
+                            <span><img src={icon4}/></span>
+                            <span><img src={icon4}/></span>
+                            <span><img src={icon4}/></span>
+                        </VerticalSlider>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th className='w-10'>Token </th>
+                                    <th className='w-10'>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             <tr>
-                                <th className='w-10'>Token </th>
-                                <th className='w-10'>Balance</th>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
                             </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Token><img src={icon2}/> SMART</Token>
-                            </td>
-                            <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </TableContainer>
-            {/*  </>)} */}
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Token><img src={icon2}/> SMART</Token>
+                                </td>
+                                <td><div className='hideH'>10,000 JNTR <span>[$5,586.63]</span></div> <Btn>DEPOSIT</Btn></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </TableContainer>
+                </>)}
             </SideBar>
             <OverLay className={isOpen ? 'open' : ''} onClick={handleCloseClick} />
         </>

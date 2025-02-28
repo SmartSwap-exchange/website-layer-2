@@ -72,7 +72,7 @@ export default class HeadFreeListing extends PureComponent {
           <Sidebar2 sidebarVisible={this.props.toggleState} onClose={() => this.props.setToggleState() } />
           <ReferSidebar sidebarVisible={this.props.toggleStateSidebar}  onClose={() => this.props.setoggleStateSidebar() } />
           <HeaderMain className='header'>
-            <TopNew>
+            {/* <TopNew>
               <div onClick={()=>{this.props.setToggleState()}} className='tn-sec'>
                 <span>1</span>
                 <p>Claim your <b>$100</b> welcome bonus <img src={GiftB} alt='Gift Black'/></p>
@@ -85,14 +85,14 @@ export default class HeadFreeListing extends PureComponent {
                 <span>3</span>
                 <p>Refer & win up to a <b>$1000</b> reward <img src={dreward} alt='Gift Black'/></p>
               </div>
-            </TopNew>
+            </TopNew> */}
           {/* <TopBar>
             <img src={DropIcon} />
             <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> </p>
           </TopBar> */}
           <LHead className="header wow fadeInDown">
-              <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> <Triangle onClick={this.toggleHeaderDrop}/></Logo>
-              {HeaderDrop && (
+              <Logo className={`logo  ${HeaderDrop && 'open'}`} ><Link to="/"><img  src={LogoM} alt="logo" /></Link> {/* <Triangle onClick={this.toggleHeaderDrop}/> */}</Logo>
+              {/* {HeaderDrop && (
                 <>
                 <DropDownMenu>
                     <Scrollbars renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
@@ -117,15 +117,18 @@ export default class HeadFreeListing extends PureComponent {
                       <a data-id="06" className='soon'><img src={selogo16} /></a>
                       <a data-id="07" className='soon'><img src={selogo17} /></a>
                       <a data-id="08" className='soon'><img src={selogo19} /></a>
-                      {/* <a data-no="09" className='no'><img src={selogo18} /></a> */}
-                      {/* <a><img src={selogo08} /></a>
+
+                      Hidden Links
+                      <a data-no="09" className='no'><img src={selogo18} /></a>
+                      <a><img src={selogo08} /></a>
                       <a><img src={selogo09} /></a>
-                      <a><img src={selogo10} /></a> */}
+                      <a><img src={selogo10} /></a>
+                      Hidden Links
                     </Scrollbars>
                   </DropDownMenu>
                   <OverLay onClick={this.toggleHeaderDrop} />
                 </>
-              )}
+              )} */}
               {/* <RMbox>
                   <a  className="link01 disableBtnLink" ><span>Rewards program</span></a>
                   <a className="headerBtn disabled">GAIN 152.50% APY</a>
@@ -135,18 +138,18 @@ export default class HeadFreeListing extends PureComponent {
                   target='_blank' href='https://chromewebstore.google.com/detail/smartexchange-beta/pcoblipkncbakbcnfkgobkikjfkjmhoc'
                   // onClick={()=>{this.props.setToggleState()}} 
                 >
-                  <p>Claim Your <span>&nbsp;$100&nbsp;</span> Welcome Bonus</p> <img alt='rightIcon' src={giftWhite}/>
                   <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
                           <b>Install virtual wallet</b>
-                          <i>Google web store</i>
+                          <i>web store</i>
                       </div>
                   </div>
                 </HBtn>
                 <HBtn className='last' target="_blank" href='/vaults'>
-                  <p>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY</p> <img alt='rightIcon' src={hright}/>
-                  {/* <div className='btnTop'>
+                  <img alt='rightIcon' src={hright}/>
+                  {/* <p>Claim Your <span>&nbsp;547.50%&nbsp;</span> APY</p> <img alt='rightIcon' src={hright}/>
+                  <div className='btnTop'>
                       <img src={chrome}/>
                       <div className='btnTxt'>
                           <b>Install virtual wallet</b>
@@ -255,7 +258,7 @@ const HeaderMain = styled.div `
   }
 `
 const LHead = styled(FlexDiv) ` 
-    justify-content:flex-start; width: 100%; position: sticky; top: 0; transition: all 0.3s ease-in-out; z-index: 100; padding: 20px 40px;
+    justify-content:flex-start; width: 100%; position: sticky; top: 0; transition: all 0.3s ease-in-out; z-index: 100; padding: 20px 40px; align-items: center;
     &.fixed {background: rgba(0,0,0,0.8);
       .logo {}
       .link01.disableBtnLink:hover:after {background: #000;}
@@ -264,17 +267,21 @@ const LHead = styled(FlexDiv) `
       padding: 20px 20px 20px 15px;
       &.fixed {padding: 20px 20px 20px 15px;}
     }
+    @media (max-width: 640px){
+      padding: 11px 20px 11px 15px;
+      &.fixed {padding: 11px 20px 11px 15px;}
+    }
 `
 const Logo = styled.div ` 
-    margin-right:25px; display: flex; align-items: center;  top: 0; width: 375px; padding:26px 40px; position: absolute; left: 0; cursor: pointer; z-index: 2;
+    margin-right:25px; display: flex; align-items: center;  top: 5px; width: 375px; padding:26px 40px; position: absolute; left: 0; cursor: pointer; z-index: 2;
     .logo2 {display: none;}
   &.open {background: #191b21;}
   @media screen and (max-width: 991px) {
-    padding: 12px 10px;
+    padding: 12px 10px; top: 0;
   }
-  @media screen and (max-width: 768px) {
-    padding: 18px 10px; width: auto; margin-right: 0;
-    img {width: 220px;}
+  @media screen and (max-width: 640px) {
+    padding: 0 0; width: auto; margin-right: 0; position: relative; left: -8px;
+    img {width: 190px;}
   }
 `
 const Triangle = styled.a `
@@ -344,29 +351,50 @@ const HRight = styled.div `
   a.rightIcon {}
 `
 const HBtn = styled.a `
-  font-size: 14px; color: #fff; padding: 10px 44px 10px 0 ; border-right: 1px solid #35373a; margin: 0; margin-left: 30px; font-weight: bold; position: relative; display: flex; align-items: center;
-  img {/* height: 31px; */ margin-left: 18px; margin-top: -1px;}
+  font-size: 14px; color: #fff; padding: 10px 0 10px 0 ; /* border-right: 1px solid #35373a; */ margin: 0; margin-left: 30px; font-weight: bold; position: relative; display: flex; align-items: center;
+  img {/* height: 31px; */ margin-left: 0; margin-top: -1px;}
   span {color: #91dc27;}
   &.last {
     border-right: 0; padding-right: 0;
   }
-  .btnTop {display: flex; align-items: center; font-weight: bold; background: #91dc27; position: absolute; top: 50%; left: 0; right: 0; bottom: 0; justify-content: center; height: 65px; width: 290px; transform: translateY(-50%); /* opacity: 0; visibility: hidden; */ box-shadow: 0px 0px 10px #9d9d9d; border-radius: 5px;
-      img {filter: brightness(0); flex-shrink: 0; margin-right: 18px; margin-top: 0; margin-left: 0; width: 30px; transition: all 0.5s ease-in-out;}
-      b {display: block; font-weight: bold; font-size: 16px; color: #0d0e13; transition: all 0.5s ease-in-out;}
-      i {display: block; font-weight: bold; font-size: 11px; color: #0d0e13; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;}
+  .btnTop {display: flex; align-items: center; font-weight: bold; background: #0d0e13; justify-content: center; height: 65px; width: 290px;  /* opacity: 0; visibility: hidden; */ box-shadow: 0px 0px 10px #9d9d9d; border-radius: 5px;
+      img {filter: brightness(100); flex-shrink: 0; margin-right: 18px; margin-top: 0; margin-left: 0; width: 30px; transition: all 0.1s ease-in-out;}
+      b {display: block; font-weight: bold; font-size: 16px; color: #fff; transition: all 0.5s ease-in-out;}
+      i {display: block; font-weight: bold; font-size: 11px; color: #fff; font-style: normal; transition: all 0.5s ease-in-out 0s; margin-top: 2px;}
   }
   &:hover {
-    .btnTop {opacity: 1; visibility: visible;}
+    .btnTop {background: #91dc27;
+      img {filter: brightness(0);}
+      b, i {color: #000;}
+    }
   }
   @media screen and (max-width: 991px) {
     border-right: 2px solid #35373a;
     p {display: none;}
     img {margin-left: 0;}
-    .btnTop {display: none;}
+    .btnTop {
+      padding: 0; box-shadow: none; background: none; width: auto; height: auto;
+      b, i {display: none;}
+      img {filter: none;}
+    }
+    &.last {
+      margin-left: 18px;
+      img {height: 30px;}
+    }
+    &:hover {
+      .btnTop {background: none;
+        img {filter: none;}
+      }
+    }
   }
   @media screen and (max-width: 640px) {
     padding: 10px 10px; margin: 0; border-right: 0 solid #35373a;
-    img {height: 25px;}
+    .btnTop {
+      img {margin: 0; width: 20px;} 
+    }
+    &.last {margin-left: 0;
+      img {width: 20px; height: auto;}
+    }
   }
 `
 

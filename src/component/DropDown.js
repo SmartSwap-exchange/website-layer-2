@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Media from '../theme/media-breackpoint'
 
     
 
@@ -36,6 +37,9 @@ const DropdownBtn = styled.div`
     span {display: flex; align-items: center; justify-content: space-between; 
         img {margin-right: 15px; width: 24px; height: 24px; object-fit: contain;}
     }
+    ${Media.sm} { 
+		height: 46px;
+	}
 `;
 
 const DropDownList = styled.div`

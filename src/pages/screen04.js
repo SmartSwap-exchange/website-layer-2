@@ -72,7 +72,7 @@ const Screen03 = (props: any) => {
                 <TopMenu>
                     <a onClick={() => toggleTab(1)} className={getActiveClass(1, 'active')}><img src={tab1}/>Self custody vaults</a>
                     <a onClick={() => toggleTab(2)} className={getActiveClass(2, 'active')}><img src={tab2}/>Unlimited passive airdrops <span className='badge'>23</span></a>
-                    <a onClick={() => toggleTab(3)} className={getActiveClass(3, 'active')}><img src={tab3}/>VIP access</a>
+                    {/* <a onClick={() => toggleTab(3)} className={getActiveClass(3, 'active')}><img src={tab3}/>VIP access</a> */}
                 </TopMenu>
                 {getActiveClass(1,
                     <>
@@ -99,6 +99,8 @@ const Screen03 = (props: any) => {
                                 <span><img src={icon2}/></span>
                                 <span><img src={icon3}/></span>
                                 <span><img src={icon4}/></span>
+                                <span><img src={icon1}/></span>
+                                <span><img src={icon2}/></span>
                             </VerticalSlider>
                             <TableScroll>
                                 <table>
@@ -113,14 +115,14 @@ const Screen03 = (props: any) => {
                                         <th className='w-10'>Your Balance <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
                                         <th className='w-10 text-center'>Deposit</th>
                                     </tr>
-                                    <tr className='hRow'>
+                                    <tr>
                                         <td>
                                             <Token><img src={icon1}/> SMART</Token>
                                         </td>
                                         <td>23,563,653</td>
                                         <td>53.52%</td>
                                         <td className='color-green'>87.53%</td>
-                                        <td>0</td>
+                                        <td>1,000,000,000</td>
                                         <td colSpan={2}>
                                             <BtnLg>
                                                 <b>Deposit $100 for 100 Days</b>
@@ -130,7 +132,7 @@ const Screen03 = (props: any) => {
                                         <td>0</td>
                                         <td><a className='btn01 white'>CONNECT WALLET</a></td>
                                     </tr>
-                                    <tr className='hRow'>
+                                    <tr>
                                         <td>
                                             <Token><img src={icon2}/> SMART</Token>
                                         </td>
@@ -147,7 +149,7 @@ const Screen03 = (props: any) => {
                                         <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
                                         <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
                                     </tr>
-                                    <tr className='hRow'>
+                                    <tr>
                                         <td>
                                             <Token><img src={icon2}/> SMART</Token>
                                         </td>
@@ -164,6 +166,32 @@ const Screen03 = (props: any) => {
                                         <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
                                         <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
                                     </tr>
+                                    <tr className='hRow'>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>0</td>
+                                        <td className='hcol color-green'>0</td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
+                                    <tr className='hRow'>
+                                        <td>
+                                            <Token><img src={icon2}/> SMART</Token>
+                                        </td>
+                                        <td>1,000,000</td>
+                                        <td>53.52%</td>
+                                        <td className='color-green'>87.53%</td>
+                                        <td className=''>1,000,000</td>
+                                        <td className='hcol'>25.52%</td>
+                                        <td className='hcol color-green'>+1,000,000 </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <Token><img src={icon2}/> SMART</Token>
@@ -173,8 +201,8 @@ const Screen03 = (props: any) => {
                                         <td className='color-green'>87.53%</td>
                                         <td className=''>1,000,000</td>
                                         <td className='hcol'>25.52%</td>
-                                        <td className='hcol color-green'>+1,000,000</td>
-                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-red'>WITHDRAWN </a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
+                                        <td className='hcol color-green'>+1,000,000 </td>
+                                        <td className='color-blue hasBtn'>1,000,000,000 <a className='claim color-white'>CONNECT WALLET</a><a className='arrow-dwn'><i className="fas fa-arrow-down"></i></a></td>
                                         <td><a onClick={toggleSelectToken} className='btn01'>DEPOSIT</a></td>
                                     </tr>
                                     <tr>
@@ -298,7 +326,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -321,7 +349,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -344,7 +372,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -367,7 +395,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -390,7 +418,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -413,7 +441,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -436,7 +464,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -459,7 +487,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -504,13 +532,13 @@ const Screen03 = (props: any) => {
                                 <thead>
                                 <tr>
                                     <th className='w-10'>Collection <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10'>NFT <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>NFT  <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
                                     <th className='w-10'>NFT supply  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10'>Floor price</th>
-                                    <th className='w-10'>Metrics <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Floor price <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
+                                    <th className='w-10'>Metrics </th>
                                     <th className='w-10'>Drop progress  <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
                                     <th className='w-10'>Due date <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
-                                    <th className='w-10'>Eligable to claim <i className="fas fa-question-circle"></i></th>
+                                    <th className='w-10'>Eligable to claim <i className="fas fa-question-circle"></i> <Shorting><a><i className="fas fa-caret-up"></i></a><a><i className="fas fa-caret-down"></i></a></Shorting></th>
                                     <th className='w-10'>Increase your share <i className="fas fa-question-circle"></i> </th>
                                 </tr>
                                 </thead>
@@ -524,8 +552,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -547,8 +575,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -570,8 +598,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -593,8 +621,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -616,8 +644,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -639,8 +667,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -662,8 +690,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -685,8 +713,8 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={nftIcon}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
-                                            <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
+                                            <ProgTxt>5,425/10,000</ProgTxt>
                                         </td>
                                         <td>
                                             <Counter>
@@ -762,7 +790,7 @@ const Screen03 = (props: any) => {
                                         <td>$1</td>
                                         <td><Token className='color-blue'><img src={Metrics}/> View detail</Token></td>
                                         <td>
-                                            <Progress><b style={{width: '20%'}} /></Progress>
+                                            <Progress><b style={{width: '60%'}} /></Progress>
                                             <ProgTxt>23,526,523 / 100,000,000</ProgTxt>
                                         </td>
                                         <td>
@@ -1182,6 +1210,9 @@ const DropdownTitle = styled.h2 `
     display: flex; width: 100%; font-size: 18px; font-weight: 700; padding: 36px 0px 38px; align-items: center;
     span {margin-left: auto; margin-right: 6px; transform: scaleY(-1);}
     .fa-info-circle {margin-right: 11px; }
+    @media screen and (max-width: 991px) { 
+        padding: 0 0px 38px; margin-top: 0;
+    }
 `
 const DropContent = styled.div `
     display: flex; gap: 50px; padding: 0 0 32px 0;
@@ -1207,7 +1238,7 @@ const PageContainer = styled.div `
         padding: 150px 15px 0;
     }
     @media (max-width: 991px){
-        padding: 220px 15px 0;
+        padding: 180px 15px 0;
     }
 `
 const TopMenu = styled.div `
@@ -1227,16 +1258,18 @@ const TopMenu = styled.div `
     }
     @media (max-width: 1200px){
         a {font-size: 18px; width: auto; flex-grow: 1;
-            img {margin-right: 10px; height: 20px;}
+            img {margin-right: 10px; height: 20px;}     
         }
     }
     @media (max-width: 991px){
         flex-flow: column; border-bottom: 0;
-        a {width: 100%; padding: 20px 15px 17px; box-shadow: 0 3px 0 #fff;}
+        a {width: 100%; padding: 20px 15px 17px; box-shadow: 0 3px 0 #fff;
+            .badge {width: 20px; height: 20px; font-size: 10px; line-height: 22px; margin: -9px 0 0 6px;}
+        }
     }
     @media (max-width: 500px){
         a {font-size: 16px;}
-        .badge {width: 24px; height: 24px;}
+        
     }
     
 ` 
@@ -1308,6 +1341,9 @@ const TableContainer = styled.div `
     &.no-padding {padding: 0;}
     table {
         width: 100%; 
+        @media screen and (max-width: 991px) {
+            min-width: 1200px;
+        }
         tr {
             th {border: 2px solid #3b3e4b; font-size: 14px; border-top-width: 2px; border-bottom-width: 2px; height: 50px; padding: 0 10px; text-align: left; position: relative; color: #a6a2b0; vertical-align: middle; font-weight: bold;
                 .fa-question-circle {font-size: 10px; position: relative; top: -0.65em;}
@@ -1330,6 +1366,9 @@ const TableContainer = styled.div `
                 &.w-90 {width: 90%;}
                 &.w-100 {width: 100%;}
                 &.hcol {background: #91dc27; color: #fff; /* border-color: #91dc27; */}
+                @media screen and (max-width: 991px) {
+                    padding-right: 24px;
+                }
             }
             td {border: 1px solid #3b3e4b; height: 52px; font-size: 12px; padding: 0 10px; text-align: left; position: relative; vertical-align: middle; color: #a6a2b0; position: relative;
                 &:last-child {
@@ -1362,7 +1401,7 @@ const TableContainer = styled.div `
                     .arrow-dwn {opacity: 0;}
                     .claim { opacity: 1;}
                 }
-                &.nobo {border: 0; vertical-align: top; padding: 10px 8px; 
+                &.nobo {border: 0; vertical-align: top; padding: 10px 8px; vertical-align: middle;
                     &:hover {background: none;}
                     span {width: 100%; justify-content: space-between; margin: 0 0 15px; display: block; color: #a6a2b0; display: flex; flex-flow: wrap; align-items: center; font-size: 12px;
                         b { margin-top: 4px;}
@@ -1372,6 +1411,7 @@ const TableContainer = styled.div `
                         p {margin: 0;}
                     }
                 }
+                
             }
             &.hRow {
                 td {
@@ -1391,7 +1431,7 @@ const TableContainer = styled.div `
     .text-center {text-align: center}
 `
 const VerticalSlider = styled.div `
-    height: 470px; width: 53px; z-index: 5; padding: 0 0; margin-right: 17px; display: flex; flex-flow: column; /* overflow-y: scroll; */ overflow-x: hidden; flex-shrink: 0; background: #292b33;
+    /* height: 470px; */ min-height: 100%; width: 53px; z-index: 5; padding: 0 0; margin-right: 17px; display: flex; flex-flow: column; /* overflow-y: scroll; */ overflow-x: hidden; flex-shrink: 0; background: #292b33;
     .VsHead {position: sticky; top: 0; border-top: 2px solid #3b3e4b; border-bottom: 2px solid #3b3e4b; height: 52px; display: block; background: #21232b; flex-shrink: 0; color: #a6a2b0; font-weight: bold; font-size: 14px; padding: 16px 0;}
     /* width */
     &::-webkit-scrollbar {width: 5px;}
@@ -1448,9 +1488,6 @@ const BtnLg = styled.div `text-align: center; position: relative; z-index: 1; co
 `
 const TableScroll = styled.div `
     overflow: auto; flex-grow: 1;
-    table {
-        min-width: 1200px;
-    }
 `
 
 export default Screen03;

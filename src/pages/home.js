@@ -53,12 +53,19 @@ import tab1Img03 from '../assets/welcome/tab1Img03.png';
 import tab1Img04 from '../assets/welcome/tab1Img04.png';
 import tab1Img05 from '../assets/welcome/tab1Img05.png';
 import tab1Img06 from '../assets/welcome/tab1Img06.png';
+import tab1Img07 from '../assets/welcome/tab1Img07.png';
+import tab1Img08 from '../assets/welcome/tab1Img08.png';
 import giftWhite from './../assets/images/giftWhite.png';
 import giftWhitelg from './../assets/images/giftWhitelg.png';
 import DropIcon from './../assets/images/tab22.png';
 import DMoney from '../assets/images/money.png';
 import arrowBtn from '../assets/images/arrowBtn.png';
 import rocket from '../assets/welcome/rocket.png'
+import pws1 from '../assets/images/pws1.png'
+import pws2 from '../assets/images/pws2.png'
+import pws3 from '../assets/images/pws3.png'
+import pws4 from '../assets/images/pws4.png'
+import pws5 from '../assets/images/pws5.png'
 
 import youtube from '../assets/social/youtube.svg'
 import linkedin from '../assets/social/linkedin-in.svg'
@@ -66,6 +73,7 @@ import tiktok from '../assets/social/tiktok.svg'
 import twitter from '../assets/social/x-twitter.svg'
 import box from '../assets/social/box.svg'
 import telegram from '../assets/social/telegram-plane.svg'
+import insta from '../assets/social/instagram.svg'
 import medium from '../assets/social/medium.svg'
 import instagram from '../assets/social/instagram.svg'
 
@@ -139,9 +147,10 @@ export default class Welcome extends PureComponent {
 
             <BannerSec>
                 <Container className='justify-center'>
-                    <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'><span>LAYER 2</span> VIRTUAL WALLET</BannerHD>
-                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Over $1 trillion in crypto tokens is held in wallets, generating no income beyond appreciation. Hodl your tokens in a secure, self-custody Layer 2 wallet to enjoy unlimited PASSIVE airdrops and APY from short-term loan fees, expediting cross-chain transactions.</p>
-                    <BtnPrimary href='#Selfcustody' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
+                    <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'>CROSS-CHAIN <span>BRIDGE LOANS</span></BannerHD>
+                    <BannerHD className='wow fadeInUp v2' data-wow-delay='0.2s'>via layer 2 virtual wallet</BannerHD>
+                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Over $1 trillion in crypto tokens is held in wallets, generating no income beyond appreciation. Hodl your tokens in a secure, self-custody Layer 2 wallet to enjoy unlimited PASSIVE airdrops and APY from short-term bridge loan fees, expediting transactions across BTC, EVM, and non-EVM chains.</p>
+                    {/* <BtnPrimary href='#Selfcustody' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
                             <img src={btn01}/>
@@ -200,7 +209,7 @@ export default class Welcome extends PureComponent {
                                 wallet to your dApp</b>
                             </div>
                         </div>
-                    </BtnPrimary>
+                    </BtnPrimary> */}
                     
                 </Container>
             </BannerSec>
@@ -209,18 +218,16 @@ export default class Welcome extends PureComponent {
                 <Container>
                     <div data-wow-delay='0.2s' className='LR-Left wow fadeInLeft'><img src={lgIco01}/></div>
                     <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
-                        <h5>FOR HOLDERS</h5>
-                        <h4>Self custody expedite
-                        short loans</h4>
-                        <p>Virtual wallets function automatically as a self-custody decentralized short-term loans offering expedite swap solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnChrome onClick={this.props.setToggleState}>
+                        <h4>Virtual Wallet</h4>
+                        <p>The virtual wallet acts as a self-custody layer 2 vault on top of your existing wallet, using the same security as your current wallet, like MetaMask or Trust Wallet. So, if you trust your wallet, you can trust the vault!</p>
+                        {/* <BtnChrome onClick={this.props.setToggleState}>
                             <div className='btnTop2'>
                                 <div className='btnTxt'>
                                     <b>Deposit $100 for 100 Days</b>
                                     <i>to Claim Your <span>547.50%</span> APY</i>
                                 </div>
                             </div>
-                        </BtnChrome>
+                        </BtnChrome> */}
                     </div>
                 </Container>
             </LeftRightTxt>
@@ -228,20 +235,8 @@ export default class Welcome extends PureComponent {
                 <Container>
                     <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco02}/></div>
                     <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
-                        <h5>FOR HOLDERS</h5>
-                        <h4>Unlimited <span>passive</span> <br/> airdrop subscription</h4>
-                        <p>Virtual wallets function automatically as a self-custody decentralized short-term arbitrage system, offering swift solutions for cross-chain users and generating passive profits from expedite fees.</p>
-                        <BtnClaim onClick={this.props.setToggleState}>
-                            <strong>CLAIM YOUR <span>$100</span> WELCOME BONUS </strong>
-                            <img src={giftWhite} alt='giftWhite'/>
-                            <div className='btnTop'>
-                                <img src={chrome}/>
-                                <div className='btnTxt'>
-                                    <b>Install virtual wallet</b>
-                                    <i>Google web store</i>
-                                </div>
-                            </div>
-                        </BtnClaim>
+                        <h4>Unlimited <span>passive</span> APY</h4>
+                        <p>As you keep your assets secure in your virtual wallet utilized as short-term bridge loans for minutes, helping to expedite cross-chain transfers in a fully decentralized way and earning you a 0.5%-2% expedite fee as passive APY, surpassing most market rates.</p>
                     </div>
                 </Container>
             </LeftRightTxt>
@@ -249,50 +244,16 @@ export default class Welcome extends PureComponent {
                 <Container>
                     <div className='LR-Left wow fadeInLeft' data-wow-delay='0.2s'><img src={lgIco03}/></div>
                     <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
-                        <h5>FOR HOLDERS</h5>
-                        <h4>Expedite cross chain
-to seconds </h4>
-                        <p>Cross-chain platforms offer a swap service with varying completion times, from minutes to hours. SmartExchange enables instant expedite token reception without any waiting period.</p>
-                        <BtnClaim onClick={this.props.setToggleState}>
-                            <strong>CLAIM YOUR <span>$100</span> WELCOME BONUS</strong>
-                            <img src={giftWhite} alt='giftWhite'/>
-                            <div className='btnTop'>
-                                <img src={chrome}/>
-                                <div className='btnTxt'>
-                                    <b>Install virtual wallet</b>
-                                    <i>Google web store</i>
-                                </div>
-                            </div>
-                        </BtnClaim>
+                        <h4>Unlimited <span>PASSIVE</span> Airdrops</h4>
+                        <p>The virtual wallet is also designed to enable projects to airdrop free tokens directly to their preferred target audiences. These tokens are distributed based on the type of tokens you hold, the quantity, and the duration of your holdings.</p>
                     </div>
                 </Container>
             </LeftRightTxt>
-            <LeftRightTxt id='QuantumVirtual' className='col-reverse'>
-                <Container>
-                    <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco04}/></div>
-                    <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
-                        <h5>FOR HOLDERS</h5>
-                        <h4>Quantum virtual limit</h4>
-                        <p>Virtual wallets are designed to facilitate quantum virtual orders across various markets without the necessity to spend gas or lock any funds beforehand. </p>
-                        <BtnClaim onClick={this.props.setToggleState}>
-                            <strong>CLAIM YOUR <span>$100</span> WELCOME BONUS</strong>
-                            <img src={giftWhite} alt='giftWhite'/>
-                            <div className='btnTop'>
-                                <img src={chrome}/>
-                                <div className='btnTxt'>
-                                    <b>Install virtual wallet</b>
-                                    <i>Google web store</i>
-                                </div>
-                            </div>
-                        </BtnClaim>
-                    </div>
-                </Container>
-            </LeftRightTxt>
-
             <WalletSec className='btnOnly'>
                 <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>
-                    <strong>CLAIM YOUR <span className='color-green'>$100</span> WELCOME BONUS </strong>
                     <img className='img-right' src={giftWhitelg} alt='giftWhite'/>
+                    <strong>Start Transforming Your Self-Custody
+                    Tokens Into Passive Income!</strong>
                     <div className='btnTop'>
                         <img src={chrome}/>
                         <div className='btnTxt'>
@@ -305,14 +266,15 @@ to seconds </h4>
 
             <Container className='no-flex'>
                 <TabLinks className='wow fadeInUp' data-wow-delay='0.2s'>
-                    <a  onClick={() => this.toggleTab(1)} className={this.getActiveClass(1,'active')}>What is SmartExchange?</a>
-                    <a onClick={() => this.toggleTab(2)} className={this.getActiveClass(2,'active')}>How it works?</a>
-                    <a onClick={() => this.toggleTab(3)} className={this.getActiveClass(3,'active')}>New user experience</a>
+                    <a  onClick={() => this.toggleTab(1)} className={this.getActiveClass(1,'active')}>How it Works</a>
+                    <a onClick={() => this.toggleTab(2)} className={this.getActiveClass(2,'active')}>Problems We Solve</a>
+                    <a onClick={() => this.toggleTab(3)} className={this.getActiveClass(3,'active')}>Our Solutions</a>
+                    <a onClick={() => this.toggleTab(4)} className={this.getActiveClass(4,'active')}>Passive income </a>
                 </TabLinks>
                 {this.getActiveClass(1,
                 <TabContent className='' data-wow-delay='0.2s'>
                     {/* <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange is a layer 2 virtual wallet utilizing the established security of decentralized wallets like MetaMask and TrustWallet. It optimizes multi-chain and cross-chain transactions, enhancing speed, cost-efficiency, and risk mitigation. Users can generate passive income through decentralized Arbitrage and AI Quantum market-making systems.</TabPera> */}
-                    <TabImgTxt>
+                    {/* <TabImgTxt>
                         <div className='tt-left'>
                             <div data-id="tabL01" >
                                 <h3 className={activeTab === 'tabL01' ? 'active' : ''} onMouseEnter={() => this.handleTabClick('tabL01')}>Self-custody vaults</h3>
@@ -332,14 +294,41 @@ to seconds </h4>
                         <img id="tabL02" src={activeTab === 'tabL02' ? tab1Img02 : ''} style={{ display: activeTab === 'tabL02' ? 'block' : 'none' }} />
                         <img id="tabL03" src={activeTab === 'tabL03' ? tab1Img03 : ''} style={{ display: activeTab === 'tabL03' ? 'block' : 'none' }} />
                         </div>
-                    </TabImgTxt>
+                    </TabImgTxt> */}
+                    <TabImg>
+                        <img src={tabImg01} />
+                    </TabImg>
                 </TabContent>
                 )} 
                 {this.getActiveClass(2,
                 <TabContent className='' data-wow-delay='0.2s'>
-                    <TabImg>
-                        <img src={tabImg01} />
-                    </TabImg>
+                    <PWSMain>
+                        <figure>
+                            <img src={pws1} alt={pws1} />
+                            <h4>Slow Cross-Chain</h4>
+                            <p>Swaps take minutes to hours between different chains due to consensus mechanisms, security measures, and multi-signature validation.</p>
+                        </figure>
+                        <figure>
+                            <img src={pws2} alt={pws2} />
+                            <h4>Centralized Bridges</h4>
+                            <p>All cross-chain bridges rely on oracles, exposing them to centralization, downtime, and security risks.</p>
+                        </figure>
+                        <figure>
+                            <img src={pws3} alt={pws3} />
+                            <h4>Unutilized Tokens</h4>
+                            <p>More than $1 trillion in assets sit unused in wallets without generating any income.</p>
+                        </figure>
+                        <figure>
+                            <img src={pws4} alt={pws4} />
+                            <h4>Scattered Pools</h4>
+                            <p>Liquidity spread across many small pools increasing slippage and inefficient cross-chain trades.</p>
+                        </figure>
+                        <figure>
+                            <img src={pws5} alt={pws5} />
+                            <h4>Low Buying Power</h4>
+                            <p>Market makers must lock funds and pay gas fees for orders, limiting buying power on DEXs compared to CEXs.</p>
+                        </figure>
+                    </PWSMain>
                 </TabContent>
                 )}
                 {this.getActiveClass(3,
@@ -349,24 +338,43 @@ to seconds </h4>
                     <TabImgTxt>
                         <div className='tt-left'>
                             <div data-id="tabL05" >
-                                <h3 className={activeTab2 === 'tabL04' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL04')}>Unlimited APY</h3>
-                                {activeTab2 === 'tabL04' ? <p>Holders can passively receive expedited fees every time users leverage the holding fund to perform short-term expedited loans</p> : ''}
+                                <h3 className={activeTab2 === 'tabL04' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL04')}>Self-custody vaults</h3>
+                                {activeTab2 === 'tabL04' ? <p>SmartExchange is a Layer 2 virtual wallet featuring self-custody vaults that utilize the established security of decentralized wallets like MetaMask and TrustWallet.</p> : ''}
                             </div>
                             <div data-id="tabL05" >
-                                <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL05')}>Unlimited airdrops</h3>
-                                {activeTab2 === 'tabL05' ?  <p>$SMART token, acting as Unlimited Airdrop Subscription (UAS) token, represent an innovative cryptocurrency utility. They offer passive access to unlimited airdrops when held in self-custody.</p> : ''}
+                                <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL05')}>Hijacking swaps</h3>
+                                {activeTab2 === 'tabL05' ?  <p>automatically detects and intercepts swap transactions when users attempt to trade on DEXs like Uniswap or aggregators like 1inch. Instead of executing the swap directly through the DEX, SmartExchange routes the transaction through alternative paths to offer cheaper swaps.</p> : ''}
                             </div>
                             <div data-id="tabL06" >
-                                <h3 className={activeTab2 === 'tabL06' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL06')}>VIP access</h3>
-                                {activeTab2 === 'tabL06' ? <p></p> : ''}
+                                <h3 className={activeTab2 === 'tabL06' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL06')}>Faster cross-chain</h3>
+                                {activeTab2 === 'tabL06' ? <p>SmartExchange bypasses slow bridges by using a Layer 2 virtual wallet that pre-funds swaps, enabling instant execution across BTC, EVM, and non-EVM chains. No delays, no waiting—just seamless, self-custody cross-chain transactions in seconds.</p> : ''}
                             </div>
-                            
-                            
                         </div>
                         <div className='tt-right'>
-                        <img id="tabL04" src={activeTab2 === 'tabL04' ? tab1Img05 : ''} style={{ display: activeTab2 === 'tabL04' ? 'block' : 'none' }} />
-                        <img id="tabL05" src={activeTab2 === 'tabL05' ? tab1Img04 : ''} style={{ display: activeTab2 === 'tabL05' ? 'block' : 'block' }} />
+                        <img id="tabL04" src={activeTab2 === 'tabL04' ? tab1Img04 : ''} style={{ display: activeTab2 === 'tabL04' ? 'block' : 'none' }} />
+                        <img id="tabL05" src={activeTab2 === 'tabL05' ? tab1Img05 : ''} style={{ display: activeTab2 === 'tabL05' ? 'block' : 'block' }} />
                         <img id="tabL06" src={activeTab2 === 'tabL06' ? tab1Img06 : ''} style={{ display: activeTab2 === 'tabL06' ? 'block' : 'none' }} />
+                        </div>
+                    </TabImgTxt>                    
+                </TabContent>
+                )}
+                {this.getActiveClass(4,
+                <TabContent className='' data-wow-delay='0.2s'>
+                    {/* <TabPera className='wow fadeInUp' data-wow-delay='0.2s'>SmartExchange offers a user-friendly web3-based interface that is easily navigable, even for new users. The platform is highly customizable, allowing users to adjust settings and preferences according to their preferences. This level of customization enables users to optimize their DeFi experience based on their individual needs and goals. Additionally, SmartExchange provides shortcuts to favorite links, alerts, and various opportunities such as launch-pads, scale-pads, NFTs, staking, airdrops, strategy analysis, index tracking, educational, portfolio tracking, and access for all crypto apps from the google play marketplace.</TabPera> */}
+                    <TabImgTxt>
+                        <div className='tt-left'>
+                            <div data-id="tabL01" >
+                                <h3 className={activeTab === 'tabL01' ? 'active' : ''} onMouseEnter={() => this.handleTabClick('tabL01')}>Unlimited passive APY</h3>
+                                {activeTab === 'tabL01' ?  <p>Holders can passively receive expedited fees every time users leverage the holding fund to perform short-term expedited bridge loans.</p> : ''}
+                            </div>
+                            <div data-id="tabL02" >
+                                <h3 className={activeTab === 'tabL02' ? 'active' : ''} onMouseEnter={() => this.handleTabClick('tabL02')}>Unlimited passive airdrops</h3>
+                                {activeTab === 'tabL02' ? <p>Instead of the outdated model where users had to complete marketing tasks in exchange for airdrops—only to dump them and harm the project’s token price—this system eliminates scams and dumping. Projects can now distribute tokens pro-rata gradually, block by block, over an extended period, while users receive airdrops effortlessly, with no marketing tasks required.</p> : ''}
+                            </div>
+                        </div>
+                        <div className='tt-right'>
+                        <img id="tabL01" src={activeTab === 'tabL01' ? tab1Img07 : ''} style={{ display: activeTab === 'tabL01' ? 'block' : 'block' }} />
+                        <img id="tabL02" src={activeTab === 'tabL02' ? tab1Img08 : ''} style={{ display: activeTab === 'tabL02' ? 'block' : 'none' }} />
                         </div>
                     </TabImgTxt>
                 </TabContent>
@@ -465,7 +473,7 @@ to seconds </h4>
                 <Supporting>Supporting :<img src={Eth}/>300+ EVM blockchains</Supporting>
                 */}</>
             </Container>
-            <LeftRightTxt id='FreeAirdrop' className='col-reverse'>
+            {/* <LeftRightTxt id='FreeAirdrop' className='col-reverse'>
                 <Container>
                 <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco05}/></div>
                 <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
@@ -488,7 +496,7 @@ to seconds </h4>
                         <LinkBtn>Start Integration <i class="fas fa-angle-double-right"></i></LinkBtn>
                     </div>
                 </Container>
-            </LeftRightTxt>
+            </LeftRightTxt> */}
             <Container>
                 <ValueMain>
                     <div className='valueCol wow fadeInLeft' data-wow-delay='0.2s'>
@@ -509,9 +517,10 @@ to seconds </h4>
                 <p>Hold <span>$SMART</span> on your virtual wallet and enjoy VIP access to all <span>UNLIMITED PASSIVE AIRDROP</span> subscription tokens</p>
             </TopBar>
         </WelcomeMain>
-        <FootBtn>
-            {/* <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark> */}
-            {/* <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
+        {/* <FootBtn>
+            Hidden V1
+            <BtnDark className='disabled white-color shadow-white'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/></BtnDark>
+            <BtnDark onClick={this.props.setToggleState} className='disabled white-color shadow-white wow fadeInUp' data-wow-delay='0.2s'>CLAIM YOUR&nbsp;<span className='color-green'>$25</span>&nbsp;WELCOME BONUS <img className='img-right' src={peraIco}/>
                 <div className='btnTop'>
                     <img src={chrome}/>
                     <div className='btnTxt'>
@@ -519,10 +528,11 @@ to seconds </h4>
                         <i>Google web store</i>
                     </div>
                 </div>
-            </BtnDark> */}
+            </BtnDark>
+            Hidden V1
             <BtnNew onClick={()=>this.props.setoggleStateSidebar()} data-aos="fade-up" className='v2'>
                 <p>Refer & Win Up to a <span>$1000</span> Reward</p> <img src={DMoney} alt='btn' /></BtnNew>
-        </FootBtn>
+        </FootBtn> */}
         <Footer>
             <div className='FMLeftr'>
                 <span>Powered by:</span> <a target='_blank' href='https://quantum.foundation/'><img src={qntmLogo} /></a>
@@ -533,11 +543,12 @@ to seconds </h4>
                 {/* <a><img src={tiktok}/></a> */}
                 <a href='https://twitter.com/_Smart_Exchange' target='_blank'><img src={twitter}/></a>
                 {/* <a><img src={medium}/></a> */}
+                <a target='_blank' href='https://t.me/+uukHBGUhdKhlNGM5'><img src={insta}/></a>
                 <a target='_blank' href='https://t.me/+uukHBGUhdKhlNGM5'><img src={telegram}/></a>
                 <a><img src={box}/></a>
             </div>
             <div className="FMRight">
-                <a target='_blank' href='https://airdrop.tube/giveaway'><img src={rocket} alt='rocket'/> Project, distributes airdrops to holders and traders for <span>FREE</span></a>
+                <a target='_blank' >For projects</a>
             </div>
         </Footer>
     </>
@@ -552,14 +563,14 @@ const TabLinks = styled.div `
         &.active {color: #91dc27; border-bottom: 3px solid #91dc27;}
     }
     @media screen and (max-width: 1440px) {
-        a {font-size: 25px;}
+        a {font-size: 20px;}
     }
     @media screen and (max-width: 991px) {
-        a {font-size: 20px;}
+        a {font-size: 18px;}
     }
     @media screen and (max-width: 768px) {
         flex-flow: column; margin-top: 80px;
-        a {padding: 15px; font-size: 20px; width: 100%;}
+        a {padding: 15px; font-size: 18px; width: 100%;}
     }
 `
 const TabContent = styled.div `
@@ -570,6 +581,36 @@ const TabBtns = styled.div `
     @media screen and (max-width: 991px) {
         flex-flow: column; align-items: center; 
         padding: 0 0 100px 0;
+    }
+`
+const PWSMain = styled.div `
+    display: flex; gap: 35px; padding: 66px 0 0;
+    figure {
+        width: 20%;
+        h4 {color: #91dc27; font-size: 24px; font-weight: 600; margin: 33px 0 25px;}
+        p {color: #a6a2b0; font-size: 16px; line-height: 1.5; margin: 0;}
+    }
+    @media screen and (max-width: 1200px) {
+        figure {
+            h4 {font-size: 20px; margin: 23px 0 12px;}
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        flex-flow: wrap; gap: 30px;
+        figure {
+            width: calc(33.33% - 30px);
+        }
+    }
+    @media screen and (max-width: 768px) {
+        figure {
+            width: calc(50% - 15px);
+            img {height: 50px;}
+        }
+    }
+    @media screen and (max-width: 640px) {
+        figure {
+            width: 100%; text-align: center;
+        }
     }
 `
 const TabPera = styled.p `
@@ -608,9 +649,10 @@ const ValueMain = styled.div `
     background-image: -webkit-linear-gradient( 0deg, rgb(13,14,19) 0%, rgb(145,220,39) 50%, rgb(13,14,19) 100%);
     background-image: -ms-linear-gradient( 0deg, rgb(13,14,19) 0%, rgb(145,220,39) 50%, rgb(13,14,19) 100%);}
     .valueCol {
-        width: 430px; max-width: 100%;
+        width: 430px; max-width: 36%; flex-grow: 1;
         h3 {font-size: 36px; font-weight: bold; margin: 29px 0 35px; color: #000;}
         p {font-size: 21px; color: #fff; margin: 0; line-height: 36px;}
+        img {margin: -70px 0 -70px -80px;}
     }
     .ValImg {margin: 0 auto;
         .responsive {display: none;}
@@ -624,19 +666,26 @@ const ValueMain = styled.div `
     }
     @media screen and (max-width: 991px) {
         flex-flow: column; align-items: center; padding: 80px 0; margin-top: 80px;
-        .valueCol { text-align: center;
-            h3 {font-size: 26px; margin: 22px 0 30px;} 
-            img {max-height: 130px;}
+        .valueCol { text-align: center; width: 300px; max-width: 100%;
+            h3 {font-size: 26px;} 
+            img {max-height: 130px; margin: 0 0 -40px 0;}
         }
         .ValImg {margin: 30px -15px;
             .desk {display: none;}
             .responsive {display: block;}
         }
     }
+    @media screen and (max-width: 640px) {
+        padding: 40px 0 60px; margin-top: 0;
+        .valueCol {
+            h3 {font-size: 22px; margin: 16px 0 10px; }
+            p {line-height: 1.4;}
+        }
+    }
 `
 const BtnDark = styled.a `
-    color: #fff; font-size: 24px; width: 665px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 5px; position: relative; box-shadow: 0 0 18px 5px #fff; text-align: left; overflow: hidden;
-    .img-right {margin-left: 26px; height: 38px; margin-top: -1px;}
+    color: #fff; font-size: 24px; width: 732px; max-width: 100%; background: #0d0e13; margin: 46px auto 56px; padding: 27px 62px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 5px; position: relative; box-shadow: 0 0 18px 5px #fff; text-align: left; overflow: hidden;
+    .img-right {margin-right: 45px;  margin-top: -1px; flex-shrink: 0px;}
     strong {color: #fff; margin: 0; line-height: 1.3;}
     .btnTop {display: flex; align-items: center; font-weight: bold; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #91dc27; color: #0d0e13; text-align: left; justify-content: center; opacity: 0; visibility: hidden; z-index: 1;
         img {filter: brightness(0); width: 48px; flex-shrink: 0; margin-right: 25px; transition: all 0.5s ease-in-out;}
@@ -647,8 +696,8 @@ const BtnDark = styled.a `
         .btnTop {opacity: 1; visibility: visible;}
     }
     @media screen and (max-width: 991px) {
-        font-size: 20px; width: 540px; padding: 15px 15px; height: 75px;
-        .img-right {height: 35px;}
+        font-size: 18px; width: 540px; padding: 15px 15px; height: auto;
+        .img-right {height: 35px; margin-right: 20px;}
         .btnTop { 
             img {margin-right: 15px; width: 40px;}
             b {font-size: 18px;}
@@ -737,11 +786,11 @@ const WelcomeMain = styled.main `
     }
 `
 const BannerSec = styled.section `
-    padding: 264px 0 70px 0;
+    padding: 264px 0 100px 0;
     /* padding: 114px 0 225px 0; */
     width: 100%; min-height: 300px; text-align: center;
     p {
-        color: #a6a2b0; font-size: 22px; line-height: 1.8; margin: 0 0 78px 0; width: 1100px; max-width: 100%;
+        color: #a6a2b0; font-size: 18px; line-height: 1.8; margin: 0 0 78px 0; width: 1350px; max-width: 100%;
     }
     @media (max-width: 1200px){
         padding: 264px 0 100px 0;
@@ -753,23 +802,26 @@ const BannerSec = styled.section `
         }
     }
     @media (max-width: 767px){
-        min-height: 100vh; padding: 250px 0 80px; display: flex; align-items: center; justify-content: center;
+        min-height: inherit; padding: 150px 0 80px; display: flex; align-items: center; justify-content: center;
         p {font-size: 20px;}
     }
     @media (max-width: 480px){
-        p {font-size: 18px;}
+        p {font-size: 16px;}
     }
 `
 const BannerHD = styled.h3 `
-    font-size: 66px; color: white; font-weight: bold; text-transform: uppercase;
-    margin: 0 0 9px 0; font-weight: normal; text-shadow: 0 0 15px #fff;
-    span {color: #91dc27; font-weight: bold; text-shadow: 0 0 0 #fff;}
-    
+    font-size: 86px; color: white; font-weight: bold; text-transform: uppercase; line-height: 1;
+    margin: 0 0 5px 0; font-weight: normal; text-shadow: 0 0 15px #fff;
+    span {color: #91dc27; font-weight: bold; text-shadow: 0 0 15px #91dc27;}
+    &.v2 {color: #565260; text-shadow: 0 0 15px #565260; margin-bottom: 30px;}
+    @media (max-width: 1300px){
+        font-size: 50px;
+    }
     @media (max-width: 767px){
         font-size: 32px;
     }
     @media (max-width: 480px){
-        font-size: 28px;
+        font-size: 24px;
     }
 `
 const BtnPrimary = styled.a `
@@ -944,7 +996,9 @@ const TabImgTxt = styled.div `
 const Footer = styled.div `
     display: flex; align-items: center; background: #16171e;  padding: 16px 42px; justify-content: space-between;
     span {margin-right: 30px;}
-    .FMLeftr {display: flex; align-items: center; width: 33.33%;}
+    .FMLeftr {display: flex; align-items: center; width: 33.33%;
+        span {font-size: 12px; color: #a6a2b0; }
+    }
     .FMRight {font-size: 12px; color: #91dc27; font-weight: 700;  width: 33.33%; text-align: right;
         img {margin: -3px 18px 0 0; height: 19px;}
         a {color: #91dc27;}
