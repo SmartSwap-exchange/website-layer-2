@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-import BannerBg from '../assets/welcome/home-bg.png';
+import BannerBg from '../assets/welcome/home-bg.webp';
 import Apple from '../assets/images/apple.png';
 import PlayS from '../assets/images/play.png';
 import Browsers from '../assets/images/browser.png';
@@ -39,22 +39,23 @@ import btn06 from '../assets/images/btn06.png';
 import lgIco01 from '../assets/welcome/lgIco01.png';
 import lgIco02 from '../assets/welcome/lgIco02.png';
 import lgIco03 from '../assets/welcome/lgIco03.png';
-import lgIco04 from '../assets/welcome/lgIco04.png';
+import lgIco04 from '../assets/welcome/lgIco004.png';
+// import lgIco04 from '../assets/welcome/lgIco04.png';
 import lgIco05 from '../assets/welcome/lgIco05.png';
 import lgIco06 from '../assets/welcome/lgIco06.png';
 import chrome from '../assets/welcome/chrome.png';
 import peraIco from '../assets/welcome/peraIco.png';
-import tabImg01 from '../assets/welcome/tabImg01.png';
+import tabImg01 from '../assets/welcome/tabImg01.webp';
 import Recket2 from '../assets/welcome/rocket2.png';
 import qntmLogo from '../assets/welcome/qntmLogo.png';
 import tab1Img01 from '../assets/welcome/tab1Img01.png';
 import tab1Img02 from '../assets/welcome/tab1Img02.png';
 import tab1Img03 from '../assets/welcome/tab1Img03.png';
-import tab1Img04 from '../assets/welcome/tab1Img04.png';
-import tab1Img05 from '../assets/welcome/tab1Img05.png';
-import tab1Img06 from '../assets/welcome/tab1Img06.png';
-import tab1Img07 from '../assets/welcome/tab1Img07.png';
-import tab1Img08 from '../assets/welcome/tab1Img08.png';
+import tab1Img04 from '../assets/welcome/tab1Img04.webp';
+import tab1Img05 from '../assets/welcome/tab1Img05.webp';
+import tab1Img06 from '../assets/welcome/tab1Img06.webp';
+import tab1Img07 from '../assets/welcome/tab1Img07.webp';
+import tab1Img08 from '../assets/welcome/tab1Img08.webp';
 import giftWhite from './../assets/images/giftWhite.png';
 import giftWhitelg from './../assets/images/giftWhitelg.png';
 import DropIcon from './../assets/images/tab22.png';
@@ -147,9 +148,9 @@ export default class Welcome extends PureComponent {
 
             <BannerSec>
                 <Container className='justify-center'>
-                    <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'>CROSS-CHAIN <span>BRIDGE LOANS</span></BannerHD>
-                    <BannerHD className='wow fadeInUp v2' data-wow-delay='0.2s'>via layer 2 virtual wallet</BannerHD>
-                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Over $1 trillion in crypto tokens is held in wallets, generating no income beyond appreciation. Hodl your tokens in a secure, self-custody Layer 2 wallet to enjoy unlimited PASSIVE airdrops and APY from short-term bridge loan fees, expediting transactions across BTC, EVM, and non-EVM chains.</p>
+                    <BannerHD className='wow fadeInUp' data-wow-delay='0.2s'>INSTANT SETTLEMENT ACCELERATION LAYER</BannerHD>
+                    <BannerHD className='wow fadeInUp v2' data-wow-delay='0.2s'>FROM <span>Bitcoin</span> TO ALL NETWORKS</BannerHD>
+                    <p className='wow fadeInUp' data-wow-delay='0.3s'>Over $1 trillion in crypto sits idle. Earn passive income securely by putting your assets to work. With a self-custody virtual wallet, you can provide short-term liquidity across Bitcoin, EVM, and non-EVM networks.</p>
                     {/* <BtnPrimary href='#Selfcustody' className='wow fadeInUp btnLg' data-wow-delay='0.4s'>
                         <strong>FOR HOLDERS</strong>
                         <div className='btnTop'>
@@ -218,8 +219,8 @@ export default class Welcome extends PureComponent {
                 <Container>
                     <div data-wow-delay='0.2s' className='LR-Left wow fadeInLeft'><img src={lgIco01}/></div>
                     <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
-                        <h4>Virtual Wallet</h4>
-                        <p>The virtual wallet acts as a self-custody layer 2 vault on top of your existing wallet, using the same security as your current wallet, like MetaMask or Trust Wallet. So, if you trust your wallet, you can trust the vault!</p>
+                        <h4>Instant Settlement <span>with <br className='TabScreen'/> 2 blocks</span></h4>
+                        <p>Users receive assets on the destination chain within 1 block per chain - without waiting for long bridge finality. The system verifies that a user has initiated a valid cross-chain transfer, then instantly disburses the destination asset using liquidity provided by other users offering short-term bridge loans. Once the original transfer finalizes, the lenders are automatically repaid. This provides near-instant, low-risk access to assets across chains — dramatically improving speed, capital efficiency, and user experience.</p>
                         {/* <BtnChrome onClick={this.props.setToggleState}>
                             <div className='btnTop2'>
                                 <div className='btnTxt'>
@@ -235,7 +236,7 @@ export default class Welcome extends PureComponent {
                 <Container>
                     <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco02}/></div>
                     <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
-                        <h4>Unlimited <span>passive</span> APY</h4>
+                        <h4>Unlimited <span>PASSIVE</span> APY</h4>
                         <p>As you keep your assets secure in your virtual wallet utilized as short-term bridge loans for minutes, helping to expedite cross-chain transfers in a fully decentralized way and earning you a 0.5%-2% expedite fee as passive APY, surpassing most market rates.</p>
                     </div>
                 </Container>
@@ -246,6 +247,15 @@ export default class Welcome extends PureComponent {
                     <div className='LR-Right wow fadeInRight' data-wow-delay='0.2s'>
                         <h4>Unlimited <span>PASSIVE</span> Airdrops</h4>
                         <p>The virtual wallet is also designed to enable projects to airdrop free tokens directly to their preferred target audiences. These tokens are distributed based on the type of tokens you hold, the quantity, and the duration of your holdings.</p>
+                    </div>
+                </Container>
+            </LeftRightTxt>
+            <LeftRightTxt id='unlimitedPassive' className='col-reverse'>
+                <Container>
+                    <div className='LR-Left wow fadeInRight' data-wow-delay='0.2s'><img src={lgIco04}/></div>
+                    <div className='LR-Right wow fadeInLeft' data-wow-delay='0.2s'>
+                        <h4>Virtual Wallet</h4>
+                        <p>The virtual wallet acts as a self-custody layer 2 vault on top of your existing wallet, using the same security as your current wallet, like MetaMask or Trust Wallet. So, if you trust your wallet, you can trust the vault!</p>
                     </div>
                 </Container>
             </LeftRightTxt>
@@ -343,7 +353,7 @@ export default class Welcome extends PureComponent {
                             </div>
                             <div data-id="tabL05" >
                                 <h3 className={activeTab2 === 'tabL05' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL05')}>Hijacking swaps</h3>
-                                {activeTab2 === 'tabL05' ?  <p>automatically detects and intercepts swap transactions when users attempt to trade on DEXs like Uniswap or aggregators like 1inch. Instead of executing the swap directly through the DEX, SmartExchange routes the transaction through alternative paths to offer cheaper swaps.</p> : ''}
+                                {activeTab2 === 'tabL05' ?  <p>SmartExchange is a browser extension that automatically detects and intercepts swap transactions when users attempt to trade on DEXs like Uniswap or aggregators like 1inch. Instead of executing the swap directly through the DEX, SmartExchange routes the transaction through alternative paths to offer cheaper swaps.</p> : ''}
                             </div>
                             <div data-id="tabL06" >
                                 <h3 className={activeTab2 === 'tabL06' ? 'active' : ''} onMouseEnter={() => this.handleTabClick2('tabL06')}>Faster cross-chain</h3>
@@ -601,6 +611,9 @@ const PWSMain = styled.div `
             width: calc(33.33% - 30px);
         }
     }
+    @media (max-width: 500px) {
+        padding: 66px 0 66px 0;
+    }
     @media screen and (max-width: 768px) {
         figure {
             width: calc(50% - 15px);
@@ -649,9 +662,9 @@ const ValueMain = styled.div `
     background-image: -webkit-linear-gradient( 0deg, rgb(13,14,19) 0%, rgb(145,220,39) 50%, rgb(13,14,19) 100%);
     background-image: -ms-linear-gradient( 0deg, rgb(13,14,19) 0%, rgb(145,220,39) 50%, rgb(13,14,19) 100%);}
     .valueCol {
-        width: 430px; max-width: 36%; flex-grow: 1;
+        width: 430px; max-width: 31%; flex-grow: 1;
         h3 {font-size: 36px; font-weight: bold; margin: 29px 0 35px; color: #000;}
-        p {font-size: 21px; color: #fff; margin: 0; line-height: 36px;}
+        p {font-size: 18px; color: #fff; margin: 0; line-height: 30px;}
         img {margin: -70px 0 -70px -80px;}
     }
     .ValImg {margin: 0 auto;
@@ -719,7 +732,7 @@ const WalletSec = styled.div `
     p {font-size: 18px; line-height: 30px; margin: 0 0 30px 0;}
     h2 {font-size: 48px; font-weight: bold; margin: 36px 0 0 0;}
     &.btnOnly {
-        margin: 90px 0 204px; padding: 84px 20px;
+        margin: 90px 0 204px; padding: 75px 20px;
         ${BtnDark} {margin: 0 auto;}
     }
     @media screen and (max-width: 1400px) {
@@ -786,11 +799,15 @@ const WelcomeMain = styled.main `
     }
 `
 const BannerSec = styled.section `
-    padding: 264px 0 100px 0;
+    padding: 340px 0 100px 0;
     /* padding: 114px 0 225px 0; */
     width: 100%; min-height: 300px; text-align: center;
     p {
-        color: #a6a2b0; font-size: 18px; line-height: 1.8; margin: 0 0 78px 0; width: 1350px; max-width: 100%;
+        color: #a6a2b0; font-size: 21px; line-height: 1.8; margin: 0 0 78px 0; width: 1360px; max-width: 100%;
+        @media (max-width: 991px) {
+            font-size: 20px;
+            margin: 0 0 40px 0;
+        }
     }
     @media (max-width: 1200px){
         padding: 264px 0 100px 0;
@@ -801,27 +818,39 @@ const BannerSec = styled.section `
             br {display: none;}
         }
     }
-    @media (max-width: 767px){
-        min-height: inherit; padding: 150px 0 80px; display: flex; align-items: center; justify-content: center;
+    @media (max-width: 800px){
         p {font-size: 20px;}
     }
-    @media (max-width: 480px){
+    @media (max-width: 767px){
+        min-height: inherit; padding: 150px 0 80px; display: flex; align-items: center; justify-content: center;
+        p {font-size: 18px;}
+    }
+    @media (max-width: 500px){
         p {font-size: 16px;}
     }
 `
 const BannerHD = styled.h3 `
-    font-size: 86px; color: white; font-weight: bold; text-transform: uppercase; line-height: 1;
+    font-size: 60px; color: white; font-weight: bold; text-transform: uppercase; line-height: 1;
     margin: 0 0 5px 0; font-weight: normal; text-shadow: 0 0 15px #fff;
-    span {color: #91dc27; font-weight: bold; text-shadow: 0 0 15px #91dc27;}
-    &.v2 {color: #565260; text-shadow: 0 0 15px #565260; margin-bottom: 30px;}
+    span {color: #f7931a; font-weight: bold; text-shadow: 0 0 15px #f7931a;}
+    &.v2 {color: #717171; text-shadow: 0 0 15px #717171; margin-bottom: 30px; margin-top: 12px;}
     @media (max-width: 1300px){
         font-size: 50px;
     }
-    @media (max-width: 767px){
+    @media (max-width: 1024px){
+        font-size: 40px;
+    }
+    @media (max-width: 800px){
         font-size: 32px;
     }
-    @media (max-width: 480px){
-        font-size: 24px;
+    @media (max-width: 767px){
+        font-size: 45px;
+        &.v2{
+            margin-top: 0;
+        }
+    }
+    @media (max-width: 500px) {
+        font-size: 35px;
     }
 `
 const BtnPrimary = styled.a `
@@ -900,7 +929,7 @@ const BtnPrimary = styled.a `
 `
 
 const Container = styled.div `
-    width: 100%; max-width: 1353px; margin: 0 auto; display: flex; flex-flow: wrap;
+    width: 100%; max-width: 1400px; margin: 0 auto; display: flex; flex-flow: wrap;
     &.no-flex {display: block;}
     &.justify-center {justify-content: center;}
     &.mob-p0 {padding: 0;}
@@ -910,10 +939,16 @@ const Container = styled.div `
 `
 const LeftRightTxt = styled.div `
     padding-top: 50px;
-    .LR-Left {width: 50%; align-self: center; margin-right: auto; text-align: center;}
-    .LR-Right {width: 50%; align-self: center;
+    .LR-Left {width: 50%; align-self: center; margin-right: auto; text-align: center;
+    
+    @media (max-width: 800px){
+        width: 100%;
+    }
+    }
+    .LR-Right {width: 100%; max-width:662px; align-self: center;
+
         h5 {font-size: 16px; color: #585560; margin: 0 0 19px 0;}
-        h4 {font-size: 48px; color: #91dc27; margin: 0 0 22px 0; line-height: 1.2;
+        h4 {font-size: 48px; color: #91dc27; margin: 0 0 25px 0; line-height: 1.2;
             span {color: #fff;}
         }
         p {font-size: 18px; line-height: 1.7; color: #a6a2b0; margin: 0 0 46px 0;}
@@ -928,22 +963,57 @@ const LeftRightTxt = styled.div `
         .LR-Left {order: 2;  margin-right: 0;  margin-left: auto;}
         .LR-Right {order: 1;}
     }
+    @media (max-width: 1346px) {
+        .LR-Right{max-width:50%;}
+    }
+    @media (max-width: 1200px) {
+        .LR-Right{max-width:50%;
+            .TabScreen{
+                display: none;
+            }
+        }
+    }
     @media (max-width: 1024px){
         .LR-Right {
+            width: 100%;
+            max-width: 50%;
             h4 {font-size: 28px;}
         }
     }
-    @media (max-width: 768px){
-        margin-bottom: 80px; padding-top: 0;
-        .LR-Left {width: 100%;
-            img {width: 300px; max-width: 100%;}
-        }
-        .LR-Right {width: 100%; text-align: center;}
+    
+    @media (max-width: 800px){
         &.col-reverse {
             .LR-Left {order: 1;
             .LR-Right {order: 2;}
         }
     }
+        .LR-Right{
+            width: 100%;
+            max-width: 100%;
+            h4{
+                text-align: center;
+                font-size: 28px;
+                .TabScreen{
+                    display: none;
+                }
+            }
+            p{
+                text-align: center;
+            }
+        }
+    }
+    @media (max-width: 768px){
+        margin-bottom: 40px; padding-top: 0;
+        .LR-Left {width: 100%;
+            img {width: 460px; max-width: 100%;}
+        }
+        .LR-Right {width: 100%; text-align: center; h4{margin: 0 0 20px 0}}
+        &.col-reverse {
+            .LR-Left {order: 1;
+            .LR-Right {order: 2;}
+        }
+    }
+}
 `
 const TabImg = styled.div `
     padding: 67px 0 100px;
@@ -974,7 +1044,7 @@ const FootBtn = styled.div `
 `
 const TabImgTxt = styled.div `
     display: flex; align-items: flex-start; margin-top: 80px; min-height: 470px;
-    .tt-left { padding-right: 70px; width: 494px; display: block;
+    .tt-left { padding-right: 110px; width: 540px; display: block;
         > div {margin: 0 0 46px; 
             h3 {font-size: 21px; font-weight: 700; color: #fff; margin: 0;
                 &.active {color: #91dc27;}
